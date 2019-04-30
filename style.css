@@ -1,0 +1,423 @@
+/* Définition des polices personnalisées */
+
+
+
+/* body */
+body
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Header */
+
+header
+{
+    display: flex;
+
+    flex-direction: row;
+    height: 75px;
+    padding-top: 10px;
+}
+
+    /* titre */
+
+#titre_principal
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+header h1
+{
+    font-family: serif;
+    font-size: 2.5em;
+    font-weight:bold;
+   
+}
+
+    /* logo */
+#logo
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+#logo img
+{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    padding: 5px;
+
+}
+
+    /* langue */
+#langue
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    
+}
+#langue img
+{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 55px;
+    border-radius: 3px;
+}
+
+
+
+    /* Navigation */
+
+body
+{
+    font-family: 'Source code pro', Calibri, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav
+{
+    
+    justify-content: space-around;
+    background-color: #424558;
+    margin-left: 15px;
+    margin-top: 4px;
+    height: 65px;
+    border-radius: 5px;
+}
+
+nav > ul
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+nav > ul::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+nav > ul > li
+{
+    float: left;
+    position: relative;
+}
+
+nav > ul > li >a
+{
+    padding : 25px;
+    color: #FFF;
+}
+
+nav > ul > li:hover a
+{
+    /*padding: 15px 30px 20px 30px;*/
+    padding-top:  20px;
+    padding-bottom : 20px;
+   
+}
+
+nav li
+{
+    list-style-type: none;
+}
+
+.submenu
+{
+   display: none;
+   background-color: rgb(230, 100, 40);
+}
+
+.submenu li:hover a
+{
+    color:#EEE;
+    font-weight: bold;
+}
+
+.submenu li:hover
+{
+    background-color: rgb(210, 77, 60);
+}
+
+nav a
+{
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav li:hover .submenu
+{
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    padding: 0px;
+    z-index: 100000;
+}
+
+.submenu li 
+{
+    border-bottom: 1px solid #CCC; 
+}
+
+.submenu li a
+{
+    padding: 15px 30px;
+    font-size: 13px;
+    color: #222538;
+    width: 270px;
+}
+
+nav > ul > li:hover
+{
+    border-top: 5px solid #e44d26;
+    background-color: rgba(228,77,38,0.15);
+}
+
+
+
+
+/* corps */
+
+#coprs
+{
+    display: flex;
+
+
+}
+    /* ventes flash */
+    #ventes_flash
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        background-color: blue;
+    }
+
+    #ventes_flash > #carrousel > ul
+    {
+        list-style-type: none;
+       
+    }
+
+        /* accroche */
+
+        #accroche
+        {
+            display: flex;
+            flex-direction: row;
+            margin-left: 20px;
+            margin-top: 150px;
+        }
+
+        #fleche
+        {
+            margin-top: 20px;
+            margin-right: 5px;
+        }
+
+        #fleche img
+        {
+            width: 120px;
+        }
+
+        #message p
+        {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+
+
+    /* section */
+    #section
+    {
+        display: flex;
+
+    }
+
+        /* liste produits */
+        #liste_produits
+        {
+            background-color: red;
+            flex:2.4;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produit
+        {
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .produit img
+        {
+            width: 100px;
+            height: 100px;
+        }
+
+        .produit_gauche
+        {
+            display: flex;
+            flex-direction: column;
+            background-color: pink;
+        }
+
+        .produit_droite
+        {
+            display: flex;
+            flex-direction: column;
+            background-color: purple;
+        }
+
+
+        /* petit message */
+        #petit_message
+        {
+            background-color: pink;
+
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: relative;
+            background-color: #706b64;
+            box-shadow: 0px 2px 5px #1c1a19;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: justify;
+            color: white;
+            font-size: 0.9em;
+            height: 20%;
+        }
+        #fleche_bulle
+        {
+            position: absolute;
+            top: 135px;
+            left: -12px;
+        }
+        #photo_sympa img
+        {
+            width: 200px;
+        }
+
+
+
+/* footer */
+#footer
+{
+    display: flex;
+    justify-content: space-around;
+    background-color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #dedede;
+}
+
+#message p , #fleche img{
+    position: relative;
+    display: block;
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 1;
+    transform: translateY(6rem);
+    animation: up 500ms linear forwards;
+    z-index: 1;
+    text-shadow: 0px 1px 1px rgba(255,255,255,1);
+}
+
+#message, #fleche {
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+    
+    100% {
+        transform: translateY(0);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  media querries  */
+@media all and (max-width: 1116px)
+{
+    body
+    {
+        width: auto;
+        text-align: left;
+    }
+
+    #ventes_flash
+    {
+        display: none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
