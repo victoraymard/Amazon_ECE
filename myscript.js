@@ -8,7 +8,8 @@ $(document).ready(function(){
 	// qui possède l'index i (0 pour l'instant)
 	$img.css('display', 'none'); // on cache les images
 	$currentImg.css('display', 'block'); // on affiche seulement l'image courante
-	$carrousel.append('<div class="controls"> <span class="prev">Precedent</span><span class="next">Suivant</span> </div>');
+	$carrousel.append('<div class="controls"> <span class="prev"><img src="images/fleche_carrousel.png"></span><span class="next"><img src="images/fleche_carrousel_bis.png"></span> </div>');
+
 
 
 	$('.next').click(function(){ // image suivante suivante

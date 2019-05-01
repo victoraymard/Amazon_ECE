@@ -226,6 +226,25 @@ nav > ul > li:hover
        
     }
 
+    .controls span
+    {
+        color: red;
+        position: absolute;
+        margin-top: -200px;
+        margin-left: 35px;
+    }
+
+    .controls .next
+    {
+        margin-left: 490px;
+    }
+
+    .controls img
+    {
+        width: 80px;
+    }
+
+
     #presentation
     {
         display: flex;
