@@ -12,10 +12,9 @@ CREATE TABLE Acheteur(
 	DateCarte Date NOT NULL,
 	NomCarte varchar(255) NOT NULL,
 	Crypto int(3) NOT NULL,
-	ID_Panier int(5) NOT NULL,
+	ID_Panier int(5) NOT NULL AUTO_INCREMENT,
 	Civilite varchar(255) NOT NULL,
 	DateNaissance Date NOT NULL,
-	FOREIGN KEY(ID_Panier) REFERENCES Panier(ID_Panier)
 );
 
 CREATE TABLE Vendeur(
@@ -75,10 +74,8 @@ CREATE TABLE Vetement(
 );
 
 CREATE TABLE Panier(
-	ID_Panier int(5) PRIMARY KEY,
-	Mail varchar(255) NOT NULL,
-	Montant_tot int(3),
-	FOREIGN KEY(Mail) REFERENCES Acheteur(Mail)
+	ID_Panier int(5) PRIMARY KEY AUTO_INCREMENT,
+	Montant_tot int(3)
 );
 
 CREATE TABLE Photos(
@@ -115,7 +112,7 @@ CREATE TABLE Fournit(
 INSERT INTO Admin VALUES('Cous', 'Cous'), ('Cous2', 'Cous2'), ('Cous3', 'Cous3');
 INSERT INTO Vendeur VALUES('Francisdu68', 'francis@gmail.com', 'Francispower', 'Francis', 'Francis.jpg', 'FondFrancis.jpg');
 INSERT INTO Acheteur VALUES('thomas.lemercier7156@hotmail.com', 'Bonjour', 'Lemercier', 'Thomas', '38 Avenue de la resistance', 'Le Raincy', 93340,
-	'France', 0789714959, 4567835467531209, '2020-06-01', 'MR LEMERCIER THOMAS', 320, 1, 'Mr.', '1999-01-07'); --T'as cru c'était des vrai lowl
+	'France', 0789714959, 4567835467531209, '2020-06-01', 'MR LEMERCIER THOMAS', 320, 1, 'Mr.', '1999-01-07');
 INSERT INTO Item(Nom, Description, Categorie) VALUES('Madame Bovary', 'Livre sur une chaudasse', 'Livre');
 --Test marche pas
 INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES(SELECT Item.ID_Item FROM Item WHERE Item.ID_Item=ID_Livre,
