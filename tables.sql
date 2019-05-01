@@ -114,8 +114,9 @@ CREATE TABLE Fournit(
 
 INSERT INTO Admin VALUES('Cous', 'Cous'), ('Cous2', 'Cous2'), ('Cous3', 'Cous3');
 INSERT INTO Vendeur VALUES('Francisdu68', 'francis@gmail.com', 'Francispower', 'Francis', 'Francis.jpg', 'FondFrancis.jpg');
-INSERT INTO Acheteur VALUES('thomas.lemercier7156@hotmail.com', 'Bonjour', 'Lemercier', 'Thomas', '38 Avenue de la resistance', 'Le Raincy', 93340, 
-	'France', 0789714959, 4567835467531209, '2020-06-01', 'MR LEMERCIER THOMAS', 320, 1, 'Mr.', '1999-01-07');
+INSERT INTO Acheteur VALUES('thomas.lemercier7156@hotmail.com', 'Bonjour', 'Lemercier', 'Thomas', '38 Avenue de la resistance', 'Le Raincy', 93340,
+	'France', 0789714959, 4567835467531209, '2020-06-01', 'MR LEMERCIER THOMAS', 320, 1, 'Mr.', '1999-01-07'); --T'as cru c'était des vrai lowl
 INSERT INTO Item(Nom, Description, Categorie) VALUES('Madame Bovary', 'Livre sur une chaudasse', 'Livre');
-INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES(SELECT Item.ID_Item FROM Item WHERE Item.ID_Item=ID_Livre, 
+--Test marche pas
+INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES(SELECT Item.ID_Item FROM Item WHERE Item.ID_Item=ID_Livre,
 	SELECT Item.Nom FROM Item WHERE Item.ID_Item=ID_Livre, 'Gustave Flaubert', 1857, 'Indefini');
