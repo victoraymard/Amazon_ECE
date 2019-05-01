@@ -6,6 +6,7 @@
 body
 {
     background: linear-gradient(40deg, rgba(9,9,121,1) 0%, rgba(100,200,230,1) 50%, rgba(9,9,121,1) 100%);
+    min-height: 1024px;
 }
 
 #bloc_page
@@ -286,8 +287,23 @@ nav > ul > li:hover
         #section
         {
             display: flex;
-
         }
+
+        #section_votreCompte
+        {
+
+            margin: 100px;
+            display: flex;
+            justify-content: center;
+            /*background-color: red;*/
+            flex:1;
+        }
+
+        #section_votreCompte table
+        {
+            margin-right: 30px;
+        }
+
 
 
         #banniere h2
