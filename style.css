@@ -442,15 +442,125 @@ nav > ul > li:hover
         }
 
 
+        /* corps produit */
+
+        #corps_produit
+        {
+            display: flex;
+            flex-direction: row;
+            background-color: blue;
+        }
+
+        #page_produit_gauche
+        {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: pink;
+            
+        }
+        #produit_retour
+        {
+            text-align: center;
+            background-color: yellow;
+            font-size: 1.3em;
+            width: 80px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+        #produit_retour:hover
+        {
+            margin-top: -5px; 
+            border-top: 5px solid #e44d26;
+            background-color: rgba(228,77,38,0.15);
+
+        }
+
+        #produit_images
+        {
+            display: flex;
+            
+            flex-direction: row;
+            background-color: orange;
+            justify-content: center;
+            
+        }
+
+        #produit_images_gauche
+        {
+            display: flex;
+            flex-direction: column;
+            
+            background-color: red;
+            flex:1;
+            margin-left: 10px;
+        }
+
+        #produit_images_gauche img
+        {
+            height: 70px;
+            width: 70px;
+            margin:5px;
+        }
+
+        #produit_images_droite
+        {
+            display: flex;
+            flex-direction: column;
+            background-color: grey;
+            flex: 2;
+        }
+
+        #produit_images_droite img
+        {
+            height: 240px;
+            width: 240px;
+            
+        }
+
+        #page_produit_droite
+        {
+            flex: 2;
+            display: flex;
+            flex-direction: row;
+            background-color: green;
+        }
+
+        #table_produit_gauche
+        {
+            flex:2;
+            background-color: lightgreen;
+            align-self:  flex-end;
+        }
+
+        #table_produit_droite
+        {
+            flex:1;
+            background-color: darkgreen;
+            align-self:  flex-end;
+        }
+
+        #table_produit_droite form
+        {
+            
+            align-items: flex-end;
+        }
+
+
+
+
 
 /* footer */
 #footer
 {
+    align-items:   flex-end;
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
     margin-bottom: 10px;
    /* background-color: green;*/
+
 }
 
 
