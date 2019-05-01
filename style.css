@@ -5,8 +5,13 @@
 /* body */
 body
 {
-    display: flex;
-    flex-direction: column;
+    background: linear-gradient(40deg, rgba(9,9,121,1) 0%, rgba(100,200,230,1) 50%, rgba(9,9,121,1) 100%);
+}
+
+#bloc_page
+{
+    width: 95%;
+    margin: auto;
 }
 
 
@@ -15,7 +20,7 @@ body
 header
 {
     display: flex;
-
+    justify-content: center;
     flex-direction: row;
     height: 75px;
     padding-top: 10px;
@@ -87,7 +92,7 @@ body
 
 nav
 {
-    
+
     justify-content: space-around;
     background-color: #424558;
     margin-left: 15px;
@@ -202,13 +207,31 @@ nav > ul > li:hover
         display: flex;
         justify-content: center;
         flex-direction: row;
-        background-color: blue;
+        background-color: rgba(0,0,0,0.3);
+        /*background-color: blue;*/
+    }
+    #ventes_flash_ventesflash
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.3);
+        text-align: center;
+        /*background-color: blue;*/
     }
 
     #ventes_flash > #carrousel > ul
     {
         list-style-type: none;
        
+    }
+
+    #presentation
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        /*background-color: blue;*/
     }
 
         /* accroche */
@@ -240,19 +263,46 @@ nav > ul > li:hover
 
 
 
-    /* section */
-    #section
-    {
-        display: flex;
+        /* section */
+        #section
+        {
+            display: flex;
 
-    }
+        }
+
+
+        #banniere h2
+        {
+            position: relative;
+            margin-bottom: 100px;
+            text-align: center;
+            font-size: 2.6em;
+            color: black;
+            text-shadow: 1px 2px 6px #FFF;
+            
+        }
+
+        #banniere img
+        {
+            width: 100%;
+            height: 210px;
+            margin-bottom: -180px;
+            border-radius: 10px;
+        }
+
 
         /* liste produits */
         #liste_produits
         {
-            background-color: red;
-            flex:2.4;
+            
+        }
+
+        #liste_produits_categorie
+        {
             display: flex;
+            justify-content: center;
+            /*background-color: red;*/
+            flex:1;
             flex-direction: column;
         }
 
@@ -263,26 +313,66 @@ nav > ul > li:hover
             margin: 10px;
             margin-left: 20px;
             margin-right: 20px;
+            background: url('images/separateur.png') repeat-x bottom;
         }
+
+        .produit_categorie
+        {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            margin: 10px;
+            justify-content: center;
+            background: url('images/separateur.png') repeat-x bottom;
+        }
+
 
         .produit img
         {
             width: 100px;
             height: 100px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .produit_categorie img
+        {
+            width: 360px;
+            height: 360px;
+            padding-bottom: 20px;
+            border-radius: 10px;
         }
 
         .produit_gauche
         {
             display: flex;
             flex-direction: column;
-            background-color: pink;
+            /*background-color: pink;*/
+        }
+        .produit_gauche_categorie
+        {
+            display: flex;
+            flex-direction: column;
+            /*background-color: pink;*/
+            margin-left: 10px;
+            flex:1;
         }
 
         .produit_droite
         {
             display: flex;
             flex-direction: column;
-            background-color: purple;
+            /*background-color: purple;*/
+        }
+        .produit_droite_categorie
+        {
+
+            display: flex;
+            flex-direction: column;
+            /*background-color: purple;*/
+            flex:3;
+            margin-left: 15px;
+            margin-right: 15px;
         }
 
 
@@ -303,6 +393,7 @@ nav > ul > li:hover
             color: white;
             font-size: 0.9em;
             height: 20%;
+            margin-top: 20px;
         }
         #fleche_bulle
         {
@@ -322,7 +413,9 @@ nav > ul > li:hover
 {
     display: flex;
     justify-content: space-around;
-    background-color: green;
+    margin-top: 50px;
+    margin-bottom: 10px;
+   /* background-color: green;*/
 }
 
 
@@ -392,16 +485,168 @@ nav > ul > li:hover
 /*  media querries  */
 @media all and (max-width: 1116px)
 {
-    body
+    #bloc_page
     {
         width: auto;
         text-align: left;
+        display: flex;
+        flex-direction: row;
     }
 
     #ventes_flash
     {
         display: none;
     }
+    #presentation
+    {
+        display: none;
+    }
+
+    header
+    {
+
+        display:inline-block;
+    }
+
+    header > h1
+    {
+        text-align: center;
+    }
+
+    header #logo
+    {
+        justify-content: center;
+    }
+
+    #langue
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* nav */
+
+        nav
+        {
+            position: relative;
+            top: 20px;
+
+            display: flex;
+            flex-direction: row;
+
+
+            height: 410px;
+            width: 140px;
+            background-color: #424558;
+            
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 4px;
+            
+            border-radius: 5px;
+        }
+
+
+        nav > ul::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        nav > ul > li
+        {
+            float: left;
+            position: relative;
+        }
+
+        nav > ul > li >a
+        {
+            padding : 25px;
+            color: #FFF;
+        }
+
+        nav > ul > li:hover a
+        {
+            /*padding: 15px 30px 20px 30px;*/
+            padding-top:  20px;
+            padding-bottom : 20px;
+           
+        }
+
+        nav li
+        {
+            list-style-type: none;
+        }
+
+        .submenu
+        {
+           display: none;
+           background-color: rgb(230, 100, 40);
+        }
+
+        .submenu li:hover a
+        {
+            color:#EEE;
+            font-weight: bold;
+        }
+
+        .submenu li:hover
+        {
+            background-color: rgb(210, 77, 60);
+        }
+
+        nav a
+        {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        nav li:hover .submenu
+        {
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            left: 120px;
+
+            padding: 0px;
+            z-index: 100000;
+        }
+
+        .submenu li 
+        {
+            border-bottom: 1px solid #CCC; 
+        }
+
+        .submenu li a
+        {
+            padding: 15px 30px;
+            font-size: 13px;
+            color: #222538;
+            width: 270px;
+        }
+
+        nav > ul > li:hover
+        {
+            border-top: 5px solid #e44d26;
+            background-color: rgba(228,77,38,0.15);
+        }
+
+
+
+    .produit_categorie img
+    {
+        width: 100%;
+        height: 80%;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+
+
+    #footer
+    {
+        display: none;
+    }
+
 
 }
 
