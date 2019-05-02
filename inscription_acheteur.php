@@ -37,6 +37,8 @@ if($Mail!=""&&$Mdp!=""&&$Nom!=""&&$Prenom!=""&&$Adresse!=""&&$Ville!=""&&$CodePo
     $sql = "INSERT INTO Acheteur(Mail, Mdp, Nom, Prenom, Adresse, Ville, CodePostal, Pays, Tel, NumCarte, DateCarte, NomCarte, Crypto, Civilite, DateNaissance) VALUES('$Mail', '$Mdp', '$Nom', '$Prenom', '$Adresse', '$Ville', '$CodePostal', '$Pays, '$Tel', '$NumCarte', '$DateCarte', '$NomCarte',
     '$Crypto', '$Civilite', '$DateNaissance')";
     mysqli_query($db_handle, $sql);
+    header ('location: accueil.php');
+    exit();
   }
   else
   {

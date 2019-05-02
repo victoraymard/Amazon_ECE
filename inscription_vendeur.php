@@ -26,6 +26,8 @@ if($Mail!=""&&$Mdp!=""&&$Nom!=""&&$Pseudo_Vendeur!=""&&$PhotoVendeur!=""&&$Image
     $sql = "INSERT INTO Vendeur(Pseudo_Vendeur, Mail, Mdp, Nom, PhotoVendeur, ImageFond) VALUES('$Pseudo_Vendeur', '$Mail', '$Mdp', '$Nom', '$PhotoVendeur',
     '$ImageFond')";
     mysqli_query($db_handle, $sql);
+    header ('location: accueil.php');
+    exit();
   }
   else
   {
