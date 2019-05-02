@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cb147fc-814e-4f69-a20b-ebe2fee04e82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/livres.php" beforeDir="false" afterPath="$PROJECT_DIR$/livres.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sports_loisirs.php" beforeDir="false" afterPath="$PROJECT_DIR$/sports_loisirs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ventes_flash.php" beforeDir="false" afterPath="$PROJECT_DIR$/ventes_flash.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +21,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ventes_flash.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
+            <state relative-caret-position="1133">
               <caret line="333" column="22" lean-forward="true" selection-start-line="333" selection-start-column="22" selection-end-line="333" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -61,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
+            <state relative-caret-position="451">
+              <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -120,7 +126,6 @@
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/getData.php" />
         <option value="$PROJECT_DIR$/livres.html" />
-        <option value="$PROJECT_DIR$/tables.sql" />
         <option value="$PROJECT_DIR$/accueil.php" />
         <option value="$PROJECT_DIR$/produit.php" />
         <option value="$PROJECT_DIR$/musiques.php" />
@@ -129,6 +134,7 @@
         <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/sports_loisirs.php" />
         <option value="$PROJECT_DIR$/ventes_flash.php" />
+        <option value="$PROJECT_DIR$/tables.sql" />
       </list>
     </option>
   </component>
@@ -188,12 +194,12 @@
       <workItem from="1556701151513" duration="937000" />
       <workItem from="1556729271884" duration="8657000" />
       <workItem from="1556826925652" duration="769000" />
-      <workItem from="1556827776656" duration="850000" />
+      <workItem from="1556827776656" duration="1295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23247000" />
+    <option name="totallyTimeSpent" value="23692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -286,13 +292,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/produit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
@@ -316,8 +315,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ventes_flash.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
+        <state relative-caret-position="1133">
           <caret line="333" column="22" lean-forward="true" selection-start-line="333" selection-start-column="22" selection-end-line="333" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
         </state>
       </provider>
     </entry>

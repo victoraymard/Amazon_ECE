@@ -19,13 +19,11 @@ CREATE TABLE Acheteur(
 
 CREATE TABLE Vendeur(
 	Pseudo_Vendeur varchar(255) PRIMARY KEY,
-	ID_Item int(5) NOT NULL,
 	Mail varchar(255) NOT NULL,
 	Mdp varchar(255) NOT NULL,
 	Nom varchar(255) NOT NULL,
 	PhotoVendeur varchar(255) NOT NULL,
 	ImageFond varchar(255) NOT NULL,
-	FOREIGN KEY (ID_Item) REFERENCES Item(ID_Item)
 );
 
 CREATE TABLE Admin(
@@ -42,7 +40,9 @@ CREATE TABLE Item(
 	QuantiteTot int(2),
 	Nom_Video varchar(255),
 	NombreVentes int(2),
-	Remise int(2)
+	Remise int(2),
+	Pseudo_Vendeur varchar(255) NOT NULL,
+	FOREIGN KEY (Pseudo_Vendeur) REFERENCES Vendeur(PSEUDO_VENDEUR)
 );
 
 CREATE TABLE Livre(
