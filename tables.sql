@@ -14,17 +14,18 @@ CREATE TABLE Acheteur(
 	Crypto int(3) NOT NULL,
 	Civilite varchar(255) NOT NULL,
 	DateNaissance Date NOT NULL,
-	ID_Panier int(5) NOT NULL,
-	FOREIGN KEY(ID_Panier) REFERENCES Panier(ID_Panier)
+	Montant_Tot INT (3)
 );
 
 CREATE TABLE Vendeur(
 	Pseudo_Vendeur varchar(255) PRIMARY KEY,
+	ID_Item int(5) NOT NULL,
 	Mail varchar(255) NOT NULL,
 	Mdp varchar(255) NOT NULL,
 	Nom varchar(255) NOT NULL,
 	PhotoVendeur varchar(255) NOT NULL,
-	ImageFond varchar(255) NOT NULL
+	ImageFond varchar(255) NOT NULL,
+	FOREIGN KEY (ID_Item) REFERENCES Item(ID_Item)
 );
 
 CREATE TABLE Admin(
@@ -37,6 +38,7 @@ CREATE TABLE Item(
 	Nom varchar(255) NOT NULL,
 	Description TEXT NOT NULL,
 	Categorie varchar(255) NOT NULL,
+	Prix float NOT NULL,
 	QuantiteTot int(2),
 	Nom_Video varchar(255),
 	NombreVentes int(2),
@@ -96,17 +98,6 @@ CREATE TABLE Contient(
 	PRIMARY KEY(ID_Panier, ID_Item)
 );
 
-/* Un vendeur fournit (met à disposition) des items*/
-
-CREATE TABLE Fournit(
-	Pseudo_Vendeur varchar(15) NOT NULL,
-	ID_Item int(5) NOT NULL,
-	Quantite int(2) NOT NULL,
-	Prix float(4) NOT NULL,
-	FOREIGN KEY(Pseudo_Vendeur) REFERENCES Vendeur(Pseudo_Vendeur),
-	FOREIGN KEY(ID_Item) REFERENCES Item(ID_Item),
-	PRIMARY KEY(Pseudo_Vendeur, ID_Item)
-);
 
 /*Saisie des données en dur comme les admins ou les tests*/
 

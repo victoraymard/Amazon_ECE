@@ -83,33 +83,24 @@ $allItems = $pdoStat->fetchAll();
     <div id= "corps">
         <div id="ventes_flash">
 
-
-
             <div id="carrousel">
                 <ul>
-                    <!--livres-->
-                    <li><img src="images/apple1.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple2.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple3.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple4.jpg" width="525" height="300" /></li>
+                    <?php
+                    //preparation de la requette pour photos
+                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos');
 
-                    <!--musiques-->
-                    <li><img src="images/apple5.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple6.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple7.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple1.jpg" width="525" height="300" /></li>
+                    //execution de la requette pour photos
+                    $photosIsOk = $photosReq->execute();
 
-                    <!--vêtements-->
-                    <li><img src="images/apple2.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple3.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple4.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple5.jpg" width="525" height="300" /></li>
+                    //recuperation des resultats pour photos
+                    $photos = $photosReq->fetchAll();
+                    ?>
 
-                    <!--sports et loisirs-->
-                    <li><img src="images/apple6.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple7.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple.jpg" width="525" height="300" /></li>
-                    <li><img src="images/apple6.jpg" width="525" height="300" /></li>
+                    <?php foreach ($photos as $photo): ?>
+
+                        <img src=<?= $photo['Nom_photo']?> width="525" height="300" >
+
+                    <?php endforeach; ?>
                 </ul>
             </div>
 
