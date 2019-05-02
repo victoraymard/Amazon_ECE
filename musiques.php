@@ -2,7 +2,7 @@
 session_start();
 
 //ouverture de la connexion avec la base de données Projet
-$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','root');
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete
 $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Musique\' ');
