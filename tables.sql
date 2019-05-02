@@ -14,6 +14,7 @@ CREATE TABLE Acheteur(
 	Crypto int(3) NOT NULL,
 	Civilite varchar(255) NOT NULL,
 	DateNaissance Date NOT NULL,
+	ID_Panier int(5) NOT NULL,
 	FOREIGN KEY(ID_Panier) REFERENCES Panier(ID_Panier)
 );
 
