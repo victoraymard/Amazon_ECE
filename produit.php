@@ -1,5 +1,18 @@
 <?php
-session_start()
+session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','root');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item='.$_GET['idItem']);
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$itemSelect = $pdoStat->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +66,6 @@ session_start()
         </header><br>
 <!------------------------------------------------------------------------------------------------------->
 <!--code spécifique à la page-->
-
 <div id="corps_produit">
     <div id="page_produit_gauche">
         <div id="produit_retour">
@@ -65,14 +77,28 @@ session_start()
             <div id="produit_images_gauche">
                 liste d'images + video
 
-                <a href="#"><img src="images\apple1.jpg"></a>
-                <a href="#"><img src="images\apple1.jpg"></a>
-                <a href="#"><img src="images\apple1.jpg"></a>
+                <?php
+                //preparation de la requette pour photos
+                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0][ID_Item]);
+
+                //execution de la requette pour photos
+                $photosIsOk = $photosReq->execute();
+
+                //recuperation des resultats pour photos
+                $photos = $photosReq->fetchAll();
+                ?>
+
+                <?php foreach ($photos as $photo): ?>
+
+                    <a href="#"><img src=<?= $photo['Nom_photo']?>></a>
+
+                <?php endforeach; ?>
+
             </div>
 
             <div id="produit_images_droite">
                 image principale
-                <img src="images\apple1.jpg">
+                <img src=<?= $photos[0]['Nom_photo']?>>
             </div>
             
         </div>
@@ -85,14 +111,14 @@ session_start()
     <div id="page_produit_droite">
         <table id="table_produit_gauche">
              <tr>
-                        <td colspan="2" align="left"><h2>nom du produit</h2></td>
+                        <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
                     </tr>
 
 
 
                     <tr>
                         <td colspan="2" align="left">
-                            <p><h3>description</h3><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p><h3>description</h3><br><?= $itemSelect[0]['Description']?></p>
                         </td>
                     </tr>
         </table>
@@ -166,8 +192,6 @@ session_start()
         
     </div>
 </div>
-
-
 
 
 <!------------------------------------------------------------------------------------------------------->

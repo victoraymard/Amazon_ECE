@@ -12,6 +12,7 @@ $executeIsOk = $pdoStat->execute();
 
 //recupération des resultats
 $allItems = $pdoStat->fetchAll();
+
 ?>
 
 
@@ -132,10 +133,6 @@ $allItems = $pdoStat->fetchAll();
 
 
 
-
-
-
-
         <div id="section">
             <div id="liste_produits">
 
@@ -147,7 +144,7 @@ $allItems = $pdoStat->fetchAll();
                 <?php foreach ($allItems as $item): ?>
                     <div class="produit">
                         <div class="produit_gauche">
-                            <a href="produit.php"><h3><?= $item['Nom']?></h3></a>
+                            <a href="produit.php?idItem=<?=$item['ID_Item']?>"><h3><?= $item['Nom']?></h3></a>
                             <a href="produit.php">
                                 <?php
                                 //preparation de la requette pour photos
@@ -160,11 +157,9 @@ $allItems = $pdoStat->fetchAll();
                                 $photos = $photosReq->fetchAll();
                                 ?>
 
-                                <?php foreach ($photos as $photo): ?>
 
-                                    <img src=<?= $photo['Nom_photo']?>>
+                                <img src=<?= $photos[0]['Nom_photo']?>>
 
-                                <?php endforeach; ?>
                             </a>
                         </div>
 
