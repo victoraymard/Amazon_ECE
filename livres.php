@@ -14,7 +14,6 @@ $itemIsOk = $itemReq->execute();
 $livres = $itemReq->fetchAll();
 
 
-
 ?>
 
 <!DOCTYPE html>
