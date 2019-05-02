@@ -110,3 +110,13 @@ CREATE TABLE Fournit(
 
 /*Saisie des données en dur comme les admins ou les tests*/
 
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Harry Potter','collection des 7 livres','Livre',3);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
+
+
