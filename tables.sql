@@ -7,14 +7,14 @@ CREATE TABLE Acheteur(
 	Ville varchar(255) NOT NULL,
 	CodePostal int(5) NOT NULL,
 	Pays varchar(255) NOT NULL,
-	Tel int(10) NOT NULL,
-	NumCarte int(16) NOT NULL,
+	Tel varchar(255) NOT NULL,
+	NumCarte varchar(255) NOT NULL,
 	DateCarte Date NOT NULL,
 	NomCarte varchar(255) NOT NULL,
 	Crypto int(3) NOT NULL,
 	Civilite varchar(255) NOT NULL,
 	DateNaissance Date NOT NULL,
-	Montant_Tot INT (3)
+	Montant_Tot int(3)
 );
 
 CREATE TABLE Vendeur(
