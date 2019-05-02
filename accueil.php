@@ -1,3 +1,8 @@
+<?php
+session_start()
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,19 +20,19 @@
     <header>
 
         <div id="logo">
-            <a href ="accueil.html"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
+            <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
         </div>
 
 
 
         <h1 id="titre_principal">
-            <a href ="accueil.html">Amazon ECE</a>
+            <a href ="accueil.php">Amazon ECE</a>
         </h1>
 
 
 
         <div id="langue">
-            <a href="accueil.html"><img src="images/france.png" alt="langue française" /></a>
+            <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
             <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
         </div>
 
@@ -36,19 +41,19 @@
             <ul>
                 <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
                     <ul class="submenu">
-                        <li><a href="livres.html">Livres</a></li>
-                        <li><a href="musiques.html">Musiques</a></li>
-                        <li><a href="vetements.html">Vêtements</a></li>
-                        <li><a href="sports_loisirs.html">Sports et loisirs</a></li>
+                        <li><a href="livres.php">Livres</a></li>
+                        <li><a href="musiques.php">Musiques</a></li>
+                        <li><a href="vetements.php">Vêtements</a></li>
+                        <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
                     </ul>
                 </li>
 
 
-                <li><a href="ventes_flash.html">Ventes flash</a></li>
-                <li><a href="votre_compte.html">Votre compte</a></li>
-                <li><a href="vendeur.html">Vendre</a></li>
-                <li><a href="panier.html">Panier</a></li>
-                <li><a href="admin.html">Admin</a></li>
+                <li><a href="ventes_flash.php">Ventes flash</a></li>
+                <li><a href="votre_compte.php">Votre compte</a></li>
+                <li><a href="vendeur.php">Vendre</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
 
@@ -131,8 +136,8 @@
 
                 <div class="produit">
                     <div class="produit_gauche">
-                        <a href="produit.html"><h3>nom du produit</h3></a>
-                        <a href="produit.html"><img src="images\apple1.jpg"></a>
+                        <a href="produit.php"><h3>nom du produit</h3></a>
+                        <a href="produit.php"><img src="images\apple1.jpg"></a>
                     </div>
 
                     <div class="produit_droite">
@@ -145,8 +150,8 @@
 
                 <div class="produit">
                     <div class="produit_gauche">
-                        <a href="produit.html"><h3>nom du produit</h3></a>
-                        <a href="produit.html"><img src="images\apple6.jpg"></a>
+                        <a href="produit.php"><h3>nom du produit</h3></a>
+                        <a href="produit.php"><img src="images\apple6.jpg"></a>
                     </div>
 
                     <div class="produit_droite">
@@ -159,8 +164,8 @@
 
                 <div class="produit">
                     <div class="produit_gauche">
-                        <a href="produit.html"><h3>nom du produit</h3></a>
-                        <a href="produit.html"><img src="images\apple5.jpg"></a>
+                        <a href="produit.php"><h3>nom du produit</h3></a>
+                        <a href="produit.php"><img src="images\apple5.jpg"></a>
                     </div>
 
                     <div class="produit_droite">
@@ -173,8 +178,8 @@
 
                 <div class="produit">
                     <div class="produit_gauche">
-                        <a href="produit.html"><h3>nom du produit</h3></a>
-                        <a href="produit.html"><img src="images\apple4.jpg"></a>
+                        <a href="produit.php"><h3>nom du produit</h3></a>
+                        <a href="produit.php"><img src="images\apple4.jpg"></a>
                     </div>
 
                     <div class="produit_droite">

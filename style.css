@@ -547,6 +547,126 @@ nav > ul > li:hover
             align-items: flex-end;
         }
 
+        /* corps vendeur */
+        #corps_vendeur
+        {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        #vendeur_gauche
+        {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            /*background-color: pink;*/
+            align-items: center;
+        }
+         #vendeur_compte_gauche
+        {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            /*background-color: pink;*/
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("images/fond_vendeur.jpg");
+            border-radius: 15px;
+            margin: 15px;
+        }
+
+        #vendeur_gauche img
+        {
+            height: 500px;
+            width: 500px;
+            border-radius: 50px;
+            border: 5px darkgreen inset;
+            box-shadow: 6px 6px 6px black;
+        }
+
+        #vendeur_compte_gauche img
+        {
+            height: 500px;
+            width: 500px;
+            border-radius: 50px;
+            border: 5px darkgreen inset;
+            box-shadow: 6px 6px 6px black;
+
+        }
+
+        #vendeur_droite
+        {
+            display: flex;
+            flex: 2;
+            flex-direction: column;
+            /*background-color: red;*/
+        }
+
+         #ajouter_un_item
+        {
+            text-align: center;
+            background-color: yellow;
+            font-size: 1.3em;
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        
+        #ajouter_un_item:hover
+        {
+            margin-top: -5px; 
+            border-top: 5px solid #e44d26;
+            background-color: rgba(228,77,38,0.15);
+
+        }
+
+        /* corps admin */
+
+        #corps_admin
+        {
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        #corps_admin .produit_droite
+        {
+            margin: 10px;
+        }
+
+        #admin_gauche
+        {
+            display: flex;
+            width: 20%;
+            flex-direction: column;
+            /*background-color: pink;*/
+            align-items: center;
+        }
+    
+        #admin_droite
+        {
+            display: flex;
+            width: 50%
+            flex-direction: column;
+            /*background-color: red;*/
+        }
+
+         #ajouter_un_item_admin
+        {
+            text-align: center;
+            background-color: yellow;
+            font-size: 1.3em;
+            width: 150px;
+            height: 65px;
+            border-radius: 5px;
+        }
+
+       
+
+    
+
+
+
 
 
 
@@ -560,7 +680,6 @@ nav > ul > li:hover
     margin-top: 50px;
     margin-bottom: 10px;
    /* background-color: green;*/
-
 }
 
 

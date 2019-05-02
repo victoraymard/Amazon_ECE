@@ -1,3 +1,7 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,51 +16,46 @@
 
 <body>
     <div id="bloc_page">
-
+        <!------------------------------------------------------------------------------->
         <header>
-
             <div id="logo">
-                <a href ="accueil.html"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
+                <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
             </div>
 
 
-
             <h1 id="titre_principal">
-                <a href ="accueil.html">Amazon ECE</a>
+                <a href ="accueil.php">Amazon ECE</a>
             </h1> 
 
 
-
             <div id="langue">
-                <a href="accueil.html"><img src="images/france.png" alt="langue française" /></a>
+                <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
                 <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
             </div>
 
 
             <nav>
                 <ul>
-                    <li><a href="cate.html" id="categories">Catégories</a> <!--menu déroulant-->
+                    <li><a id="categories" href="#">Catégories</a> <!--menu déroulant-->
                         <ul class="submenu">
-                            <li><a href="livres.html">Livres</a></li>
-                            <li><a href="musiques.html">Musiques</a></li>
-                            <li><a href="vetements.html">Vêtements</a></li>
-                            <li><a href="sports_loisirs.html">Sports et loisirs</a></li>
+                            <li><a href="livres.php">Livres</a></li>
+                            <li><a href="musiques.php">Musiques</a></li>
+                            <li><a href="vetements.php">Vêtements</a></li>
+                            <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
                         </ul>
                     </li>
 
-
-                    <li><a href="ventes_flash.html">Ventes flash</a></li>
-                    <li><a href="votre_compte.html">Votre compte</a></li>
-                    <li><a href="vendeur.html">Vendre</a></li>
-                    <li><a href="panier.html">Panier</a></li>
-                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="ventes_flash.php">Ventes flash</a></li>
+                    <li><a href="votre_compte.php">Votre compte</a></li>
+                    <li><a href="vendeur.php">Vendre</a></li>
+                    <li><a href="panier.php">Panier</a></li>
+                    <li><a href="admin.php">Admin</a></li>
                 </ul>
             </nav>
 
-
         </header><br>
 
-
+        <!------------------------------------------------------------------------------->
 
 
 
@@ -64,30 +63,11 @@
 
 
         <div id= "corps">
-            <div id="ventes_flash_ventesflash">
-
-
-                <h2>
-                    Découvrez nos meilleurs ventes !
-                </h2>
-
-                <p>
-                    <a href="#ancre_livres">Livres</a>, 
-                    <a href="#ancre_musiques">musiques</a>, 
-                    <a href="#ancre_vêtements">vêtements</a>, 
-                    <a href="#ancre_sports_loisirs">sports et loisirs</a>
-                </p>
-
-
+            <div id="banniere">
+                
+                <img src="images\vetements.jpg">
+                <h2>Nos vêtements</h2>
             </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -95,7 +75,7 @@
                 <div id="liste_produits_categorie">
                     
 
-                   <h2 id="ancre_livres">Nos livres</h2>
+                   <h2>Découvrez nos produits !</h2>
 
 
 
@@ -122,7 +102,6 @@
                     </div>
 
 
-                    <h2 id="ancre_musiques">Nos musiques</h2>
                     <div class="produit_categorie">
                         <div class="produit_gauche_categorie">
                             
@@ -144,7 +123,6 @@
                         </div>      
                     </div>
 
-                    <h2 id="ancre_vêtements">Nos vêtements</h2>
                     <div class="produit_categorie">
                         <div class="produit_gauche_categorie">
                             
@@ -166,7 +144,6 @@
                         </div>      
                     </div>
 
-                    <h2 id="ancre_sports_loisirs">Nos accessoires de sports et loisirs</h2>
                     <div class="produit_categorie">
                         <div class="produit_gauche_categorie">
                             
@@ -197,6 +174,8 @@
             </div>
         </div>
 
+
+        <!------------------------------------------------------------------------------->
         <div id="footer">
             <small>
                 Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
