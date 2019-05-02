@@ -1,5 +1,17 @@
 <?php
-session_start()
+session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','root');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item ');
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$allItems = $pdoStat->fetchAll();
 ?>
 
 
@@ -124,7 +136,6 @@ session_start()
 
 
 
-
         <div id="section">
             <div id="liste_produits">
 
@@ -133,73 +144,41 @@ session_start()
 
 
 
+                <?php foreach ($allItems as $item): ?>
+                    <div class="produit">
+                        <div class="produit_gauche">
+                            <a href="produit.php"><h3><?= $item['Nom']?></h3></a>
+                            <a href="produit.php">
+                                <?php
+                                //preparation de la requette pour photos
+                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item[ID_Item]);
 
-                <div class="produit">
-                    <div class="produit_gauche">
-                        <a href="produit.php"><h3>nom du produit</h3></a>
-                        <a href="produit.php"><img src="images\apple1.jpg"></a>
+                                //execution de la requette pour photos
+                                $photosIsOk = $photosReq->execute();
+
+                                //recuperation des resultats pour photos
+                                $photos = $photosReq->fetchAll();
+                                ?>
+
+                                <?php foreach ($photos as $photo): ?>
+
+                                    <img src=<?= $photo['Nom_photo']?>>
+
+                                <?php endforeach; ?>
+                            </a>
+                        </div>
+
+                        <div class="produit_droite">
+                            <p>
+                            <h4>Description courte du produit :</h4><br>
+                            <?= $item['Description']?>
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="produit_droite">
-                        <p>
-                        <h4>Description courte du produit</h4><br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
 
-                <div class="produit">
-                    <div class="produit_gauche">
-                        <a href="produit.php"><h3>nom du produit</h3></a>
-                        <a href="produit.php"><img src="images\apple6.jpg"></a>
-                    </div>
-
-                    <div class="produit_droite">
-                        <p>
-                        <h4>Description courte du produit</h4><br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="produit">
-                    <div class="produit_gauche">
-                        <a href="produit.php"><h3>nom du produit</h3></a>
-                        <a href="produit.php"><img src="images\apple5.jpg"></a>
-                    </div>
-
-                    <div class="produit_droite">
-                        <p>
-                        <h4>Description courte du produit</h4><br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="produit">
-                    <div class="produit_gauche">
-                        <a href="produit.php"><h3>nom du produit</h3></a>
-                        <a href="produit.php"><img src="images\apple4.jpg"></a>
-                    </div>
-
-                    <div class="produit_droite">
-                        <p>
-                        <h4>Description courte du produit</h4><br>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
+                <?php endforeach; ?>
             </div>
-
             <div id="petit_message">
 
                 <img src="images/bulle.png" alt="" id="fleche_bulle" />
