@@ -4,14 +4,15 @@ session_start();
 //ouverture de la connexion avec la base de données Projet
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','root');
 
-//préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Livre\' ');
+//préparation de la requete pour Item
+$itemReq = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Livre\' ');
 
-//execution de la requete
-$executeIsOk = $pdoStat->execute();
+//execution de la requete pour Item
+$itemIsOk = $itemReq->execute();
 
-//recupération des resultats
-$livres = $pdoStat->fetchAll();
+//recupération des resultats pour Item
+$livres = $itemReq->fetchAll();
+
 
 
 ?>
@@ -84,13 +85,11 @@ $livres = $pdoStat->fetchAll();
             </div>
 
 
-
-            <!----------------------------LISTE PRODUITS START -------------------------------->
             <div id="section">
+            <!----------------------------LISTE PRODUITS START -------------------------------->
+
 
                 <div class="liste_produits_categorie" id="liste_produits_categorie">
-
-
                     <h2>Découvrez nos produits !</h2>
 
 
@@ -99,8 +98,22 @@ $livres = $pdoStat->fetchAll();
 
                         <div class="produit_categorie">
                             <div class="produit_gauche_categorie">
+                                <?php
+                                    //preparation de la requette pour photos
+                                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '. $livre[ID_Item]);
 
-                                <img src="images/notre_dame.jpg">
+                                    //execution de la requette pour photos
+                                    $photosIsOk = $photosReq->execute();
+
+                                    //recuperation des resultats pour photos
+                                    $photos = $photosReq->fetchAll();
+                                ?>
+
+                                <?php foreach ($photos as $photo): ?>
+
+                                <img src=<?= $photo['Nom_photo']?>>
+
+                                <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">
@@ -124,11 +137,8 @@ $livres = $pdoStat->fetchAll();
 
                 </div>
 
-
-            </div>
-        </div>
-
         <!----------------------------LISTE PRODUITS END -------------------------------->
+            </div>
 
         <!------------------------------------------------------------------------------->
         <div id="footer">
