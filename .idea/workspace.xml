@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cb147fc-814e-4f69-a20b-ebe2fee04e82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/musiques.php" beforeDir="false" afterPath="$PROJECT_DIR$/musiques.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vetements.php" beforeDir="false" afterPath="$PROJECT_DIR$/vetements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,19 +33,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tables.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
+            <state relative-caret-position="480">
+              <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/musiques.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="299">
               <caret line="104" column="68" lean-forward="true" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
             </state>
           </provider>
@@ -55,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vetements.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
+            <state relative-caret-position="399">
               <caret line="102" column="68" lean-forward="true" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
             </state>
           </provider>
@@ -85,11 +84,11 @@
         <option value="$PROJECT_DIR$/getData.php" />
         <option value="$PROJECT_DIR$/livres.html" />
         <option value="$PROJECT_DIR$/sports_loisirs.php" />
-        <option value="$PROJECT_DIR$/tables.sql" />
         <option value="$PROJECT_DIR$/livres.php" />
         <option value="$PROJECT_DIR$/accueil.php" />
         <option value="$PROJECT_DIR$/vetements.php" />
         <option value="$PROJECT_DIR$/musiques.php" />
+        <option value="$PROJECT_DIR$/tables.sql" />
       </list>
     </option>
   </component>
@@ -121,7 +120,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556808654027" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556809240909" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -151,7 +150,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12114000" />
+    <option name="totallyTimeSpent" value="12545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -223,13 +222,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="119" column="95" selection-start-line="119" selection-start-column="95" selection-end-line="119" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2281">
@@ -247,17 +239,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/musiques.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="104" column="68" lean-forward="true" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vetements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
+        <state relative-caret-position="399">
           <caret line="102" column="68" lean-forward="true" selection-start-line="102" selection-start-column="68" selection-end-line="102" selection-end-column="68" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/musiques.php">
+    <entry file="file://$PROJECT_DIR$/tables.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="104" column="68" lean-forward="true" selection-start-line="104" selection-start-column="68" selection-end-line="104" selection-end-column="68" />
+        <state relative-caret-position="480">
+          <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
         </state>
       </provider>
     </entry>
