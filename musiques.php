@@ -1,5 +1,18 @@
 <?php
-session_start()
+session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','root');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Musique\' ');
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$musiques = $pdoStat->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -70,108 +83,52 @@ session_start()
             </div>
 
 
-
+            <!----------------------------LISTE PRODUITS START -------------------------------->
             <div id="section">
-                <div id="liste_produits_categorie">
-                    
 
-                   <h2>Découvrez nos produits !</h2>
+                <div class="liste_produits_categorie" id="liste_produits_categorie">
 
 
+                    <h2>Découvrez nos produits !</h2>
 
-                    <!------------------------liste des produits------------------------------------------------------->
-                    <div class="produit_categorie">
-                        <div class="produit_gauche_categorie">
-                            
-                            <img src="images\notre_dame.jpg">
+
+                    <?php foreach ($musiques as $musique): ?>
+
+
+                        <div class="produit_categorie">
+                            <div class="produit_gauche_categorie">
+
+                                <img src="images/notre_dame.jpg">
+                            </div>
+
+                            <div class="produit_droite_categorie">
+                                <h3>
+                                    <?= $musique['Nom']?>
+                                </h3>
+                                <p>
+                                <h4>Description courte du produit</h4><br>
+                                <?= $musique['Description']?>
+                                </p>
+                                <p>
+                                    quantité : <?= $vetement['QuantiteTot']?>
+                                </p>
+                                <p>
+                                    à partir de (prix le plus bas)
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="produit_droite_categorie">
-                            <h3>nom du produit</h3>
-                            <p>
-                                <h4>Description courte du produit</h4><br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p>
-                                quantité
-                            </p>
-                            <p>
-                                à partir de (prix le plus bas)
-                            </p>
-                        </div>      
-                    </div>
+                    <?php endforeach; ?>
 
-
-                    <div class="produit_categorie">
-                        <div class="produit_gauche_categorie">
-                            
-                            <img src="images\notre_dame.jpg">
-                        </div>
-
-                        <div class="produit_droite_categorie">
-                            <h3>nom du produit</h3>
-                            <p>
-                                <h4>Description courte du produit</h4><br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p>
-                                quantité
-                            </p>
-                            <p>
-                                à partir de (prix le plus bas)
-                            </p>
-                        </div>      
-                    </div>
-
-                    <div class="produit_categorie">
-                        <div class="produit_gauche_categorie">
-                            
-                            <img src="images\notre_dame.jpg">
-                        </div>
-
-                        <div class="produit_droite_categorie">
-                            <h3>nom du produit</h3>
-                            <p>
-                                <h4>Description courte du produit</h4><br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p>
-                                quantité
-                            </p>
-                            <p>
-                                à partir de (prix le plus bas)
-                            </p>
-                        </div>      
-                    </div>
-
-                    <div class="produit_categorie">
-                        <div class="produit_gauche_categorie">
-                            
-                            <img src="images\notre_dame.jpg">
-                        </div>
-
-                        <div class="produit_droite_categorie">
-                            <h3>nom du produit</h3>
-                            <p>
-                                <h4>Description courte du produit</h4><br>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <p>
-                                quantité
-                            </p>
-                            <p>
-                                à partir de (prix le plus bas)
-                            </p>
-                        </div>      
-                    </div>
-
-
-
-                    
-                    
-                    <!-------------------------------------fin produits------------------------------------------>
                 </div>
+
+
             </div>
+        </div>
+
+        <!----------------------------LISTE PRODUITS END -------------------------------->
+
+
         </div>
 
 
