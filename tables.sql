@@ -14,17 +14,18 @@ CREATE TABLE Acheteur(
 	Crypto int(3) NOT NULL,
 	Civilite varchar(255) NOT NULL,
 	DateNaissance Date NOT NULL,
-	ID_Panier int(5) NOT NULL,
-	FOREIGN KEY(ID_Panier) REFERENCES Panier(ID_Panier)
+	Montant_Tot INT (3)
 );
 
 CREATE TABLE Vendeur(
 	Pseudo_Vendeur varchar(255) PRIMARY KEY,
+	ID_Item int(5) NOT NULL,
 	Mail varchar(255) NOT NULL,
 	Mdp varchar(255) NOT NULL,
 	Nom varchar(255) NOT NULL,
 	PhotoVendeur varchar(255) NOT NULL,
-	ImageFond varchar(255) NOT NULL
+	ImageFond varchar(255) NOT NULL,
+	FOREIGN KEY (ID_Item) REFERENCES Item(ID_Item)
 );
 
 CREATE TABLE Admin(
@@ -37,6 +38,7 @@ CREATE TABLE Item(
 	Nom varchar(255) NOT NULL,
 	Description TEXT NOT NULL,
 	Categorie varchar(255) NOT NULL,
+	Prix float NOT NULL,
 	QuantiteTot int(2),
 	Nom_Video varchar(255),
 	NombreVentes int(2),
@@ -96,17 +98,21 @@ CREATE TABLE Contient(
 	PRIMARY KEY(ID_Panier, ID_Item)
 );
 
-/* Un vendeur fournit (met à disposition) des items*/
-
-CREATE TABLE Fournit(
-	Pseudo_Vendeur varchar(15) NOT NULL,
-	ID_Item int(5) NOT NULL,
-	Quantite int(2) NOT NULL,
-	Prix float(4) NOT NULL,
-	FOREIGN KEY(Pseudo_Vendeur) REFERENCES Vendeur(Pseudo_Vendeur),
-	FOREIGN KEY(ID_Item) REFERENCES Item(ID_Item),
-	PRIMARY KEY(Pseudo_Vendeur, ID_Item)
-);
 
 /*Saisie des données en dur comme les admins ou les tests*/
+
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Harry Potter','collection des 7 livres','Livre',3);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/livres-HP.jpg',2);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/Deux-petits-pas-sur-le-sable-mouille.jpg',4);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/boxer-chien-boxer-t-shirt-degrade-homme.jpg',5);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/2477751_2.jpg',6);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/harryPot.jpg',2);
+
 
