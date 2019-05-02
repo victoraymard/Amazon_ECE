@@ -95,8 +95,22 @@ $sports_loisirs = $pdoStat->fetchAll();
 
                         <div class="produit_categorie">
                             <div class="produit_gauche_categorie">
+                                <?php
+                                //preparation de la requette pour photos
+                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$sport_loisir['ID_Item']);
 
-                                <img src="images/notre_dame.jpg">
+                                //execution de la requette pour photos
+                                $photosIsOk = $photosReq->execute();
+
+                                //recuperation des resultats pour photos
+                                $photos = $photosReq->fetchAll();
+                                ?>
+
+                                <?php foreach ($photos as $photo): ?>
+
+                                    <img src=<?= $photo['Nom_photo']?>>
+
+                                <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">

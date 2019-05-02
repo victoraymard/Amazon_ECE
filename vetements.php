@@ -97,7 +97,7 @@ $vetements = $pdoStat->fetchAll();
                             <div class="produit_gauche_categorie">
                                 <?php
                                 //preparation de la requette pour photos
-                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement[ID_Item]);
+                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement['ID_Item']);
 
                                 //execution de la requette pour photos
                                 $photosIsOk = $photosReq->execute();
