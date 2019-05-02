@@ -73,18 +73,8 @@ session_start()
 
             </div>
 
-
-
-
-
-
-
-
-
-
-
             <div id="section_votreCompte">
-                
+
 
                 <table frame="box">
 
@@ -98,13 +88,13 @@ session_start()
                         <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous connecter sur notre site:</p> </td>
                     </tr>
 
-                    <form> 
+                    <form action="connexion_admin" method="post">
                         <tr>
                             <td>
-                                <label> Pseudo: </label>
+                                <label> Pseudo : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom">
+                                <input type="text" name="Pseudo_Admin">
                             </td>
                         </tr>
 
@@ -112,24 +102,24 @@ session_start()
 
                         <tr>
                             <td>
-                                <label> Mot de passe: </label>
+                                <label> Mot de passe : </label>
                             </td>
                             <td>
-                                <input type="password" id="mdp">
+                                <input type="password" name="Mdp">
                             </td>
                         </tr>
 
 
                         <tr>
-                            <td colspan="2" align="right"><a href="admin_compte.php"><input type="button" value="inscrire maintenant" onclick="validation()"></a></td>
+                            <td colspan="2" align="right"><input type="submit" value="Se connecter"></a></td>
                         </tr>
 
-                        
+
                     </form>
                     <br>
                 </table>
 
-                
+
             </div>
 
         </div>

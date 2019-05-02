@@ -19,13 +19,11 @@ CREATE TABLE Acheteur(
 
 CREATE TABLE Vendeur(
 	Pseudo_Vendeur varchar(255) PRIMARY KEY,
-	ID_Item int(5) NOT NULL,
 	Mail varchar(255) NOT NULL,
 	Mdp varchar(255) NOT NULL,
 	Nom varchar(255) NOT NULL,
 	PhotoVendeur varchar(255) NOT NULL,
-	ImageFond varchar(255) NOT NULL,
-	FOREIGN KEY (ID_Item) REFERENCES Item(ID_Item)
+	ImageFond varchar(255) NOT NULL
 );
 
 CREATE TABLE Admin(
@@ -42,7 +40,9 @@ CREATE TABLE Item(
 	QuantiteTot int(2),
 	Nom_Video varchar(255),
 	NombreVentes int(2),
-	Remise int(2)
+	Remise int(2),
+	Pseudo_Vendeur varchar(255) NOT NULL,
+	FOREIGN KEY (Pseudo_Vendeur) REFERENCES Vendeur(Pseudo_Vendeur)
 );
 
 CREATE TABLE Livre(
@@ -101,12 +101,12 @@ CREATE TABLE Contient(
 
 /*Saisie des données en dur comme les admins ou les tests*/
 
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12);
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Harry Potter','collection des 7 livres','Livre',3);
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32);
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1);
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3);
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('Harry Potter','collection des 7 livres','Livre',3, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, Pseudo_Vendeur) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13, 'Francis');
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/livres-HP.jpg',2);
@@ -114,5 +114,6 @@ INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/Deux-petits-pas-sur
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/boxer-chien-boxer-t-shirt-degrade-homme.jpg',5);
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/2477751_2.jpg',6);
 INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/harryPot.jpg',2);
+INSERT INTO Admin VALUES ('Cous', 'Cous');
 
 

@@ -16,19 +16,23 @@ if($Pseudo_Vendeur!="" && $Mdp!="")
 
   if($db_found)
   {
-    $sql = "SELECT * FROM Vendeur WHERE Pseudo_Vendeur = $Pseudo_Vendeur";
+    $sql = "SELECT * FROM Vendeur WHERE Pseudo_Vendeur = '$Pseudo_Vendeur'";
 
-    if(($result = mysqli_query($db_handle, $sql))
+    $result = mysqli_query($db_handle, $sql);
+
+    if(mysqli_num_rows($result)!=0)
     {
       while($row = mysqli_fetch_assoc($result))
       {
         if($row['Mdp'] == $Mdp)
         {
           session_start();
-          $_SESSION['Pseudo_Vendeur'] = $row['Pseudo_Vendeur']
-          $_SESSION['PhotoVendeur'] = $row['PhotoVendeur']
-          $_SESSION['ImageFond'] = $row['ImageFond']
-          header('Location: accueil_connecte.php');
+          $_SESSION['Pseudo_Vendeur'] = $row['Pseudo_Vendeur'];
+          $_SESSION['PhotoVendeur'] = $row['PhotoVendeur'];
+          $_SESSION['ImageFond'] = $row['ImageFond'];
+
+          mysqli_close($db_handle);
+          header('Location: accueil.php');
           exit();
         }
         else
@@ -40,18 +44,17 @@ if($Pseudo_Vendeur!="" && $Mdp!="")
     }
     else
     {
-      echo "Le pseudo saisie est errone ou n'existe pas !"
+      echo "Le pseudo saisie est errone ou n'existe pas !";
     }
   }
   else
   {
+    mysqli_close($db_handle);
     echo "Database not found";
   }
 }
 else
 {
-  echo "Veuillez saisir un pseudo et un mot de passe !"
+  echo "Veuillez saisir un pseudo et un mot de passe !";
 }
-
-mysqli_close($db_handle);
 ?>

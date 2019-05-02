@@ -73,18 +73,8 @@ session_start()
 
             </div>
 
-
-
-
-
-
-
-
-
-
-
             <div id="section_votreCompte">
-                
+
 
                 <table frame="box">
 
@@ -98,13 +88,13 @@ session_start()
                         <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous connecter sur notre site:</p> </td>
                     </tr>
 
-                    <form> 
+                    <form action="connexion_acheteur.php" method="post">
                         <tr>
                             <td>
-                                <label> mail: </label>
+                                <label> Mail: </label>
                             </td>
                             <td>
-                                <input type="text" id="nom">
+                                <input type="text" name="Mail">
                             </td>
                         </tr>
 
@@ -115,16 +105,16 @@ session_start()
                                 <label> Mot de passe: </label>
                             </td>
                             <td>
-                                <input type="password" id="mdp">
+                                <input type="password" name="Mdp">
                             </td>
                         </tr>
 
 
                         <tr>
-                            <td colspan="2" align="right"><input type="button" value="inscrire maintenant" onclick="validation()"></td>
+                            <td colspan="2" align="right"><input type="submit" value="Se connecter"></td>
                         </tr>
 
-                        
+
                     </form>
                     <br>
                 </table>
@@ -132,7 +122,7 @@ session_start()
                 <br><br>
                 <a href="votre_compte_creation.php">Toujours pas de compte chez nous ?</a>
 
-                
+
             </div>
 
         </div>
