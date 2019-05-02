@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ session_start()
                     </tr>
 
 
-                    <form> 
+                    <form action="inscription_vendeur.php" method="post">
 
                         <tr>
                             <td>
@@ -111,7 +111,7 @@ session_start()
                                 <label> Nom : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom">
+                                <input type="text" id="nom" name="Nom">
                             </td>
                         </tr>
 
@@ -121,7 +121,7 @@ session_start()
                                 <label> Pseudo : </label>
                             </td>
                             <td>
-                                <input type="text" id="pseudo">
+                                <input type="text" id="pseudo" name="Pseudo_Vendeur">
                             </td>
                         </tr>
 
@@ -131,7 +131,7 @@ session_start()
                                 <label> Mail : </label>
                             </td>
                             <td>
-                                <input type="email" id="mail">
+                                <input type="email" id="mail" name="Mail">
                             </td>
                         </tr>
 
@@ -141,30 +141,27 @@ session_start()
                                 <label> Mot de passe : </label>
                             </td>
                             <td>
-                                <input type="password" id="mdp">
+                                <input type="password" id="mdp" name="Mdp">
                             </td>
                         </tr>
-
 
                         <tr>
                             <td>
                                 <label> Photo : </label>
                             </td>
                             <td>
-                                <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                                <!-- peut être utile 
-
-                                    <form action="myform.cgi">
-                                        <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                                        <label for="fileupload"> Select a file to upload</label>
-                                        <br><input type="image" src="/wp-content/uploads/sendform.png" alt="Submit" width="100">
-                                    </form>
-                                -->
+                                <input type="file" name="PhotoVendeur" value="fileupload" id="fileupload">
                             </td>
                         </tr>
-                        
 
-
+                        <tr>
+                            <td>
+                                <label> Image de Fond: </label>
+                            </td>
+                            <td>
+                                <input type="file" name="ImageFond" value="fileupload" id="fileupload">
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>
@@ -173,18 +170,18 @@ session_start()
                         </tr>
 
                         <tr>
-                            <td colspan="2" align="right"><a href="vendeur_compte.php"><input type="button" value="inscrire maintenant" onclick="validation()"></a></td>
+                            <td colspan="2" align="right"><input type="submit" value="S'inscrire"></a></td>
                         </tr>
 
 
-                        
+
                     </form>
                     <br>
                 </table>
 
                 <br><br>
                 <a href="vendeur.php">Déjà membre ?</a>
-                
+
             </div>
 
         </div>

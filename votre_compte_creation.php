@@ -139,7 +139,7 @@ session_start();
                                 <label> Civilite : </label>
                             </td>
                             <td>
-                                <select name="Civlite" required placeholder="Sélectionner votre vendeur" >
+                                <select name="Civilite" required placeholder="Sélectionner votre vendeur" >
                                     <option value="">Sélectionner une réponse</option>
                                     <option value="Mr.">Mr.</option>
                                     <option value="Mme">Mme</option>
@@ -273,7 +273,7 @@ session_start();
                                 <label> Date de d'expiration : </label>
                             </td>
                             <td>
-                                <input type="date" id="crypto" name="Crypto">
+                                <input type="date" id="datecarte" name="DateCarte">
                             </td>
                         </tr>
 
