@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +99,7 @@ session_start()
                     </tr>
 
 
-                    <form> 
+                    <form action="inscription_acheteur.php" method="post">
 
                         <tr>
                             <td>
@@ -111,7 +111,7 @@ session_start()
                                 <label> Nom : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom">
+                                <input type="text" id="nom" name="Nom">
                             </td>
                         </tr>
 
@@ -121,17 +121,40 @@ session_start()
                                 <label> Prénom : </label>
                             </td>
                             <td>
-                                <input type="text" id="prenom">
+                                <input type="text" id="prenom" name="Prenom">
                             </td>
                         </tr>
 
+                        <tr>
+                            <td>
+                                <label> Date de naissance : </label>
+                            </td>
+                            <td>
+                                <input type="date" id="datenaissance" name="DateNaissance">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <label> Civilite : </label>
+                            </td>
+                            <td>
+                                <select name="Civlite" required placeholder="Sélectionner votre vendeur" >
+                                    <option value="">Sélectionner une réponse</option>
+                                    <option value="Mr.">Mr.</option>
+                                    <option value="Mme">Mme</option>
+                                    <option value="Mlle">Mlle</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>
                                 <label> Mail : </label>
                             </td>
                             <td>
-                                <input type="email" id="mail">
+                                <input type="email" id="mail" name="Mail">
                             </td>
                         </tr>
 
@@ -141,7 +164,7 @@ session_start()
                                 <label> Mot de passe: </label>
                             </td>
                             <td>
-                                <input type="password" id="mdp">
+                                <input type="password" id="mdp" name="Mdp">
                             </td>
                         </tr>
 
@@ -157,7 +180,7 @@ session_start()
                                 <label> Adresse : </label>
                             </td>
                             <td>
-                                <input type="text" id="adresse">
+                                <input type="text" id="adresse" name="Adresse">
                             </td>
                         </tr>
 
@@ -166,7 +189,7 @@ session_start()
                                 <label> Code postal : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="5" id="code_postal">
+                                <input type="number" maxlength="5" id="code_postal" name="CodePostal">
                             </td>
                         </tr>
 
@@ -175,12 +198,27 @@ session_start()
                                 <label> Ville : </label>
                             </td>
                             <td>
-                                <input type="text" id="ville">
+                                <input type="text" id="ville" name="Ville">
                             </td>
                         </tr>
 
+                        <tr>
+                            <td>
+                                <label> Pays : </label>
+                            </td>
+                            <td>
+                                <input type="text" id="pays" name="Pays">
+                            </td>
+                        </tr>
 
-
+                        <tr>
+                            <td>
+                                <label> Telephone : </label>
+                            </td>
+                            <td>
+                                <input type="number" maxlength="10" id="tel" name="Tel">
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>
@@ -203,13 +241,12 @@ session_start()
                             </td>
                         </tr>
 
-
                         <tr>
                             <td>
                                 <label> Numéro de carte : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="16">
+                                <input type="number" maxlength="16" name="NumCarte">
                             </td>
                         </tr>
 
@@ -218,7 +255,7 @@ session_start()
                                 <label> Nom sur la carte : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom_carte">
+                                <input type="text" id="nom_carte" name="NomCarte">
                             </td>
                         </tr>
 
@@ -227,20 +264,18 @@ session_start()
                                 <label> Cryptogramme : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="3" id="crypto">
+                                <input type="number" maxlength="3" id="crypto" name="Crypto">
                             </td>
                         </tr>
 
-
-
-
-
-                        
-
-
-
-                        
-
+                        <tr>
+                            <td>
+                                <label> Date de d'expiration : </label>
+                            </td>
+                            <td>
+                                <input type="date" id="crypto" name="Crypto">
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>
@@ -249,22 +284,18 @@ session_start()
                         </tr>
 
                         <tr>
-                            <td colspan="2" align="right"><input type="button" value="inscrire maintenant" onclick="validation()"></td>
+                            <td colspan="2" align="right"><input type="submit" value="S'inscrire"></td>
                         </tr>
-
-
-                        
                     </form>
                     <br>
                 </table>
 
                 <br><br>
                 <a href="votre_compte.php">Déjà client ?</a>
-                
+
             </div>
 
         </div>
-
 
 
         <div id="footer">
