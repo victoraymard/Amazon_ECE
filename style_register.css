@@ -94,3 +94,14 @@
     margin-bottom: -15%;
     color: #495057;
 }
+
+ .col-md-3 > a > input{
+    width: 100%;
+    min-width: 120px;
+}
+
+.col-md-6 > .btnRegister{
+    width: 100%;
+    min-width: 120px;
+}
+
