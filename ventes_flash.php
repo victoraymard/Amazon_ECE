@@ -158,7 +158,7 @@ session_start();
                                     </a>
                                     <ul class="social">
                                         <li><a href="produit.php?idItem=<?=$livre['ID_Item']?>" class="fa fa-search"></a></li>
-                                        <li><a href="produit.php?idItem=<?=$livre['ID_Item']?>"><font size="1">£ 10.00</font></a></li>
+                                        <li><a href="produit.php?idItem=<?=$livre['ID_Item']?>"> <font size="3"><?= $livre['Prix']?>€</font></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
                                     <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
@@ -235,7 +235,7 @@ session_start();
                                     </a>
                                     <ul class="social">
                                         <li><a href="produit.php?idItem=<?=$musique['ID_Item']?>" class="fa fa-search"></a></li>
-                                        <li><a href="produit.php?idItem=<?=$musique['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$musique['ID_Item']?>" <font size="3"><?= $musique['Prix']?>€</font></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
                                     <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
@@ -305,8 +305,8 @@ session_start();
                                     </a>
                                     <ul class="social">
                                         <li><a href="produit.php?idItem=<?=$vetement['ID_Item']?>" class="fa fa-search"></a></li>
-                                        <li><a href="produit.php?idItem=<?=$vetement['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
-                                        <li><a href="" class="fa fa-shopping-cart"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$vetement['ID_Item']?>" <font size="3"><?= $vetement['Prix']?>€</font></a></li>
+                                        <li><a href="" class="fa fa-shopping-cart"></a>
                                     </ul>
                                     <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
                                 </div>
@@ -378,7 +378,7 @@ session_start();
                                     </a>
                                     <ul class="social">
                                         <li><a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>" class="fa fa-search"></a></li>
-                                        <li><a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>" <font size="3"><?= $sport_loisir['Prix']?>€</font></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
                                     <span class="product-discount-label">- <?= $livre['Remise']?>%</span>

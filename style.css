@@ -964,7 +964,7 @@ nav > ul > li:hover
 .product-grid8:hover .social li:nth-child(2){transition-delay:.2s}
 .product-grid8:hover .social li:nth-child(3){transition-delay:.4s}
 .product-grid8 .social li a{font-size:3em;background-color:  rgba(255,255,255,0.9);color:black;font-size:25px;line-height:40px;text-align:center;height:65px;width:65px;border:1px solid grey;display:block;transition:all .5s ease-in-out}
-.product-grid8 .social li a:hover{color:black;border-color:#000}
+.product-grid8 .social li a:hover{color:dodgerblue;border-color:#000}
 .product-grid8 .product-discount-label{display:block;padding:4px 15px 4px 30px;color:#fff;background-color:#0081c2;position:absolute;top:10px;right:0;-webkit-clip-path:polygon(34% 0,100% 0,100% 100%,0 100%);clip-path:polygon(34% 0,100% 0,100% 100%,0 100%)}
 .product-grid8 .product-content{padding:20px 0 0}
 .product-grid8 .price{color:#000;font-size:19px;font-weight:400;margin-bottom:8px;text-align:left;transition:all .3s; text-align: center}
