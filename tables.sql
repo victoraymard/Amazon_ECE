@@ -42,7 +42,6 @@ CREATE TABLE Item(
 	NombreVentes int(2),
 	Remise int(2),
 	Pseudo_Vendeur varchar(255) NOT NULL,
-	Quantite int(2) NOT NULL,
 	FOREIGN KEY (Pseudo_Vendeur) REFERENCES Vendeur(Pseudo_Vendeur)
 );
 
