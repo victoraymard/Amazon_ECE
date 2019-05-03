@@ -10,23 +10,32 @@ $Quantite_Panier = isset($_POST["Quantite_Panier"])?$_POST["Quantite_Panier"]:""
 
 if($Quantite_Panier!="")
 {
-  $database = "Projet";
-  $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-  $db_found = mysqli_select_db($db_handle, $database);
-
-  if($db_found)
+  //Si un utilisateur est co
+  if($_SESSION['Mail']!="")
   {
-    $sql = "INSERT INTO Panier VALUES('".$_SESSION['Mail']."', '$ID_Item', '$Quantite_Panier')";
-    mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
+    $database = "Projet";
+    $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+    $db_found = mysqli_select_db($db_handle, $database);
 
-    mysqli_close($db_handle);
-    header ('location: panier.php');
-    exit();
+    if($db_found)
+    {
+      $sql = "INSERT INTO Panier VALUES('".$_SESSION['Mail']."', '$ID_Item', '$Quantite_Panier')";
+      mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
+
+      mysqli_close($db_handle);
+      header ('location: panier.php');
+      exit();
+    }
+    else
+    {
+      mysqli_close($db_handle);
+      echo "Database not found";
+    }
   }
-  else
+  else //Sinon, on l'envoie se  co
   {
-    mysqli_close($db_handle);
-    echo "Database not found";
+    header('location: votre_compte.php');
+    exit();
   }
 }
 else

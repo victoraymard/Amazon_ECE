@@ -159,7 +159,7 @@ $itemSelect = $pdoStat->fetchAll();
 
 
                         <tr>
-                            <td href="ajouterpanier.php?idItem=<?=$itemSelect['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
+                            <td colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
                         </tr>
 
 
