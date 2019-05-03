@@ -136,7 +136,7 @@ session_start();
                             <div class="product-grid8">
 
                                 <div class="product-image8">
-                                    <a href="#">
+                                    <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
                                         <?php
                                         //preparation de la requette pour photos
                                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$livre['ID_Item']);
@@ -146,6 +146,11 @@ session_start();
 
                                         //recuperation des resultats pour photos
                                         $photos = $photosReq->fetchAll();
+
+                                        if ($photos[1]['Nom_photo']==""){
+                                            $photos[1]['Nom_photo']="images/blanc.jpg";
+                                        }
+
                                         ?>
                                         <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
                                         <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
@@ -159,12 +164,11 @@ session_start();
                                     <span class="product-discount-label">-20%</span>
                                 </div>
                                 <div class="product-content">
-                                    <div class="price"><?= $livre['Nom']?>
-                                        <span><font size="1">£ 10.00</font> </span>
+                                    <div class="price">
+                                        <?= $livre['Nom']?>
                                     </div>
                                     <span class="product-shipping"><?= $livre['Description']?></span>
-                                    <h3 class="title"><a href="#"><?= $livre['Nom']?></a></h3>
-                                    <a class="all-deals" href="">More info <i class="fa fa-angle-right icon"></i></a>
+                                    <a class="all-deals" href="produit.php?idItem=<?=$livre['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +215,7 @@ session_start();
                             <div class="product-grid8">
 
                                 <div class="product-image8">
-                                    <a href="#">
+                                    <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
                                         <?php
                                         //preparation de la requette pour photos
                                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$musique['ID_Item']);
@@ -238,7 +242,7 @@ session_start();
                                     </div>
                                     <span class="product-shipping"><?= $musique['Description']?></span>
                                     <h3 class="title"><a href="#"><?= $musique['Nom']?></a></h3>
-                                    <a class="all-deals" href="">More info <i class="fa fa-angle-right icon"></i></a>
+                                    <a class="all-deals" href="produit.php?idItem=<?=$musique['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +281,7 @@ session_start();
                             <div class="product-grid8">
 
                                 <div class="product-image8">
-                                    <a href="#">
+                                    <a href="produit.php?idItem=<?=$vetement['ID_Item']?>">
                                         <?php
                                         //preparation de la requette pour photos
                                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement['ID_Item']);
@@ -304,7 +308,7 @@ session_start();
                                     </div>
                                     <span class="product-shipping"><?= $vetement['Description']?></span>
                                     <h3 class="title"><a href="#"><?= $vetement['Nom']?></a></h3>
-                                    <a class="all-deals" href="">More info <i class="fa fa-angle-right icon"></i></a>
+                                    <a class="all-deals" href="produit.php?idItem=<?=$vetement['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -346,7 +350,7 @@ session_start();
                             <div class="product-grid8">
 
                                 <div class="product-image8">
-                                    <a href="#">
+                                    <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>">
                                         <?php
                                         //preparation de la requette pour photos
                                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$sport_loisir['ID_Item']);
@@ -373,7 +377,7 @@ session_start();
                                     </div>
                                     <span class="product-shipping"><?= $sport_loisir['Description']?></span>
                                     <h3 class="title"><a href="#"><?= $sport_loisir['Nom']?></a></h3>
-                                    <a class="all-deals" href="">More info <i class="fa fa-angle-right icon"></i></a>
+                                    <a class="all-deals" href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                                 </div>
                             </div>
                         </div>
