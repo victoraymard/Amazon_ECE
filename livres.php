@@ -109,15 +109,16 @@ $livres = $itemReq->fetchAll();
                                 ?>
 
                                 <?php foreach ($photos as $photo): ?>
-
-                                <img href="produit.php?idItem=<?=$livre['ID_Item']?>" src=<?= $photo['Nom_photo']?>>
+                                <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
+                                    <img src=<?= $photo['Nom_photo']?>>
+                                </a>
 
                                 <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">
                                 <h3 href="produit.php?idItem=<?=$livre['ID_Item']?>">
-                                    <?= $livre['Nom']?>
+                                    <a href="produit.php?idItem=<?=$livre['ID_Item']?>"><?= $livre['Nom']?></a>
                                 </h3>
                                 <p>
                                 <h4>Description courte du produit</h4><br>

@@ -5,13 +5,15 @@ session_start();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Panier WHERE Mail ='.$_SESSION['Mail']);
+$pdoStat = $objetPDO->prepare('SELECT * FROM Panier WHERE Mail = "'.$_SESSION['Mail'].'"');
 
 //execution de la requete
 $executeIsOk = $pdoStat->execute();
 
 //recupération des resultats
-$allItems = $pdoStat->fetchAll();
+$allItemsPanier = $pdoStat->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -104,20 +106,36 @@ $allItems = $pdoStat->fetchAll();
                    <!----------------------------------PRODUIT--------------------------------------->
 
                 <form>
+                    <?php foreach ($allItemsPanier as $itemPanier): ?>
+
+                    <?php
+                    //ouverture de la connexion avec la base de données Projet
+                    $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+                    //préparation de la requete
+                    $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item ='.$itemPanier['ID_Item']);
+
+                    //execution de la requete
+                    $executeIsOk = $pdoStat->execute();
+
+                    //recupération des resultats
+                    $itemSelect = $pdoStat->fetchAll();
+
+                    ?>
                     <tr>
                         <td>
                             <input type="checkbox" id="item_checkbox">
                         </td>
                         <td>
                             <label>
-                                <?php foreach ($allItems as $item): ?>
+
                                     <div class="produit">
                                         <div class="produit_gauche">
-                                            <a href="produit.php?idItem=<?=$item['ID_Item']?>"><h3><?= $item['Nom']?></h3></a>
+                                            <a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a>
                                             <a href="produit.php">
                                                 <?php
                                                 //preparation de la requette pour photos
-                                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item['ID_Item']);
+                                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
 
                                                 //execution de la requette pour photos
                                                 $photosIsOk = $photosReq->execute();
@@ -135,16 +153,16 @@ $allItems = $pdoStat->fetchAll();
                                         <div class="produit_droite">
                                             <p>
                                                 <br><br>
-                                                <strong>Description courte du produit :</strong> <?= $item['Description']?><br>
-                                                <strong>Vendeur :</strong> <?= $item['Pseudo_Vendeur']?><br>
-                                            <h4>Prix : <?= $item['Prix']?> </h4>
+                                                <strong>Description courte du produit :</strong> <?= $itemSelect[0]['Description']?><br>
+                                                <strong>Vendeur :</strong> <?= $itemSelect[0]['Pseudo_Vendeur']?><br>
+                                            <h4>Prix : <?= $itemSelect[0]['Prix']?> </h4>
                                             </p>
                                         </div>
                                     </div>
-                                <?php endforeach; ?>
                             </label>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
 
                     <!------------------------------------------------------------------------------------------------------->
 

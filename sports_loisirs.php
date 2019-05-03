@@ -108,14 +108,16 @@ $sports_loisirs = $pdoStat->fetchAll();
 
                                 <?php foreach ($photos as $photo): ?>
 
-                                    <img src=<?= $photo['Nom_photo']?>>
+                                    <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>">
+                                        <img src=<?= $photo['Nom_photo']?>>
+                                    </a>
 
                                 <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">
                                 <h3>
-                                    <?= $sport_loisir['Nom']?>
+                                   <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>"><?= $sport_loisir['Nom']?></a>
                                 </h3>
                                 <p>
                                 <h4>Description courte du produit</h4><br>
