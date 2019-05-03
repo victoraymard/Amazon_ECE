@@ -168,21 +168,18 @@ $allItemsPanier = $pdoStat->fetchAll();
                     <!------------------------------------------------------------------------------------------------------->
 
                     <tr>
-                        <td colspan="2" align="left"><input type="button" value="passer commande" onclick="validation()"></td>
+                        <td colspan="2" align="left"><h2>Montant total : <?= $_SESSION['Montant_Tot']?></h2></td>
                     </tr>
-
-
+                    <tr>
+                        <td  colspan="2" align="left">
+                            <a href="paiement.php"><input type="button" value="passer commande" onclick="validation()"></a>
+                        </td>
+                    </tr>
 
                 </form>
             </table>
 
 
-
-
-
-
-
-            
 
         </div>
 
