@@ -94,7 +94,7 @@ session_start()
                                 <label> Mail: </label>
                             </td>
                             <td>
-                                <input type="text" name="Mail">
+                                <input type="text" name="Mail" required>
                             </td>
                         </tr>
 
@@ -105,7 +105,7 @@ session_start()
                                 <label> Mot de passe: </label>
                             </td>
                             <td>
-                                <input type="password" name="Mdp">
+                                <input type="password" name="Mdp" required>
                             </td>
                         </tr>
 

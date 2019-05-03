@@ -111,7 +111,7 @@ session_start();
                                 <label> Nom : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom" name="Nom">
+                                <input type="text" id="nom" name="Nom" placeholder="Nom" required>
                             </td>
                         </tr>
 
@@ -121,7 +121,7 @@ session_start();
                                 <label> Prénom : </label>
                             </td>
                             <td>
-                                <input type="text" id="prenom" name="Prenom">
+                                <input type="text" id="prenom" name="Prenom" placeholder="Prenom" required>
                             </td>
                         </tr>
 
@@ -130,7 +130,7 @@ session_start();
                                 <label> Date de naissance : </label>
                             </td>
                             <td>
-                                <input type="date" id="datenaissance" name="DateNaissance">
+                                <input type="date" id="datenaissance" name="DateNaissance" required>
                             </td>
                         </tr>
 
@@ -139,7 +139,7 @@ session_start();
                                 <label> Civilite : </label>
                             </td>
                             <td>
-                                <select name="Civilite" required placeholder="Sélectionner votre vendeur" >
+                                <select name="Civilite" required placeholder="Sélectionner votre vendeur">
                                     <option value="">Sélectionner une réponse</option>
                                     <option value="Mr.">Mr.</option>
                                     <option value="Mme">Mme</option>
@@ -154,7 +154,7 @@ session_start();
                                 <label> Mail : </label>
                             </td>
                             <td>
-                                <input type="email" id="mail" name="Mail">
+                                <input type="email" id="mail" name="Mail" placeholder="BonneNote@ing4.oklm" required>
                             </td>
                         </tr>
 
@@ -164,7 +164,7 @@ session_start();
                                 <label> Mot de passe: </label>
                             </td>
                             <td>
-                                <input type="password" id="mdp" name="Mdp">
+                                <input type="password" id="mdp" name="Mdp" placeholder="******" required>
                             </td>
                         </tr>
 
@@ -180,7 +180,7 @@ session_start();
                                 <label> Adresse : </label>
                             </td>
                             <td>
-                                <input type="text" id="adresse" name="Adresse">
+                                <input type="text" id="adresse" name="Adresse" placeholder="67 rue delapiscine" required>
                             </td>
                         </tr>
 
@@ -189,7 +189,7 @@ session_start();
                                 <label> Code postal : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="5" id="code_postal" name="CodePostal">
+                                <input type="number" maxlength="5" id="code_postal" name="CodePostal" placeholder="97419" required>
                             </td>
                         </tr>
 
@@ -198,7 +198,7 @@ session_start();
                                 <label> Ville : </label>
                             </td>
                             <td>
-                                <input type="text" id="ville" name="Ville">
+                                <input type="text" id="ville" name="Ville" placeholder="Paris" required>
                             </td>
                         </tr>
 
@@ -207,7 +207,7 @@ session_start();
                                 <label> Pays : </label>
                             </td>
                             <td>
-                                <input type="text" id="pays" name="Pays">
+                                <input type="text" id="pays" name="Pays" placeholder="France" required>
                             </td>
                         </tr>
 
@@ -216,7 +216,7 @@ session_start();
                                 <label> Telephone : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="10" id="tel" name="Tel">
+                                <input type="number" maxlength="10" id="tel" name="Tel" placeholder="0666060606" required>
                             </td>
                         </tr>
 
@@ -246,7 +246,7 @@ session_start();
                                 <label> Numéro de carte : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="16" name="NumCarte">
+                                <input type="number" maxlength="16" name="NumCarte" placeholder="************4572" required>
                             </td>
                         </tr>
 
@@ -255,7 +255,7 @@ session_start();
                                 <label> Nom sur la carte : </label>
                             </td>
                             <td>
-                                <input type="text" id="nom_carte" name="NomCarte">
+                                <input type="text" id="nom_carte" name="NomCarte" placeholder="Mme Piscine" required>
                             </td>
                         </tr>
 
@@ -264,7 +264,7 @@ session_start();
                                 <label> Cryptogramme : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="3" id="crypto" name="Crypto">
+                                <input type="number" maxlength="3" id="crypto" name="Crypto" placeholder="666" required>
                             </td>
                         </tr>
 
@@ -273,7 +273,7 @@ session_start();
                                 <label> Date de d'expiration : </label>
                             </td>
                             <td>
-                                <input type="date" id="datecarte" name="DateCarte">
+                                <input type="date" id="datecarte" name="DateCarte" required>
                             </td>
                         </tr>
 

@@ -4,9 +4,6 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 
 //Inscription d'un acheteur
-//Conditoon à revoir
-if(isset($_POST['Mail'])AND isset($_POST['Mdp'])AND isset($_POST['Nom'])AND isset($_POST['Prenom'])AND isset($_POST['Adresse'])AND isset($_POST['Ville'])AND isset($_POST['CodePostal'])AND isset($_POST['Pays'])AND isset($_POST['Tel'])AND isset($_POST['NumCarte'])AND isset($_POST['DateCarte'])AND isset($_POST['NomCarte'])AND isset($_POST['Crypto'])AND isset($_POST['Civilite'])AND isset($_POST['DateNaissance']))
-{
 $Mail = $_POST['Mail'];
 $Mdp = $_POST['Mdp'];
 $Nom = $_POST['Nom'];
@@ -42,10 +39,5 @@ else
 {
   mysqli_close($db_handle);
   echo "Database not found";
-}
-}
-else
-{
-  echo "Veuillez saisir toutes les informations demandees svp !";
 }
 ?>
