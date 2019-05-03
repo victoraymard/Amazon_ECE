@@ -64,116 +64,113 @@ $itemSelect = $pdoStat->fetchAll();
                 </ul>
             </nav>
         </header><br>
-<!------------------------------------------------------------------------------------------------------->
-<!--code spécifique à la page-->
-<div id="corps_produit">
-    <div id="page_produit_gauche">
-        <div id="produit_images">
-            <div id="produit_images_gauche">
+        <!------------------------------------------------------------------------------------------------------->
+        <!--code spécifique à la page-->
+        <div id="corps_produit">
+            <div id="page_produit_gauche">
+                <div id="produit_images">
+                    <div id="produit_images_gauche">
 
-                <?php
+                        <?php
                 //preparation de la requette pour photos
-                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
+                        $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
 
                 //execution de la requette pour photos
-                $photosIsOk = $photosReq->execute();
+                        $photosIsOk = $photosReq->execute();
 
                 //recuperation des resultats pour photos
-                $photos = $photosReq->fetchAll();
-                ?>
+                        $photos = $photosReq->fetchAll();
+                        ?>
 
-                <?php foreach ($photos as $photo): ?>
+                        <?php foreach ($photos as $photo): ?>
 
-                    <a href="#"><img src=<?= $photo['Nom_photo']?>></a>
+                            <a href="#"><img src=<?= $photo['Nom_photo']?>></a>
 
-                <?php endforeach; ?>
+                        <?php endforeach; ?>
+
+                    </div>
+
+                    <div id="produit_images_droite">
+                        <img src=<?= $photos[0]['Nom_photo']?>>
+                    </div>
+
+                </div>
 
             </div>
 
-            <div id="produit_images_droite">
-                <img src=<?= $photos[0]['Nom_photo']?>>
-            </div>
-
-        </div>
-
-    </div>
 
 
 
-
-    <div id="page_produit_droite">
-        <table id="table_produit_gauche">
-             <tr>
-                 <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
-             </tr>
-
+            <div id="page_produit_droite">
+                <table id="table_produit_gauche">
+                   <tr>
+                       <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
+                   </tr>
 
 
-            <tr>
-                <td colspan="2" align="left">
-                    <p>Description : <?= $itemSelect[0]['Description']?></p>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="left">
-                    Quantité : <?= $itemSelect[0]['QuantiteTot']?>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2" align="left">
-                    <br>
-                    <strong>Prix : <?= $itemSelect[0]['Prix']?></strong>
-                </td>
-            </tr>
-        </table>
+
+                   <tr>
+                    <td colspan="2" align="left">
+                        <p>Description : <?= $itemSelect[0]['Description']?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left">
+                        Quantité : <?= $itemSelect[0]['QuantiteTot']?>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="left">
+                        <br>
+                        <strong>Prix : <?= $itemSelect[0]['Prix']?></strong>
+                    </td>
+                </tr>
+            </table>
 
             <table id="table_produit_droite">
 
 
-                    <form action="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" method="post">
-                        <tr>
-                            <td>
-                                Votre vendeur:
-                            </td>
-                            <td>
-                                <?= $itemSelect[0]['Pseudo_Vendeur']?>
-                            </td>
-                        </tr>
+                <form action="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" method="post">
+                    <tr>
+                        <td>
+                            Votre vendeur:
+                        </td>
+                        <td>
+                            <?= $itemSelect[0]['Pseudo_Vendeur']?>
+                        </td>
+                    </tr>
 
 
-                        <tr>
-                            <td>
-                                <label> Quantité : </label>
-                            </td>
-                            <td>
-                                <input type="number" maxlength="16" name="Quantite_Panier" placeholder="Quantité" required>
-                            </td>
-                        </tr>
-
-
-
-                        <tr>
-                            <td>
-                                <label> Prix unitaire : </label>
-                            </td>
-                            <td>
-                                <output type="text"><?= $itemSelect[0]['Prix']?></output>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
-                        </tr>
+                    <tr>
+                        <td>
+                            <label> Quantité : </label>
+                        </td>
+                        <td>
+                            <input type="number" max=<?= $itemSelect[0]['QuantiteTot']?> min="0" name="Quantite_Panier" placeholder="Quantité" required>
+                        </td>
+                    </tr>
 
 
 
-                    </form>
-                    <br>
-                </table>
+                    <tr>
+                        <td>
+                            <label> Prix unitaire : </label>
+                        </td>
+                        <td>
+                            <output type="text"><?= $itemSelect[0]['Prix']?></output>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
+                    </tr>
 
 
 
+                </form>
+                <br>
+            </table>
 
 
 
@@ -186,17 +183,20 @@ $itemSelect = $pdoStat->fetchAll();
 
 
 
-    </div>
-</div>
 
 
-<!------------------------------------------------------------------------------------------------------->
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
+
         </div>
     </div>
+
+
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="footer">
+        <small>
+            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+        </small>
+    </div>
+</div>
 </body>
 
 </html>
