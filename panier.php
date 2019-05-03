@@ -172,7 +172,7 @@ $allItemsPanier = $pdoStat->fetchAll();
                     </tr>
                     <tr>
                         <td  colspan="2" align="left">
-                            <a href="paiement.php"><input type="button" value="passer commande" onclick="validation()"></a>
+                            <a href="paiement.php?Montant_Tot=<?= $_SESSION['Montant_Tot']?>"><input type="button" value="passer commande" onclick="validation()"></a>
                         </td>
                     </tr>
 

@@ -9,8 +9,10 @@ define('DB_PASS', '');
 
 //Variables provenant d'un formulaire
 //isset(if-then-else)
-$Pseudo_Vendeur = $_POST["Pseudo_Vendeur"];
-$Mdp = $_POST["Mdp"];
+$NumCarte = $_POST["NumCarte"];
+$NomCarte = $_POST["NomCarte"];
+$DateCarte = $_POST["DateCarte"];
+$Crypto = $_POST["Crypto"];
 
 $database = "Projet";
 $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
@@ -18,7 +20,7 @@ $db_found = mysqli_select_db($db_handle, $database);
 
 if($db_found)
 {
-    $sql = "SELECT * FROM Vendeur WHERE Pseudo_Vendeur = '$Pseudo_Vendeur'";
+    $sql = "SELECT * FROM Acheteur WHERE Mail = '$_SESSION[Mail]'";
 
     $result = mysqli_query($db_handle, $sql);
 

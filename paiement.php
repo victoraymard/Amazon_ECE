@@ -120,7 +120,7 @@ session_start();
                                         <p><font size="2" >Nous ne transmettrons pas vos informations bancaires à des tiers</font></p>
 
 
-                                        <input type="submit" class="btnRegister"  value="Payer!"/>
+                                        <input type="submit" class="btnRegister"  value="Payer <?=$_GET['Montant_Tot']?> €"/>
                                     </div>
                                 </div>
                             </form>
