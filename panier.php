@@ -155,6 +155,7 @@ $allItemsPanier = $pdoStat->fetchAll();
                                                 <br><br>
                                                 <strong>Description courte du produit :</strong> <?= $itemSelect[0]['Description']?><br>
                                                 <strong>Vendeur :</strong> <?= $itemSelect[0]['Pseudo_Vendeur']?><br>
+                                                <strong>Quantite dans le panier :</strong> <?= $itemPanier['Quantite_panier']?><br>
                                             <h4>Prix : <?= $itemSelect[0]['Prix']?> </h4>
                                             </p>
                                         </div>
