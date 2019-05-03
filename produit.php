@@ -116,7 +116,7 @@ $itemSelect = $pdoStat->fetchAll();
             </tr>
             <tr>
                 <td colspan="2" align="left">
-                    Quantité : <?= $itemSelect[0]['Quantite']?>
+                    Quantité : <?= $itemSelect[0]['QuantiteTot']?>
                 </td>
             </tr>
             <tr>
