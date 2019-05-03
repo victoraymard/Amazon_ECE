@@ -22,12 +22,6 @@ $executeIsOk = $pdoStat->execute();
 //recupération des resultats
 $itemSelect = $pdoStat->fetchAll();
 
-//Verification de l'existence de l'article dans le panier
-$database = "Projet";
-$db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-$db_found = mysqli_select_db($db_handle, $database);
-
-
 ///RECUPERATION INFORMATION ACHETEUR
 //ouverture de la connexion avec la base de données Projet
 $objetPDO2 = new PDO('mysql:host=localhost;dbname=Projet','root','');
@@ -37,6 +31,14 @@ $pdoStat2 = $objetPDO2->prepare('SELECT * FROM Acheteur WHERE Mail= \''.$_SESSIO
 $executeIsOk2 = $pdoStat2->execute();
 //recupération des resultats
 $acheteurSelect = $pdoStat2->fetchAll();
+
+//Verification de l'existence de l'article dans le panier
+$database = "Projet";
+$db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+$db_found = mysqli_select_db($db_handle, $database);
+
+
+
 
   //Si un utilisateur est co
 if($_SESSION['Mail']!="")
@@ -56,9 +58,10 @@ if($_SESSION['Mail']!="")
       $sql2 = "UPDATE `Item` SET `QuantiteTot`= ". $result ." WHERE `ID_Item` = ".$ID_Item;
       mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
 
-      $nouveauMontantTot = $itemSelect[0]['Prix'] + $acheteurSelect[0]['Montant_Tot'];
+      $nouveauMontantTot = ($itemSelect[0]['Prix']*$Quantite_Panier) + $acheteurSelect[0]['Montant_Tot'];
       $changementMontantTotal = "UPDATE `Acheteur` SET `Montant_Tot`= $nouveauMontantTot  WHERE Mail = '".$_SESSION['Mail']."'";
       mysqli_query($db_handle, $changementMontantTotal) or die (mysqli_error($db_handle));
+      $_SESSION['Montant_Tot'] = $nouveauMontantTot;
 
       mysqli_close($db_handle);
       header('location: panier.php');
@@ -71,10 +74,14 @@ if($_SESSION['Mail']!="")
       $sql2 = "UPDATE `Item` SET `QuantiteTot`= ". $result ." WHERE `ID_Item` = ".$ID_Item;
       mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
       mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
-      
-      $nouveauMontantTot = $itemSelect[0]['Prix'] + $acheteurSelect[0]['Montant_Tot'];
+
+
+      $nouveauMontantTot = ($itemSelect[0]['Prix']*$Quantite_Panier) + $acheteurSelect[0]['Montant_Tot'];
       $changementMontantTotal = "UPDATE `Acheteur` SET `Montant_Tot`= $nouveauMontantTot  WHERE Mail = '".$_SESSION['Mail']."'";
       mysqli_query($db_handle, $changementMontantTotal) or die (mysqli_error($db_handle));
+
+      $_SESSION['Montant_Tot'] = $nouveauMontantTot;
+
 
       mysqli_close($db_handle);
       header ('location: panier.php');

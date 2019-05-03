@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cb147fc-814e-4f69-a20b-ebe2fee04e82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/btn_danger.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/item.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajout_item_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajout_item_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ajout_item_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajout_item_vendeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajouterpanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajouterpanier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion_vendeur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/style_register.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/panier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
+            <state relative-caret-position="499">
               <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
             </state>
           </provider>
@@ -101,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ajouterpanier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+            <state relative-caret-position="374">
+              <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -218,7 +209,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44105000" />
+    <option name="totallyTimeSpent" value="44660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -358,13 +349,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/panier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendeur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -416,10 +400,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/panier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="175" column="29" lean-forward="true" selection-start-line="175" selection-start-column="29" selection-end-line="175" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ajouterpanier.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+        <state relative-caret-position="374">
+          <caret line="68" column="5" lean-forward="true" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
         </state>
       </provider>
     </entry>
