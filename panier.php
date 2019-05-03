@@ -1,5 +1,17 @@
 <?php
-session_start()
+session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Panier WHERE Mail ='.$_SESSION['Mail']);
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$allItems = $pdoStat->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -89,91 +101,52 @@ session_start()
                 </tr>
 
 
+                   <!----------------------------------PRODUIT--------------------------------------->
 
-
-
-                <form> 
-
-
+                <form>
                     <tr>
                         <td>
                             <input type="checkbox" id="item_checkbox">
-
                         </td>
                         <td>
                             <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
+                                <?php foreach ($allItems as $item): ?>
+                                    <div class="produit">
+                                        <div class="produit_gauche">
+                                            <a href="produit.php?idItem=<?=$item['ID_Item']?>"><h3><?= $item['Nom']?></h3></a>
+                                            <a href="produit.php">
+                                                <?php
+                                                //preparation de la requette pour photos
+                                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item['ID_Item']);
 
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
+                                                //execution de la requette pour photos
+                                                $photosIsOk = $photosReq->execute();
+
+                                                //recuperation des resultats pour photos
+                                                $photos = $photosReq->fetchAll();
+                                                ?>
+
+
+                                                <img src=<?= $photos[0]['Nom_photo']?>>
+
+                                            </a>
+                                        </div>
+
+                                        <div class="produit_droite">
+                                            <p>
+                                                <br><br>
+                                                <strong>Description courte du produit :</strong> <?= $item['Description']?><br>
+                                                <strong>Vendeur :</strong> <?= $item['Pseudo_Vendeur']?><br>
+                                            <h4>Prix : <?= $item['Prix']?> </h4>
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php endforeach; ?>
                             </label>
                         </td>
                     </tr>
 
-
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-
-                        </td>
-                        <td>
-                            <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
-
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                    </div>
-                                </div>
-                            </label>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-
-                        </td>
-                        <td>
-                            <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
-
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                    </div>
-                                </div>
-                            </label>
-                        </td>
-                    </tr>
-
-
-
-
-
-
+                    <!------------------------------------------------------------------------------------------------------->
 
                     <tr>
                         <td colspan="2" align="left"><input type="button" value="passer commande" onclick="validation()"></td>

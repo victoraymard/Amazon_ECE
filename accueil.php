@@ -136,7 +136,7 @@ $allItems = $pdoStat->fetchAll();
                     <div class="produit">
                         <div class="produit_gauche">
                             <a href="produit.php?idItem=<?=$item['ID_Item']?>"><h3><?= $item['Nom']?></h3></a>
-                            <a href="produit.php">
+                            <a href="produit.php?idItem=<?=$item['ID_Item']?>" >
                                 <?php
                                 //preparation de la requette pour photos
                                 $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item['ID_Item']);
@@ -156,8 +156,10 @@ $allItems = $pdoStat->fetchAll();
 
                         <div class="produit_droite">
                             <p>
-                            <h4>Description courte du produit :</h4><br>
-                            <?= $item['Description']?>
+                                <br><br>
+                                <strong>Description courte du produit :</strong> <?= $item['Description']?><br>
+                                <strong>Vendeur :</strong> <?= $item['Pseudo_Vendeur']?><br>
+                                <h4>Prix : <?= $item['Prix']?> </h4>
                             </p>
                         </div>
                     </div>

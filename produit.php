@@ -130,17 +130,10 @@ $itemSelect = $pdoStat->fetchAll();
 
                         <tr>
                             <td>
-                                Choisissez votre vendeur:
+                                Votre vendeur:
                             </td>
-
                             <td>
-                                <select name="aboutUs:" required placeholder="Sélectionner votre vendeur" >
-                                    <option value="vendeur_null">Sélectionner une réponse</option>
-                                    <option value="vendeur1">vendeur1</option>
-                                    <option value="vendeur2">vendeur2</option>
-                                    <option value="vendeur3">vendeur3</option>
-                                    <option value="vendeur4">vendeur4</option>
-                                </select>
+                                <?= $itemSelect[0]['Pseudo_Vendeur']?>
                             </td>
                         </tr>
 
@@ -167,7 +160,7 @@ $itemSelect = $pdoStat->fetchAll();
 
 
                         <tr>
-                            <td href="ajouterpanier.php?idItem=<?=$itemSelect['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
+                            <td href="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
                         </tr>
 
 
