@@ -6,10 +6,20 @@ session_start()
 <html>
 <head>
     <meta charset="utf-8" />
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_register.css" />
+
+
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
+    <script type="text/javascript">
+        function getfile(){
+            document.getElementById('fileupload').click();
+            document.getElementById('selectedfile').value=document.getElementById('fileupload').value
+        }
+    </script>
     <title>Amazon ECE - Connexion acheteur</title>
 </head>
 
@@ -73,7 +83,44 @@ session_start()
 
             </div>
 
-            <div id="section_votreCompte">
+            <div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="images\user.png" alt=""/>
+                        <h3>Ravis de vous revoir</h3>
+                        <p>Nous nous sentions perdu sans vous</p>
+                        <a href="votre_compte_creation.php"><input type="submit" name="" value="Enregistrez-vous!"/><br/></a>
+
+                    </div>
+                    <div class="col-md-9 register-right">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Connexion acheteur</h3>
+                                <form action="inscription_vendeur.php" method="post">
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Mail *" value="" name="Mail"/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="submit" class="btnRegister"  value="Connectez-vous!"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <!-- <div id="section_votreCompte">
 
 
                 <table frame="box">
@@ -123,7 +170,7 @@ session_start()
                 <a href="votre_compte_creation.php">Toujours pas de compte chez nous ?</a>
 
 
-            </div>
+            </div>-->
 
         </div>
 

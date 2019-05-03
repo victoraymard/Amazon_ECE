@@ -91,13 +91,13 @@ session_start();
                                     <div class="row register-form">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Nom" value="" name="Nom" required/>
+                                                <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Pseudo" value="" name="Pseudo_Vendeur"required/>
+                                                <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
+                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required/>
                                             </div>
                                             <!--<div class="form-group">
                                                 <input type="password" class="form-control"  placeholder="Confirmez votre mot de passe *" value="" name="Mdp"/>
@@ -106,7 +106,7 @@ session_start();
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" placeholder="Email" value="" name="Mail" required/>
+                                                <input type="email" class="form-control" placeholder="Email *" value="" name="Mail" required/>
                                             </div>
 
                                             <div class="form-group">
@@ -135,134 +135,11 @@ session_start();
                     </div>
                 </div>
             </div>
+        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--<div id="section_votreCompte">
-
-
-                <table frame="box">
-
-                    <tr>
-                        <td colspan="2" align="left"><h1>Enregistrement de l'utilisateur</h1></td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous inscrire sur notre site:</p> </td>
-                    </tr>
-
-
-                    <form action="inscription_vendeur.php" method="post">
-
-                        <tr>
-                            <td>
-                                <h3>Informations personnelles</h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label> Nom : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="nom" name="Nom">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Pseudo : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="pseudo" name="Pseudo_Vendeur">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mail : </label>
-                            </td>
-                            <td>
-                                <input type="email" id="mail" name="Mail">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mot de passe : </label>
-                            </td>
-                            <td>
-                                <input type="password" id="mdp" name="Mdp">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <label> Photo : </label>
-                            </td>
-                            <td>
-                                <input type="file" name="PhotoVendeur" value="fileupload" id="fileupload">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <label> Image de Fond: </label>
-                            </td>
-                            <td>
-                                <input type="file" name="ImageFond" value="fileupload" id="fileupload">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p><font size="2" >Nous ne transmettrons pas vos informations à des tiers</font></p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2" align="right"><input type="submit" value="S'inscrire"></a></td>
-                        </tr>
-
-
-
-                    </form>
-                    <br>
-                </table>
-
-                <br><br>
-                <a href="vendeur.php">Déjà membre ?</a>
-
-            </div>-->
 
         </div>
-
-
-
         <div id="footer">
             <small>
                 Droits d'auteur | Copyright &copy; 2019, Amazon ECE.

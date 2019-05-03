@@ -141,8 +141,8 @@ session_start()
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="file" style="display:none" name="Nom_Photo" value="fileupload" id="fileupload"  accept="image/*"/>
-                                                <input type="button" value="Choisir les photos de l'item" onclick="getfile()" multiple="" class="btn_selection" />                                            
+                                                <input type="file" style="display:none" name="Nom_Photo" value="fileupload" id="fileupload"  accept="image/*"  multiple=""/>
+                                                <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />                                            
                                             </div>
 
                                             <div class="form-group">
@@ -186,107 +186,6 @@ session_start()
 
 
 
-            <!--<div id="section_votreCompte">
-
-
-                <div id="produit_retour">
-                    <a href="vendeur_compte.php">Retour</a>
-                   
-                </div>
-
-
-                <table frame="box">
-
-                    <tr>
-                        <td colspan="2" align="left"><h1>Enregistrement de l'utilisateur</h1></td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous inscrire sur notre site:</p> </td>
-                    </tr>
-
-
-                    <form> 
-
-
-                        <tr>
-                            <td>
-                                <label> Nom : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="nom">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> description : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="description">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> quantité : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="quantite">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> prix unitaire : </label>
-                            </td>
-                            <td>
-                                <input type="number" id="prix_unitaire">
-                            </td>
-                        </tr>
-
-
-
-                        
-                        <tr>
-                            <td>
-                                <label> photo(s) : </label>
-                            </td>
-                            <td>
-                                <input type="file" name="photo_item" value="photo_item" id="photo_item">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <label> vidéo : </label>
-                            </td>
-                            <td>
-                                <input type="file" name="video_item" value="video_item" id="video_item">
-                            </td>
-                        </tr>
-
-                        
-
-
-                        <tr>
-                        <td colspan="2" align="right"><input type="button" value="valider" onclick="validation()"></td>
-                        </tr>
-
-
-
-                        
-                    </form>
-                    <br>
-                </table>
-
-                
-            </div>-->
 
         </div>
 

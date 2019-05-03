@@ -6,11 +6,21 @@ session_start()
 <html>
 <head>
     <meta charset="utf-8" />
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_register.css" />
+
+
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
-    <title>Amazon ECE - création compte vendeur</title>
+    <script type="text/javascript">
+        function getfile(){
+            document.getElementById('fileupload').click();
+            document.getElementById('selectedfile').value=document.getElementById('fileupload').value
+        }
+    </script>
+    <title>Amazon ECE - ajout vendeur admin</title>
 </head>
 
 <body>
@@ -69,7 +79,7 @@ session_start()
         <div id= "corps">
             <div id="ventes_flash">
 
-                <h2>création d'un compte vendeur</h2>
+                <h2>Ajout d'un compte vendeur</h2>
 
             </div>
 
@@ -77,106 +87,65 @@ session_start()
 
 
 
+<a href=""></a>
+
+            <div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="images\admin.png" alt=""/>
+                        <h3>Bienvenue</h3>
+                        <p>Remplissez ce formulaire pour ajouter un vendeur</p>
+
+                    </div>
+                    <div class="col-md-9 register-right">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Ajout d'un vendeur</h3>
+                                <form action="inscription_vendeur.php" method="post">
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nom" value="" name="Nom" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Pseudo" value="" name="Pseudo_Vendeur"required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Email" value="" name="Mail" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="file" style="display:none" name="PhotoVendeur" value="fileupload" id="fileupload"  accept="image/*"/>
+                                                <input type="button" value="Choisir une photo de profile" onclick="getfile()" class="btn_selection"/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="file" style="display:none" name="ImageFond" value="fileupload" id="fileupload"  accept="image/*" />
+                                                <input type="button" value="Choisir une photo de fond" onclick="getfile()"  class="btn_selection"/>
+                                            </div>
 
 
 
-
-
-
-            <div id="section_votreCompte">
-
-
-                <table frame="box">
-
-                    <tr>
-                        <td colspan="2" align="left"><h1>Enregistrement de l'utilisateur</h1></td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour ajouter un vendeur:</p> </td>
-                    </tr>
-
-
-                    <form> 
-
-                        <tr>
-                            <td>
-                                <h3>Informations personnelles</h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label> Nom : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="nom">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Pseudo : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="pseudo">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mail : </label>
-                            </td>
-                            <td>
-                                <input type="email" id="mail">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mot de passe : </label>
-                            </td>
-                            <td>
-                                <input type="password" id="mdp">
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Photo : </label>
-                            </td>
-                            <td>
-                                <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                                <!-- peut être utile 
-
-                                    <form action="myform.cgi">
-                                        <input type="file" name="fileupload" value="fileupload" id="fileupload">
-                                        <label for="fileupload"> Select a file to upload</label>
-                                        <br><input type="image" src="/wp-content/uploads/sendform.png" alt="Submit" width="100">
-                                    </form>
-                                -->
-                            </td>
-                        </tr>
-                        
-
-                        <tr>
-                            <td colspan="2" align="right"><a href="vendeur_compte.php"><input type="button" value="inscrire maintenant" onclick="validation()"></a></td>
-                        </tr>
-
-
-                        
-                    </form>
-                    <br>
-                </table>
-
-                
-                
+                                            <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
+           
 
         </div>
 

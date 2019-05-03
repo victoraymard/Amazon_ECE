@@ -6,10 +6,20 @@ session_start();
 <html>
 <head>
     <meta charset="utf-8" />
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_register.css" />
+
+
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
+    <script type="text/javascript">
+        function getfile(){
+            document.getElementById('fileupload').click();
+            document.getElementById('selectedfile').value=document.getElementById('fileupload').value
+        }
+    </script>
     <title>Amazon ECE - création compte client</title>
 </head>
 
@@ -78,12 +88,157 @@ session_start();
 
 
 
+            <div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="images\user.png" alt=""/>
+                        <h3>Bienvenue</h3>
+                        <p>Plus que 30 secondes et vous pourrez enfin commander cette magnifique paire de palmes qui vous fait de l'oeil depuis des mois!</p>
+
+                        <a href="votre_compte.php"><input type="submit" name="" value="Connectez-vous!"/><br/></a>
+                    </div>
+                    <div class="col-md-9 register-right">
+
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Enregistrement acheteur</h3>
+                                <form action="inscription_vendeur.php" method="post">
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <h4>Informations personnelles</h4>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Prénom *" value="" name="Prenom" required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" placeholder="Date de naissance *" value="" name="DateNaissance" required/>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <select name="Civilite" required placeholder="Sélectionner votre vendeur">
+                                                    <option value="">Sélectionner une réponse</option>
+                                                    <option value="Mr.">Mr.</option>
+                                                    <option value="Mme">Mme</option>
+                                                    <option value="Mlle">Mlle</option>
+                                                    <option value="Autre">Autre</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" placeholder="Email *" value="" name="Mail" required/>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required/>
+                                            </div>
+                                            
+
+                                            <div class="form-group">
+                                                <h4>Informations de livraison</h4>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Adresse *" value="" name="Adresse" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="Code postal *" value="" name="CodePostal" required length="5" />
+                                            </div>
+
+                                            
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Ville *" value="" name="Ville" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Pays *" value="" name="Pays" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="Numéro de téléphone *" value="" name="Telephone" length="10" required/>
+                                            </div>
+
+
+                                           
 
 
 
 
 
-            <div id="section_votreCompte">
+
+                                        </div>
+                                        <div class="col-md-6">
+                                             <div class="form-group">
+                                                <h4>Informations de paiement</h4>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <select name="TypeDeCarte:" required>
+                                                    <option value="reponseParDefault">Sélectionner une réponse</option>
+                                                    <option value="Visa">Visa</option>
+                                                    <option value="MasterCard">MasterCard</option>
+                                                    <option value="American Express">American Express</option>
+                                                    <option value="Paypal">Paypal</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="Numéro de carte *" value="" name="NumCarte" length="16" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Nom sur la carte *" value="" name="NomCarte" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="Cryptogramme *" value="" name="Crypto" lenghth="3" required/>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" placeholder="Date d'expiration *" value="" name="DateCarte" required/>
+                                            </div>
+
+
+
+                                            <p><font size="2" >Nous ne transmettrons pas vos informations à des tiers</font></p>
+
+                                           <input type="submit" class="btnRegister"  value="Enregistrez-vous!"/>
+                                        </div>
+
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!--<div id="section_votreCompte">
 
 
                 <table frame="box">
@@ -293,8 +448,7 @@ session_start();
                 <br><br>
                 <a href="votre_compte.php">Déjà client ?</a>
 
-            </div>
-
+            </div>-->
         </div>
 
 
