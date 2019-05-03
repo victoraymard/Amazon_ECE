@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cb147fc-814e-4f69-a20b-ebe2fee04e82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ajout_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajout_vendeur.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/btn_danger.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/item.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajout_item_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajout_item_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ajout_item_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajout_item_vendeur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ajouterpanier.php" beforeDir="false" afterPath="$PROJECT_DIR$/ajouterpanier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/connexion_acheteur.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion_acheteur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/panier.php" beforeDir="false" afterPath="$PROJECT_DIR$/panier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/connexion_vendeur.php" beforeDir="false" afterPath="$PROJECT_DIR$/connexion_vendeur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/style_register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tables.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/check_paiement.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -92,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ajouterpanier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
+            <state relative-caret-position="527">
+              <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -139,11 +145,11 @@
         <option value="$PROJECT_DIR$/produit.php" />
         <option value="$PROJECT_DIR$/tables.sql" />
         <option value="$PROJECT_DIR$/connexion_acheteur.php" />
-        <option value="$PROJECT_DIR$/ajouterpanier.php" />
         <option value="$PROJECT_DIR$/ajout_vendeur.php" />
         <option value="$PROJECT_DIR$/panier.php" />
         <option value="$PROJECT_DIR$/paiement.php" />
         <option value="$PROJECT_DIR$/check_paiement.php" />
+        <option value="$PROJECT_DIR$/ajouterpanier.php" />
       </list>
     </option>
   </component>
@@ -212,7 +218,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43890000" />
+    <option name="totallyTimeSpent" value="44105000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -352,13 +358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ajouterpanier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/panier.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
@@ -414,6 +413,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ajouterpanier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
         </state>
       </provider>
     </entry>
