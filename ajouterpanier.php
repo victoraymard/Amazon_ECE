@@ -1,4 +1,8 @@
 <?php
+
+//Item selectionné
+$id_Item = $_GET['idItem'];
+
 //Variables provenant d'un formulaire (création d'un profil, mise en vente d'un item)
 //isset(if-then-else)
 
