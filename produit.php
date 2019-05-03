@@ -100,9 +100,9 @@ $itemSelect = $pdoStat->fetchAll();
                 image principale
                 <img src=<?= $photos[0]['Nom_photo']?>>
             </div>
-            
+
         </div>
-        
+
     </div>
 
 
@@ -126,8 +126,7 @@ $itemSelect = $pdoStat->fetchAll();
             <table id="table_produit_droite">
 
 
-                    <form> 
-
+                    <form action="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" method="post">
                         <tr>
                             <td>
                                 Votre vendeur:
@@ -143,11 +142,11 @@ $itemSelect = $pdoStat->fetchAll();
                                 <label> Quantité : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="16">
+                                <input type="number" maxlength="16" name="Quantite_Panier">
                             </td>
                         </tr>
 
-                        
+
 
                         <tr>
                             <td>
@@ -160,11 +159,11 @@ $itemSelect = $pdoStat->fetchAll();
 
 
                         <tr>
-                            <td href="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
+                            <td href="ajouterpanier.php?idItem=<?=$itemSelect['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
                         </tr>
 
 
-                        
+
                     </form>
                     <br>
                 </table>
@@ -182,7 +181,7 @@ $itemSelect = $pdoStat->fetchAll();
 
 
 
-        
+
     </div>
 </div>
 
