@@ -1,5 +1,12 @@
 <?php
-session_start()
+session_start();
+
+//Pour pas que la page admin soit accesible par adresse
+if(!isset($_SESSION['Pseudo_Admin']))
+{
+    header('location: accueil.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +76,7 @@ session_start()
                     <td colspan="2" align="left"><h2>Mes items</h2></td>
                 </tr>
 
-                <form> 
+                <form>
 
 
                     <tr>
@@ -182,7 +189,7 @@ session_start()
                         <td colspan="2" align="left"><h2>Mes items</h2></td>
                     </tr>
 
-                    <form> 
+                    <form>
 
 
                         <tr>
