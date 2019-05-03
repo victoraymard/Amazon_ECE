@@ -146,7 +146,7 @@ $itemSelect = $pdoStat->fetchAll();
                                 <label> Quantité : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="16" name="Quantite_Panier">
+                                <input type="number" maxlength="16" name="Quantite_Panier" placeholder="Quantité" required>
                             </td>
                         </tr>
 
