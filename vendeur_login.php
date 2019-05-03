@@ -97,15 +97,15 @@ session_start()
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Connexion vendeur</h3>
-                                <form action="inscription_vendeur.php" method="post">
+                                <form action="connexion_vendeur.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"/>
+                                                <input type="text" class="form-control" placeholder="TheKillerdu62" value="" name="Pseudo_Vendeur" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
+                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
