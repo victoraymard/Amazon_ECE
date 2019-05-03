@@ -30,7 +30,7 @@ if($Pseudo_Admin!="" && $Mdp!="")
           $_SESSION['Pseudo_Admin'] = $row['Pseudo_Admin'];
 
           mysqli_close($db_handle);
-          header('Location: accueil.php');
+          header('Location: admin_compte.php');
           exit();
         }
         else
