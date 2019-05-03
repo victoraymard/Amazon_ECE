@@ -100,9 +100,9 @@ $itemSelect = $pdoStat->fetchAll();
                 image principale
                 <img src=<?= $photos[0]['Nom_photo']?>>
             </div>
-            
+
         </div>
-        
+
     </div>
 
 
@@ -126,35 +126,17 @@ $itemSelect = $pdoStat->fetchAll();
             <table id="table_produit_droite">
 
 
-                    <form> 
-
-                        <tr>
-                            <td>
-                                Choisissez votre vendeur:
-                            </td>
-
-                            <td>
-                                <select name="aboutUs:" required placeholder="Sélectionner votre vendeur" >
-                                    <option value="vendeur_null">Sélectionner une réponse</option>
-                                    <option value="vendeur1">vendeur1</option>
-                                    <option value="vendeur2">vendeur2</option>
-                                    <option value="vendeur3">vendeur3</option>
-                                    <option value="vendeur4">vendeur4</option>
-                                </select>
-                            </td>
-                        </tr>
-
-
+                    <form action="ajouterpanier.php?idItem=<?=$itemSelect[0]['ID_Item']?>" method="post">
                         <tr>
                             <td>
                                 <label> Quantité : </label>
                             </td>
                             <td>
-                                <input type="number" maxlength="16">
+                                <input type="number" maxlength="16" name="Quantite_Panier">
                             </td>
                         </tr>
 
-                        
+
 
                         <tr>
                             <td>
@@ -167,11 +149,11 @@ $itemSelect = $pdoStat->fetchAll();
 
 
                         <tr>
-                            <td href="ajouterpanier.php?idItem=<?=$itemSelect['ID_Item']?>" colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
+                            <td colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
                         </tr>
 
 
-                        
+
                     </form>
                     <br>
                 </table>
@@ -189,7 +171,7 @@ $itemSelect = $pdoStat->fetchAll();
 
 
 
-        
+
     </div>
 </div>
 
