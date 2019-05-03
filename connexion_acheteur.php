@@ -36,6 +36,7 @@ if($db_found)
         $_SESSION['DateCarte'] = $row['DateCarte'];
         $_SESSION['NomCarte'] = $row['NomCarte'];
         $_SESSION['Crypto'] = $row['Crypto'];
+        $_SESSION['Montant_Tot'] = $row['Montant_Tot'];
 
         mysqli_close($db_handle);
         header('Location: accueil.php');

@@ -30,7 +30,7 @@ if($db_found)
         $_SESSION['ImageFond'] = $row['ImageFond'];
 
         mysqli_close($db_handle);
-        header('Location: accueil.php');
+        header('Location: vendeur_compte.php');
         exit();
       }
       else
