@@ -78,7 +78,7 @@ CREATE TABLE Vetement(
 
 
 CREATE TABLE Photos(
-	Nom_photo varchar(255) PRIMARY KEY,
+	Nom_Photo varchar(255) PRIMARY KEY,
 	ID_Item int(4) NOT NULL,
 	FOREIGN KEY(ID_Item) REFERENCES Item(ID_Item)
 );
