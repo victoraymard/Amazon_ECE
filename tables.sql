@@ -87,7 +87,7 @@ CREATE TABLE Photos(
 /*Un panier contient des items*/
 
 CREATE TABLE Panier(
-	Mail int(5) NOT NULL,
+	Mail varchar(255) NOT NULL,
 	ID_Item int(5) NOT NULL,
 	Quantite_panier int(2) NOT NULL,
 	FOREIGN KEY(Mail) REFERENCES Acheteur(Mail),
@@ -98,7 +98,7 @@ CREATE TABLE Panier(
 
 /*Saisie des données en dur comme les admins ou les tests*/
 
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 15; 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 15, 'Francis');
 INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Harry Potter','collection des 7 livres','Livre',3, 30, 'Francis');
 INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32,12, 'Francis');
 INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1,8, 'Francis');
