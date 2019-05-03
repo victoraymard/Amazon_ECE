@@ -161,13 +161,13 @@ $itemSelect = $pdoStat->fetchAll();
                                 <label> Prix unitaire : </label>
                             </td>
                             <td>
-                                <output type="text"> 3€</output>
+                                <output type="text"><?= $itemSelect[0]['Prix']?></output>
                             </td>
                         </tr>
 
 
                         <tr>
-                            <td colspan="2" align="right"><input type="button" value="inscrire maintenant" onclick="validation()"></td>
+                            <td colspan="2" align="right"><input type="submit" value="Ajouter au panier"></td>
                         </tr>
 
 
