@@ -105,5 +105,19 @@
     min-width: 120px;
 }
 
+.btn_selection{
+    padding-bottom: 4px;
+    padding-top: 3px;
+    margin-bottom: 4px;
+    width: 100%;
+    border-radius: 5px;
+}
 
-
+.col-md-6 select{
+    padding-bottom: 8px;
+    padding-top: 7px;
+    width: 100%;
+    border-radius: 5px;
+    color: #495057;
+    border-color: #CCC;
+}
