@@ -16,8 +16,8 @@ session_start();
     <script type="text/javascript" src="myscript.js"></script>
     <script type="text/javascript">
         function getfile(){
-            document.getElementById('hiddenfile').click();
-            document.getElementById('selectedfile').value=document.getElementById('hiddenfile').value
+            document.getElementById('fileupload').click();
+            document.getElementById('selectedfile').value=document.getElementById('fileupload').value
         }
     </script>
 
@@ -118,6 +118,8 @@ session_start();
                                                 <input type="file" style="display:none" name="ImageFond" value="fileupload" id="fileupload"  accept="image/*"/>
                                                 <input type="button" value="Choisir une photo de fond" onclick="getfile()" />                                            
                                             </div>
+
+
 
                                             <p><font size="2" >Nous ne transmettrons pas vos informations à des tiers</font></p>
 
