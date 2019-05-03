@@ -8,6 +8,18 @@ define('DB_PASS', '');
 $ID_Item = $_GET['idItem'];
 $Quantite_Panier = isset($_POST["Quantite_Panier"])?$_POST["Quantite_Panier"]:"";
 
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item='.$ID_Item);
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$itemSelect = $pdoStat->fetchAll();
+
   //Si un utilisateur est co
 if($_SESSION['Mail']!="")
 {
@@ -17,9 +29,11 @@ if($_SESSION['Mail']!="")
 
   if($db_found)
   {
+    $result = $itemSelect[0]['QuantiteTot']-$Quantite_Panier;
     $sql = "INSERT INTO Panier VALUES('".$_SESSION['Mail']."', '$ID_Item', '$Quantite_Panier')";
+    $sql2 = "UPDATE `Item` SET `QuantiteTot`= ". $result ." WHERE `ID_Item` = ".$ID_Item;
     mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
-
+    mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
     mysqli_close($db_handle);
     header ('location: panier.php');
     exit();

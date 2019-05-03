@@ -160,7 +160,7 @@ $allItems = $pdoStat->fetchAll();
                                 <strong>Description courte du produit :</strong> <?= $item['Description']?><br>
                                 Vendeur : <?= $item['Pseudo_Vendeur']?><br>
                                 <strong>Prix : <?= $item['Prix']?> </strong><br>
-                                Quantité : <?= $item[0]['QuantiteTot']?>
+                                Quantité : <?= $item['QuantiteTot']?>
                             </p>
                         </div>
                     </div>
