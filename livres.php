@@ -107,13 +107,9 @@ $livres = $itemReq->fetchAll();
                                     //recuperation des resultats pour photos
                                     $photos = $photosReq->fetchAll();
                                 ?>
-
-                                <?php foreach ($photos as $photo): ?>
                                 <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
-                                    <img src=<?= $photo['Nom_photo']?>>
+                                    <img src=<?= $photos[0]['Nom_photo']?>>
                                 </a>
-
-                                <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">
@@ -125,7 +121,7 @@ $livres = $itemReq->fetchAll();
                                 <?= $livre['Description']?>
                                 </p>
                                 <p>
-                                    quantité : <?= $vetement['QuantiteTot']?>
+                                    quantité : <?= $livre['QuantiteTot']?>
                                 </p>
                                 <p>
                                     à partir de (prix le plus bas)

@@ -106,13 +106,9 @@ $sports_loisirs = $pdoStat->fetchAll();
                                 $photos = $photosReq->fetchAll();
                                 ?>
 
-                                <?php foreach ($photos as $photo): ?>
-
                                     <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>">
-                                        <img src=<?= $photo['Nom_photo']?>>
+                                        <img src=<?= $photos[0]['Nom_photo']?>>
                                     </a>
-
-                                <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">

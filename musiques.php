@@ -108,13 +108,9 @@ $musiques = $pdoStat->fetchAll();
                                 $photos = $photosReq->fetchAll();
                                 ?>
 
-                                <?php foreach ($photos as $photo): ?>
-
                                     <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
-                                        <img src=<?= $photo['Nom_photo']?>>
+                                        <img src=<?= $photos[0]['Nom_photo']?>>
                                     </a>
-
-                                <?php endforeach; ?>
                             </div>
 
                             <div class="produit_droite_categorie">
@@ -126,7 +122,7 @@ $musiques = $pdoStat->fetchAll();
                                 <?= $musique['Description']?>
                                 </p>
                                 <p>
-                                    quantité : <?= $vetement['QuantiteTot']?>
+                                    quantité : <?= $musique['QuantiteTot']?>
                                 </p>
                                 <p>
                                     à partir de (prix le plus bas)
