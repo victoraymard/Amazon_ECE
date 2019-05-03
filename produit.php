@@ -68,14 +68,8 @@ $itemSelect = $pdoStat->fetchAll();
 <!--code spécifique à la page-->
 <div id="corps_produit">
     <div id="page_produit_gauche">
-        <div id="produit_retour">
-            <a href="accueil.php">Retour</a>
-            <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-        </div>
-
         <div id="produit_images">
             <div id="produit_images_gauche">
-                liste d'images + video
 
                 <?php
                 //preparation de la requette pour photos
@@ -97,7 +91,6 @@ $itemSelect = $pdoStat->fetchAll();
             </div>
 
             <div id="produit_images_droite">
-                image principale
                 <img src=<?= $photos[0]['Nom_photo']?>>
             </div>
 
@@ -111,16 +104,27 @@ $itemSelect = $pdoStat->fetchAll();
     <div id="page_produit_droite">
         <table id="table_produit_gauche">
              <tr>
-                        <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
-                    </tr>
+                 <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
+             </tr>
 
 
 
-                    <tr>
-                        <td colspan="2" align="left">
-                            <p><h3>description</h3><br><?= $itemSelect[0]['Description']?></p>
-                        </td>
-                    </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <p>Description : <?= $itemSelect[0]['Description']?></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    Quantité : <?= $itemSelect[0]['QuantiteTot']?>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    <br>
+                    <strong>Prix : <?= $itemSelect[0]['Prix']?></strong>
+                </td>
+            </tr>
         </table>
 
             <table id="table_produit_droite">

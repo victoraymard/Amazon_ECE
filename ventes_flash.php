@@ -157,11 +157,11 @@ session_start();
 
                                     </a>
                                     <ul class="social">
-                                        <li><a href="" class="fa fa-search"></a></li>
-                                        <li><a><font size="1">£ 10.00</font></a></li>
+                                        <li><a href="produit.php?idItem=<?=$livre['ID_Item']?>" class="fa fa-search"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$livre['ID_Item']?>"><font size="1">£ 10.00</font></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
-                                    <span class="product-discount-label">-20%</span>
+                                    <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
                                 </div>
                                 <div class="product-content">
                                     <div class="price">
@@ -225,16 +225,20 @@ session_start();
 
                                         //recuperation des resultats pour photos
                                         $photos = $photosReq->fetchAll();
+                                        if ($photos[1]['Nom_photo']==""){
+                                            $photos[1]['Nom_photo']="images/blanc.jpg";
+                                        }
+
                                         ?>
                                         <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
                                         <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
                                     </a>
                                     <ul class="social">
-                                        <li><a href="" class="fa fa-search"></a></li>
-                                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$musique['ID_Item']?>" class="fa fa-search"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$musique['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
-                                    <span class="product-discount-label">-20%</span>
+                                    <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
                                 </div>
                                 <div class="product-content">
                                     <div class="price"><?= $musique['Nom']?>
@@ -291,16 +295,20 @@ session_start();
 
                                         //recuperation des resultats pour photos
                                         $photos = $photosReq->fetchAll();
+                                        if ($photos[1]['Nom_photo']==""){
+                                            $photos[1]['Nom_photo']="images/blanc.jpg";
+                                        }
+
                                         ?>
                                         <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
                                         <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
                                     </a>
                                     <ul class="social">
-                                        <li><a href="" class="fa fa-search"></a></li>
-                                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$vetement['ID_Item']?>" class="fa fa-search"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$vetement['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
-                                    <span class="product-discount-label">-20%</span>
+                                    <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
                                 </div>
                                 <div class="product-content">
                                     <div class="price"><?= $vetement['Nom']?>
@@ -360,16 +368,20 @@ session_start();
 
                                         //recuperation des resultats pour photos
                                         $photos = $photosReq->fetchAll();
+                                        if ($photos[1]['Nom_photo']==""){
+                                            $photos[1]['Nom_photo']="images/blanc.jpg";
+                                        }
+
                                         ?>
                                         <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
                                         <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
                                     </a>
                                     <ul class="social">
-                                        <li><a href="" class="fa fa-search"></a></li>
-                                        <li><a href="" class="fa fa-shopping-bag"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>" class="fa fa-search"></a></li>
+                                        <li><a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>" class="fa fa-shopping-bag"></a></li>
                                         <li><a href="" class="fa fa-shopping-cart"></a></li>
                                     </ul>
-                                    <span class="product-discount-label">-20%</span>
+                                    <span class="product-discount-label">- <?= $livre['Remise']?>%</span>
                                 </div>
                                 <div class="product-content">
                                     <div class="price"><?= $sport_loisir['Nom']?>
