@@ -75,24 +75,24 @@ session_start()
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Ajout Livre</h3>
-                                <form action="inscription_vendeur.php" method="post">
+                                <form action="ajout_livres.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" />
+                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur"/>
+                                                <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur" required/>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                           <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" />
+                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" />
-                                        </div>                                   
+                                            <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" required/>
+                                        </div>
                                         <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                     </div>
                                 </div>

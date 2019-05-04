@@ -17,9 +17,8 @@ session_start()
             document.getElementById('selectedfile').value=document.getElementById('fileupload').value
         }
     </script>
-    <title>Amazon ECE - ajout livre</title>
+    <title>Amazon ECE - ajout musique</title>
 </head>
-
 <body>
     <div id="bloc_page">
         <header>
@@ -51,17 +50,9 @@ session_start()
                 </ul>
             </nav>
         </header><br>
-
-
-
-
-
-
-
-
         <div id= "corps">
             <div class="jumbotron text-center">
-                <h2>Formulaire d'insertion de livre</h2>
+                <h2>Formulaire d'insertion de musique</h2>
             </div>
             <div class="container register">
                 <div class="row">
@@ -71,28 +62,27 @@ session_start()
                         <p>Super, un nouveau produit sur le site!</p>
                     </div>
                     <div class="col-md-9 register-right">
-
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Ajout Livre</h3>
-                                <form action="inscription_vendeur.php" method="post">
+                                <form action="ajout_musiques.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" />
+                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur"/>
+                                                <input type="text" class="form-control" placeholder="Compositeur *" value="" name="Compositeur" required/>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                           <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" />
+                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" />
-                                        </div>                                   
+                                            <input type="text" class="form-control" placeholder="Album *" value="" name="Album" required/>
+                                        </div>
                                         <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                     </div>
                                 </div>
@@ -110,5 +100,4 @@ session_start()
     </div>
 </div>
 </body>
-
 </html>

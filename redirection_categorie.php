@@ -12,10 +12,6 @@ $Prix = (float)$_POST["Prix"];
 $Nom_Photo = $_POST['Nom_Photo'];
 $Nom_Video = $_POST['Nom_Video'];
 
-define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-
 $database = "Projet";
 $db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 $db_found = mysqli_select_db($db_handle, $database);
@@ -25,10 +21,11 @@ if($db_found)
   $sql = "INSERT INTO Item(Nom, Description, Categorie, Prix, QuantiteTot, Nom_Video, Pseudo_Vendeur) VALUES('$Nom', '$Description', '$Categorie', '$Prix', '$Quantite', '$Nom_Video', '".$_SESSION['Pseudo_Vendeur']."')";
   mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
 
-  $sql2 = "INSERT INTO Photos(Nom_Photo) VALUES('$Nom_Photo')";
+  $sql2 = "INSERT INTO Photos VALUES('images/$Nom_Photo', 1)";
   mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
 
-  $sql3 = "INSERT INTO Photos(ID_Item) SELECT MAX(ID_Item) FROM Item";
+  $sql3 = "UPDATE Photos SET ID_Item = (SELECT MAX(ID_Item) FROM Item) WHERE Nom_Photo = '$Nom_Photo'";
+  // $sql3 = "INSERT INTO Photos(ID_Item) SELECT MAX(ID_Item) FROM Item";
   mysqli_query($db_handle, $sql3) or die (mysqli_error($db_handle));
 
   mysqli_close($db_handle);
@@ -50,7 +47,7 @@ if($db_found)
   }
   if($Categorie=="Sports_Loisirs")
   {
-    header('Location: formulaire_sports_loisirs.php');
+    header('Location: vendeur_compte.php');
     exit();
   }
 }
