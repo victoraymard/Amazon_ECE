@@ -83,9 +83,9 @@ $allItems = $pdoStat->fetchAll();
     <h1 class="jumbotron-heading">Découvrez nos produits les plus vendus</h1>
     <p class="lead text-muted mb-0">Dépéchez-vous avant qu'ils soient tous vendus !</p>
     <p style="font-size: 1.3em;">
-        <a href="#ancre_livres">Livres</a>, 
-        <a href="#ancre_musiques">musiques</a>, 
-        <a href="#ancre_vêtements">vêtements</a>, 
+        <a href="#ancre_livres">Livres</a>,
+        <a href="#ancre_musiques">musiques</a>,
+        <a href="#ancre_vêtements">vêtements</a>,
         <a href="#ancre_sports_loisirs">sports et loisirs</a>
     </p>
 </section>
@@ -127,8 +127,8 @@ $allItems = $pdoStat->fetchAll();
                         <i class="fa fa-heart"></i> Bienvenue sur notre site !
                     </div>
                     <img src="images\ned_flanders.png">
-                    
-                    
+
+
                     <div class="card-body">
                         <p style="text-align: center; font-weight: bold;">Etes-vous prêt à découvrir nos produits ?</p>
                     </div>
@@ -176,13 +176,13 @@ $allItems = $pdoStat->fetchAll();
                                         //recuperation des resultats pour photos
                                 $photos = $photosReq->fetchAll();
 
-                                if ($photos[1]['Nom_photo']==""){
-                                    $photos[1]['Nom_photo']="images/blanc.jpg";
+                                if ($photos[1]['Nom_Photo']==""){
+                                    $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 
                                 ?>
-                                <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
-                                <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
+                                <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
+                                <img class="pic-2" src=<?= $photos[1]['Nom_Photo']?>>
 
                             </a>
 
@@ -205,7 +205,7 @@ $allItems = $pdoStat->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
-        
+
     </div>
     <hr>
 
@@ -250,13 +250,13 @@ $allItems = $pdoStat->fetchAll();
                                         //recuperation des resultats pour photos
                                 $photos = $photosReq->fetchAll();
 
-                                if ($photos[1]['Nom_photo']==""){
-                                    $photos[1]['Nom_photo']="images/blanc.jpg";
+                                if ($photos[1]['Nom_Photo']==""){
+                                    $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 
                                 ?>
-                                <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
-                                <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
+                                <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
+                                <img class="pic-2" src=<?= $photos[1]['Nom_Photo']?>>
 
                             </a>
 
@@ -279,7 +279,7 @@ $allItems = $pdoStat->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
-        
+
     </div>
     <hr>
 
@@ -325,13 +325,13 @@ $allItems = $pdoStat->fetchAll();
                                         //recuperation des resultats pour photos
                                 $photos = $photosReq->fetchAll();
 
-                                if ($photos[1]['Nom_photo']==""){
-                                    $photos[1]['Nom_photo']="images/blanc.jpg";
+                                if ($photos[1]['Nom_Photo']==""){
+                                    $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 
                                 ?>
-                                <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
-                                <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
+                                <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
+                                <img class="pic-2" src=<?= $photos[1]['Nom_Photo']?>>
 
                             </a>
 
@@ -354,7 +354,7 @@ $allItems = $pdoStat->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
-        
+
     </div>
     <hr>
 
@@ -400,13 +400,13 @@ $allItems = $pdoStat->fetchAll();
                                         //recuperation des resultats pour photos
                                 $photos = $photosReq->fetchAll();
 
-                                if ($photos[1]['Nom_photo']==""){
-                                    $photos[1]['Nom_photo']="images/blanc.jpg";
+                                if ($photos[1]['Nom_Photo']==""){
+                                    $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 
                                 ?>
-                                <img class="pic-1" src=<?= $photos[0]['Nom_photo']?>>
-                                <img class="pic-2" src=<?= $photos[1]['Nom_photo']?>>
+                                <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
+                                <img class="pic-2" src=<?= $photos[1]['Nom_Photo']?>>
 
                             </a>
 
@@ -429,7 +429,7 @@ $allItems = $pdoStat->fetchAll();
                 </div>
             <?php endforeach; ?>
         </div>
-        
+
     </div>
     <hr>
 

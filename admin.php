@@ -113,14 +113,10 @@ if(isset($_SESSION['Pseudo_Admin']))
                                                 <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Admin"required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required="" />
+                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required />
                                             </div>
 
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
-                                        </div>
-                                        
                                     </div>
                                     <div class="col-md-6">
                                         <input type="submit" class="btnRegister"  value="Connectez-vous!"/>
