@@ -53,19 +53,140 @@ if(!isset($_SESSION['Pseudo_Admin']))
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-        </header><br>
-        <!------------------------------------------------------------------------------------------------------->
-        <!--code spécifique à la page-->
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
+      </header><br>
+      <!------------------------------------------------------------------------------------------------------->
+      <!--code spécifique à la page-->
 
-        <div id="corps_admin">
+      <div id="corps_admin">
+
+
+        <div id="ajouter_un_item_admin">
+            <a href="ajout_vendeur.php">ajouter<br/>un vendeur</a>
+            <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
+        </div>
+
+        <br>
+        <table frame="box">
+
+            <tr>
+                <td colspan="2" align="left"><h2>Mes items</h2></td>
+            </tr>
+
+            <form>
+
+
+                <tr>
+                    <td>
+                        <input type="checkbox" id="item_checkbox">
+
+                    </td>
+                    <td>
+                        <label>
+                            <div class="produit">
+                                <div class="produit_gauche">
+                                    <a href="produit.php"><h3>nom du produit</h3></a>
+                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                </div>
+
+                                <div class="produit_droite">
+                                    <p>
+                                        <h4>Description courte du produit</h4><br>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <input type="checkbox" id="item_checkbox">
+
+                    </td>
+                    <td>
+                        <label>
+                            <div class="produit">
+                                <div class="produit_gauche">
+                                    <a href="produit.php"><h3>nom du produit</h3></a>
+                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                </div>
+
+                                <div class="produit_droite">
+                                    <p>
+                                        <h4>Description courte du produit</h4><br>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <input type="checkbox" id="item_checkbox">
+
+                    </td>
+                    <td>
+                        <label>
+                            <div class="produit">
+                                <div class="produit_gauche">
+                                    <a href="produit.php"><h3>nom du produit</h3></a>
+                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                </div>
+
+                                <div class="produit_droite">
+                                    <p>
+                                        <h4>Description courte du produit</h4><br>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    </p>
+                                </div>
+                            </div>
+                        </label>
+                    </td>
+                </tr>
+
+
+
+
+
+
+
+                <tr>
+                    <td colspan="2" align="left"><input type="button" value="supprimer" onclick="validation()"></td>
+                </tr>
+
+
+
+            </form>
+        </table>
+
+
+
+
+
+
+
+        <div id="admin_droite">
 
 
             <div id="ajouter_un_item_admin">
-                <a href="ajout_vendeur.php">ajouter<br/>un vendeur</a>
+                <a href="ajout_item_admin.php">ajouter<br/>un item</a>
                 <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
             </div>
 
@@ -89,7 +210,7 @@ if(!isset($_SESSION['Pseudo_Admin']))
                                 <div class="produit">
                                     <div class="produit_gauche">
                                         <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
                                     </div>
 
                                     <div class="produit_droite">
@@ -114,7 +235,7 @@ if(!isset($_SESSION['Pseudo_Admin']))
                                 <div class="produit">
                                     <div class="produit_gauche">
                                         <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
                                     </div>
 
                                     <div class="produit_droite">
@@ -139,7 +260,7 @@ if(!isset($_SESSION['Pseudo_Admin']))
                                 <div class="produit">
                                     <div class="produit_gauche">
                                         <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\vendeur.jpg"></a>
+                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
                                     </div>
 
                                     <div class="produit_droite">
@@ -174,135 +295,22 @@ if(!isset($_SESSION['Pseudo_Admin']))
 
 
 
-            <div id="admin_droite">
 
-
-                <div id="ajouter_un_item_admin">
-                    <a href="ajout_item_admin.php">ajouter<br/>un item</a>
-                    <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-                </div>
-
-                <br>
-                <table frame="box">
-
-                    <tr>
-                        <td colspan="2" align="left"><h2>Mes items</h2></td>
-                    </tr>
-
-                    <form>
-
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="item_checkbox">
-
-                            </td>
-                            <td>
-                                <label>
-                                    <div class="produit">
-                                        <div class="produit_gauche">
-                                            <a href="produit.php"><h3>nom du produit</h3></a>
-                                            <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                        </div>
-
-                                        <div class="produit_droite">
-                                            <p>
-                                                <h4>Description courte du produit</h4><br>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </label>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="item_checkbox">
-
-                            </td>
-                            <td>
-                                <label>
-                                    <div class="produit">
-                                        <div class="produit_gauche">
-                                            <a href="produit.php"><h3>nom du produit</h3></a>
-                                            <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                        </div>
-
-                                        <div class="produit_droite">
-                                            <p>
-                                                <h4>Description courte du produit</h4><br>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </label>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="item_checkbox">
-
-                            </td>
-                            <td>
-                                <label>
-                                    <div class="produit">
-                                        <div class="produit_gauche">
-                                            <a href="produit.php"><h3>nom du produit</h3></a>
-                                            <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                        </div>
-
-                                        <div class="produit_droite">
-                                            <p>
-                                                <h4>Description courte du produit</h4><br>
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </label>
-                            </td>
-                        </tr>
-
-
-
-
-
-
-
-                        <tr>
-                            <td colspan="2" align="left"><input type="button" value="supprimer" onclick="validation()"></td>
-                        </tr>
-
-
-
-                    </form>
-                </table>
-
-
-
-
-
-
-
-
-
-            </div>
 
         </div>
 
-
-
-
-        <!------------------------------------------------------------------------------------------------------->
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
-        </div>
     </div>
+
+
+
+
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="footer">
+        <small>
+            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+        </small>
+    </div>
+</div>
 </body>
 
 </html>

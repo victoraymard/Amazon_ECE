@@ -46,11 +46,19 @@ session_start()
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-        </header><br>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
+      </header><br>
 
 
 
@@ -59,55 +67,55 @@ session_start()
 
 
 
-        <div id= "corps">
-            <div class="jumbotron text-center">
-                <h2>Formulaire d'insertion de livre</h2>
-            </div>
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="images\item.png" alt=""/>
-                        <h3>Bienvenue</h3>
-                        <p>Super, un nouveau produit sur le site!</p>
-                    </div>
-                    <div class="col-md-9 register-right">
+      <div id= "corps">
+        <div class="jumbotron text-center">
+            <h2>Formulaire d'insertion de livre</h2>
+        </div>
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images\item.png" alt=""/>
+                    <h3>Bienvenue</h3>
+                    <p>Super, un nouveau produit sur le site!</p>
+                </div>
+                <div class="col-md-9 register-right">
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Ajout Livre</h3>
-                                <form action="inscription_vendeur.php" method="post">
-                                    <div class="row register-form">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" />
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur"/>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                          <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" />
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Ajout Livre</h3>
+                            <form action="inscription_vendeur.php" method="post">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" />
-                                        </div>                                   
-                                        <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
+                                            <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur"/>
+                                        </div>
                                     </div>
+
+                                    <div class="col-md-6">
+                                      <div class="form-group">
+                                        <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" />
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" />
+                                    </div>                                   
+                                    <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="footer">
-        <small>
-            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-        </small>
-    </div>
+</div>
+<div id="footer">
+    <small>
+        Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+    </small>
+</div>
 </div>
 </body>
 

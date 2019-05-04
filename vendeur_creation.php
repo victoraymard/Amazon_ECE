@@ -51,27 +51,21 @@ session_start();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
 
-        </header><br>
-
-
-
-
-
-
-
-
-        <div id= "corps">
-            <div class="jumbotron text-center">
-
-                <h2>création d'un compte vendeur</h2>
-
-            </div>
+      </header><br>
 
 
 
@@ -80,120 +74,134 @@ session_start();
 
 
 
+      <div id= "corps">
+        <div class="jumbotron text-center">
 
-
-
-            <div id="section_votreCompte">
-
-
-                <table frame="box">
-
-                    <tr>
-                        <td colspan="2" align="left"><h1>Enregistrement de l'utilisateur</h1></td>
-                    </tr>
-
-
-
-                    <tr>
-                        <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous inscrire sur notre site:</p> </td>
-                    </tr>
-
-
-                    <form action="inscription_vendeur.php" method="post">
-
-                        <tr>
-                            <td>
-                                <h3>Informations personnelles</h3>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label> Nom : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="nom" name="Nom" placeholder="Nom" required>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Pseudo : </label>
-                            </td>
-                            <td>
-                                <input type="text" id="pseudo" name="Pseudo_Vendeur" placeholder="Pseudo" required>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mail : </label>
-                            </td>
-                            <td>
-                                <input type="email" id="mail" name="Mail" placeholder="canevousinteressepas@le.jaba" required>
-                            </td>
-                        </tr>
-
-
-                        <tr>
-                            <td>
-                                <label> Mot de passe : </label>
-                            </td>
-                            <td>
-                                <input type="password" id="mdp" name="Mdp" placeholder="******" required>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <label> Photo : </label>
-                            </td>
-                            <td>
-                                <input type="file" name="PhotoVendeur" value="fileupload" id="fileupload" accept="image/*">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <label> Image de Fond: </label>
-                            </td>
-                            <td>
-                                <input type="file" name="ImageFond" value="fileupload" id="fileupload">
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <p><font size="2" >Nous ne transmettrons pas vos informations à des tiers</font></p>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2" align="right"><input type="submit" value="S'inscrire"></a></td>
-                        </tr>
-
-
-
-                    </form>
-                    <br>
-                </table>
-
-                <br><br>
-                <a href="vendeur.php">Déjà membre ?</a>
-
-            </div>
+            <h2>création d'un compte vendeur</h2>
 
         </div>
 
 
 
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
+
+
+
+
+
+
+
+
+        <div id="section_votreCompte">
+
+
+            <table frame="box">
+
+                <tr>
+                    <td colspan="2" align="left"><h1>Enregistrement de l'utilisateur</h1></td>
+                </tr>
+
+
+
+                <tr>
+                    <td colspan="2" align="left"><p>Veuillez remplir le formulaire suivant pour vous inscrire sur notre site:</p> </td>
+                </tr>
+
+
+                <form action="inscription_vendeur.php" method="post">
+
+                    <tr>
+                        <td>
+                            <h3>Informations personnelles</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label> Nom : </label>
+                        </td>
+                        <td>
+                            <input type="text" id="nom" name="Nom" placeholder="Nom" required>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <label> Pseudo : </label>
+                        </td>
+                        <td>
+                            <input type="text" id="pseudo" name="Pseudo_Vendeur" placeholder="Pseudo" required>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <label> Mail : </label>
+                        </td>
+                        <td>
+                            <input type="email" id="mail" name="Mail" placeholder="canevousinteressepas@le.jaba" required>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>
+                            <label> Mot de passe : </label>
+                        </td>
+                        <td>
+                            <input type="password" id="mdp" name="Mdp" placeholder="******" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label> Photo : </label>
+                        </td>
+                        <td>
+                            <input type="file" name="PhotoVendeur" value="fileupload" id="fileupload" accept="image/*">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label> Image de Fond: </label>
+                        </td>
+                        <td>
+                            <input type="file" name="ImageFond" value="fileupload" id="fileupload">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <p><font size="2" >Nous ne transmettrons pas vos informations à des tiers</font></p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="right"><input type="submit" value="S'inscrire"></a></td>
+                    </tr>
+
+
+
+                </form>
+                <br>
+            </table>
+
+            <br><br>
+            <a href="vendeur.php">Déjà membre ?</a>
+
         </div>
+
     </div>
+
+
+
+    <div id="footer">
+        <small>
+            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+        </small>
+    </div>
+</div>
 </body>
 
 </html>

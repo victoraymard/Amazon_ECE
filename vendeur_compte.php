@@ -46,32 +46,40 @@ session_start();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-        </header><br>
-        <!------------------------------------------------------------------------------------------------------->
-        <!--code spécifique à la page-->
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
+      </header><br>
+      <!------------------------------------------------------------------------------------------------------->
+      <!--code spécifique à la page-->
 
-        <div id="corps_vendeur">
-            <div id="vendeur_compte_gauche">
-                <img src="images\vendeur.jpg">
-                <br>
-                <h1>Nom vendeur</h1>
+      <div id="corps_vendeur">
+        <div id="vendeur_compte_gauche">
+            <img src="images\vendeur.jpg">
+            <br>
+            <h1>Nom vendeur</h1>
+        </div>
+
+
+
+
+
+
+        <div id="vendeur_droite">
+
+            <div id="ajouter_un_item">
+                <a href="ajout_item_vendeur.php">ajouter un item</a>
+                <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
             </div>
-
-
-
-
-
-
-            <div id="vendeur_droite">
-
-                <div id="ajouter_un_item">
-                    <a href="ajout_item_vendeur.php">ajouter un item</a>
-                    <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-                </div>
 
 
 
@@ -81,7 +89,7 @@ session_start();
 
 
 
-               <table frame="box">
+            <table frame="box">
 
                 <tr>
                     <td colspan="2" align="left"><h2>Mes items</h2></td>

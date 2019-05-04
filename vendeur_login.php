@@ -54,27 +54,21 @@ session_start()
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
 
-        </header><br>
-
-
-
-
-
-
-
-
-        <div id= "corps">
-            <div class="jumbotron text-center">
-
-                <h2>Espace vendeur</h2>
-
-            </div>
+      </header><br>
 
 
 
@@ -83,41 +77,55 @@ session_start()
 
 
 
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="images\money.png" alt=""/>
-                        <h3>Ravi de vous revoir</h3>
-                        <p>Pourrez-vous vendre plus d'articles que la dernière fois ?</p>
+      <div id= "corps">
+        <div class="jumbotron text-center">
 
-                        <a href="vendeur.php"><input type="submit" name="" value="Enregistrez-vous!"/><br/></a>
-                    </div>
-                    <div class="col-md-9 register-right">
+            <h2>Espace vendeur</h2>
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Connexion vendeur</h3>
-                                <form action="connexion_vendeur.php" method="post">
-                                    <div class="row register-form">
-                                        <div class="col-md-6">
+        </div>
 
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="TheKillerdu62" value="" name="Pseudo_Vendeur" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
-                                            </div>
+
+
+
+
+
+
+
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images\money.png" alt=""/>
+                    <h3>Ravi de vous revoir</h3>
+                    <p>Pourrez-vous vendre plus d'articles que la dernière fois ?</p>
+
+                    <a href="vendeur.php"><input type="submit" name="" value="Enregistrez-vous!"/><br/></a>
+                </div>
+                <div class="col-md-9 register-right">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Connexion vendeur</h3>
+                            <form action="connexion_vendeur.php" method="post">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="TheKillerdu62" value="" name="Pseudo_Vendeur" required/>
                                         </div>
-                                        <div class="col-md-6">
-                                            <input type="submit" class="btnRegister" value="Connectez vous!"/>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="col-md-6">
+                                        <input type="submit" class="btnRegister" value="Connectez vous!"/>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
 

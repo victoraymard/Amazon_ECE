@@ -61,96 +61,104 @@ $musiques = $pdoStat->fetchAll();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
-        </header><br>
+      </header><br>
 
-        <!------------------------------------------------------------------------------->
-
-
-
-
-
-
-        <div id= "corps">
-            <div id="banniere">
-                
-                <img src="images\musiques.jpg">
-                <h2>Nos musiques</h2>
-            </div>
+      <!------------------------------------------------------------------------------->
 
 
-            <!----------------------------LISTE PRODUITS START -------------------------------->
-            <div id="section">
-
-                <div class="liste_produits_categorie" id="liste_produits_categorie">
 
 
-                    <h2>Découvrez nos produits !</h2>
 
 
-                    <?php foreach ($musiques as $musique): ?>
+      <div id= "corps">
+        <div id="banniere">
+            
+            <img src="images\musiques.jpg">
+            <h2>Nos musiques</h2>
+        </div>
 
 
-                        <div class="produit_categorie">
-                            <div class="produit_gauche_categorie">
-                                <?php
+        <!----------------------------LISTE PRODUITS START -------------------------------->
+        <div id="section">
+
+            <div class="liste_produits_categorie" id="liste_produits_categorie">
+
+
+                <h2>Découvrez nos produits !</h2>
+
+
+                <?php foreach ($musiques as $musique): ?>
+
+
+                    <div class="produit_categorie">
+                        <div class="produit_gauche_categorie">
+                            <?php
                                 //preparation de la requette pour photos
-                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$musique['ID_Item']);
+                            $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$musique['ID_Item']);
 
                                 //execution de la requette pour photos
-                                $photosIsOk = $photosReq->execute();
+                            $photosIsOk = $photosReq->execute();
 
                                 //recuperation des resultats pour photos
-                                $photos = $photosReq->fetchAll();
-                                ?>
+                            $photos = $photosReq->fetchAll();
+                            ?>
 
-                                    <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
-                                        <img src=<?= $photos[0]['Nom_photo']?>>
-                                    </a>
-                            </div>
-
-                            <div class="produit_droite_categorie">
-                                <h3>
-                                    <a href="produit.php?idItem=<?=$musique['ID_Item']?>"><?= $musique['Nom']?></a>
-                                </h3>
-                                <p>
-                                <h4>Description courte du produit</h4><br>
-                                <?= $musique['Description']?>
-                                </p>
-                                <p>
-                                    quantité : <?= $musique['QuantiteTot']?>
-                                </p>
-                                <p>
-                                    à partir de (prix le plus bas)
-                                </p>
-                            </div>
+                            <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
+                                <img src=<?= $photos[0]['Nom_photo']?>>
+                            </a>
                         </div>
 
-                    <?php endforeach; ?>
+                        <div class="produit_droite_categorie">
+                            <h3>
+                                <a href="produit.php?idItem=<?=$musique['ID_Item']?>"><?= $musique['Nom']?></a>
+                            </h3>
+                            <p>
+                                <h4>Description courte du produit</h4><br>
+                                <?= $musique['Description']?>
+                            </p>
+                            <p>
+                                quantité : <?= $musique['QuantiteTot']?>
+                            </p>
+                            <p>
+                                à partir de (prix le plus bas)
+                            </p>
+                        </div>
+                    </div>
 
-                </div>
-
+                <?php endforeach; ?>
 
             </div>
-        </div>
-
-        <!----------------------------LISTE PRODUITS END -------------------------------->
 
 
-        </div>
-
-
-        <!------------------------------------------------------------------------------->
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
         </div>
     </div>
+
+    <!----------------------------LISTE PRODUITS END -------------------------------->
+
+
+</div>
+
+
+<!------------------------------------------------------------------------------->
+<div id="footer">
+    <small>
+        Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+    </small>
+</div>
+</div>
 </body>
 
 </html>

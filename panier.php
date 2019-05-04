@@ -67,86 +67,94 @@ else
                 <li><a href="ventes_flash.php">Ventes flash</a></li>
                 <li><a href="votre_compte.php">Votre compte</a></li>
                 <li><a href="vendeur.php">Vendre</a></li>
-                <li><a href="panier.php">Panier</a></li>
-                <li><a href="admin.php">Admin</a></li>
-            </ul>
-        </nav>
+                <li class="overlay-image"><a href="panier.php">
+                    <div class="normal">
+                      <div class="text">Panier</div>
+                  </div>
+                  <div class="hover">
+                      <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                      <div class="text">Panier</div>
+                  </div>
+              </a></li>
+              <li><a href="admin.php">Admin</a></li>
+          </ul>
+      </nav>
 
-    </header>
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1 class="jumbotron-heading">VOTRE PANIER</h1>
-        </div>
-    </section>
+  </header>
+  <section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">VOTRE PANIER</h1>
+    </div>
+</section>
 
-    <div class="container mb-4">
-        <div class="row">
-            <div class="col-12">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col"> </th>
-                                <th scope="col">Nom du produit</th>
-                                <th scope="col">Prix unitaire</th>
-                                <th scope="col" class="text-center">Quantité</th>
-                                <th scope="col" class="text-right">Prix</th>
-                                <th> </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!------------------------------------------------------------------------------>
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Nom du produit</th>
+                            <th scope="col">Prix unitaire</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-right">Prix</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!------------------------------------------------------------------------------>
 
-                            <?php foreach ($allItemsPanier as $itemPanier): ?>
+                        <?php foreach ($allItemsPanier as $itemPanier): ?>
 
-                                <?php
+                            <?php
                             //ouverture de la connexion avec la base de données Projet
-                                $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+                            $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
                             //préparation de la requete
-                                $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item ='.$itemPanier['ID_Item']);
+                            $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item ='.$itemPanier['ID_Item']);
 
                             //execution de la requete
-                                $executeIsOk = $pdoStat->execute();
+                            $executeIsOk = $pdoStat->execute();
 
                             //recupération des resultats
-                                $itemSelect = $pdoStat->fetchAll();
-                                ?>
+                            $itemSelect = $pdoStat->fetchAll();
+                            ?>
 
 
-                                <tr>
+                            <tr>
 
 
 
 
-                                    <td><a href="produit.php">
-                                        <?php
+                                <td><a href="produit.php">
+                                    <?php
                                                 //preparation de la requette pour photos
-                                        $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
+                                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
 
                                                 //execution de la requette pour photos
-                                        $photosIsOk = $photosReq->execute();
+                                    $photosIsOk = $photosReq->execute();
 
                                                 //recuperation des resultats pour photos
-                                        $photos = $photosReq->fetchAll();
-                                        ?>
+                                    $photos = $photosReq->fetchAll();
+                                    ?>
 
 
-                                        <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200"></a></td>
+                                    <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200"></a></td>
 
 
 
 
-                                        <td><a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a></td>
+                                    <td><a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a></td>
 
-                                        <td>In stock</td>
-                                        <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
-                                        <td class="text-right"><?= $itemSelect[0]['Prix']?> €</td>
-                                        <td class="text-right"><button class="btn btn-sm btn-danger">supprimer</button> </td>
-                                    </tr>
-                                <?php endforeach; ?>
+                                    <td>In stock</td>
+                                    <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
+                                    <td class="text-right"><?= $itemSelect[0]['Prix']?> €</td>
+                                    <td class="text-right"><button class="btn btn-sm btn-danger">supprimer</button> </td>
+                                </tr>
+                            <?php endforeach; ?>
 
-                                <!------------------------------------------------------------------------------>
+                            <!------------------------------------------------------------------------------>
                                     <!--<tr>
                                         <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                         <td>Product Name Toto</td>

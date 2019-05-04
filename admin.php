@@ -53,66 +53,74 @@ session_start()
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
 
-        </header><br>
-
-
-
-
-
-
-
-
-        <div id= "corps">
-            <div class="jumbotron text-center">
-
-                <h2>Espace admin</h2>
-
-            </div>
+      </header><br>
 
 
 
 
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="images\admin.png" alt=""/>
-                        <h3>Ravis de vous revoir</h3>
-                        <p>Nous nous sentions perdu sans vous</p>
 
-                    </div>
-                    <div class="col-md-9 register-right">
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Connexion administrateur</h3>
-                                <form action="inscription_vendeur.php" method="post">
-                                    <div class="row register-form">
-                                        <div class="col-md-6">
 
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
-                                            </div>
-                                           
+
+      <div id= "corps">
+        <div class="jumbotron text-center">
+
+            <h2>Espace admin</h2>
+
+        </div>
+
+
+
+
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images\admin.png" alt=""/>
+                    <h3>Ravis de vous revoir</h3>
+                    <p>Nous nous sentions perdu sans vous</p>
+
+                </div>
+                <div class="col-md-9 register-right">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Connexion administrateur</h3>
+                            <form action="inscription_vendeur.php" method="post">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"/>
                                         </div>
-                                        <div class="col-md-6">
-                                            <input type="submit" class="btnRegister"  value="Connectez-vous!"/>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
                                         </div>
+                                        
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="col-md-6">
+                                        <input type="submit" class="btnRegister"  value="Connectez-vous!"/>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
 

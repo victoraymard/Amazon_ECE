@@ -61,7 +61,15 @@ session_start();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
+                    <li class="overlay-image"><a href="panier.php">
+                    <div class="normal">
+                      <div class="text">Panier</div>
+                  </div>
+                  <div class="hover">
+                      <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                      <div class="text">Panier</div>
+                  </div>
+              </a></li>
                     <li><a href="admin.php">Admin</a></li>
                 </ul>
             </nav>

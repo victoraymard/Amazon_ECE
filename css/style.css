@@ -262,12 +262,46 @@ nav > ul > li:hover
 {
     border-top: 5px solid #e44d26;
     background-color: rgba(228,77,38,0.15);
+    height: 65px;
 }
 
 
 
 
+/********* Hover image et texte *******/
+/* Overlay */
+.overlay-image .hover {
+ position: absolute;
+ top: 0;
+ height: 100%;
+ width: 100%;
+ opacity: 0;
+ transition: .5s ease;
+}
+/* Apparition overlay sur passage souris */
+.overlay-image:hover .hover {
+ opacity: 1;
+}
+.hover{
+    position: relative;
+    left: 0%;
+}
+.hover img{
+    width: 35px;
+}
+.hover .text{
+    position: relative;
+    top: -7px;
+}
 
+
+/********* Hover background et texte uniquement *******/
+.overlay-image .normal {
+ transition: .5s ease;
+}
+.overlay-image:hover .normal {
+ opacity: 0;
+}
 
 
 
