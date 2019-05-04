@@ -99,7 +99,7 @@ session_start()
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading">Connexion administrateur</h3>
-                            <form action="inscription_vendeur.php" method="post">
+                            <form action="connexion_admin.php" method="post">
                                 <div class="row register-form">
                                     <div class="col-md-6">
 
