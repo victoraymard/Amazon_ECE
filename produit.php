@@ -25,7 +25,7 @@ $itemSelect = $pdoStat->fetchAll();
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
-    <title>Amazon ECE - Connexion acheteur</title>
+    <title>Amazon ECE - Produit</title>
 </head>
 
 <body>
@@ -75,8 +75,12 @@ $itemSelect = $pdoStat->fetchAll();
           </nav>
       </header><br>
       <!------------------------------------------------------------------------------------------------------->
-      <!--code spécifique à la page-->
-      <div style="width: 80%; margin: auto;" id="corps_produit">
+      <section class="jumbotron text-center">
+            <h1 class="jumbotron-heading">Votre produit</h1>
+            <p class="lead text-muted mb-0">Voici toutes les informations dont vous avez besoin</p>
+    </section>
+    <!--code spécifique à la page-->
+    <div style="width: 80%; margin: auto;" id="corps_produit">
         <div id="page_produit_gauche">
             <div id="produit_images">
                 <div id="produit_images_gauche">
@@ -115,13 +119,13 @@ $itemSelect = $pdoStat->fetchAll();
 
         <div id="page_produit_droite">
             <table id="table_produit_gauche">
-             <tr>
-                 <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
-             </tr>
+               <tr>
+                   <td colspan="2" align="left"><h2><?= $itemSelect[0]['Nom']?></h2></td>
+               </tr>
 
 
 
-             <tr>
+               <tr>
                 <td colspan="2" align="left">
                     <p>Description : <?= $itemSelect[0]['Description']?></p>
                 </td>
