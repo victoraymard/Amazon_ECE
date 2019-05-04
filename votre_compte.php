@@ -77,7 +77,7 @@ session_start()
 
 
         <div id= "corps">
-            <div id="ventes_flash">
+            <div class="jumbotron text-center">
 
                 <h2>Espace client</h2>
 

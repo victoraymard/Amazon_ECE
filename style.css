@@ -5,13 +5,16 @@
 /* body */
 body
 {
-    background: linear-gradient(40deg, rgba(9,9,121,1) 0%, rgba(100,200,230,1) 50%, rgba(9,9,121,1) 100%);
+    /*background: linear-gradient(40deg, rgba(9,9,121,1) 0%, rgba(100,200,230,1) 50%, rgba(9,9,121,1) 100%);*/
+    background-color: #F7F7F5;
+    
     min-height: 1024px;
 }
 
 #bloc_page
 {
-    width: 95%;
+    /*width: 95%;*/
+    width: 100%;
     margin: auto;
 }
 
@@ -205,6 +208,8 @@ nav > ul > li:hover
     /* ventes flash */
     #ventes_flash
     {
+        width: 100%;
+        height: 200px;
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -758,13 +763,14 @@ nav > ul > li:hover
     border: 3px;
 }
 
-.mon_produit
-{
+.mon_produit{margin: auto;}
 
-    margin: auto;
-    
 
-}
+.jumbotron{padding:2rem 1rem;margin-bottom:2rem;background-color:#e9ecef;border-radius:.3rem}
+@media (min-width:576px){.jumbotron{padding:4rem 2rem}}
+.jumbotron-fluid{padding-right:0;padding-left:0;border-radius:0}
+
+ .text-center{text-align:center!important}
 
 
 

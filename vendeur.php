@@ -73,7 +73,7 @@ if(isset($_SESSION['Pseudo_Vendeur']))
 
 
         <div id= "corps">
-            <div id="ventes_flash">
+            <div class="jumbotron text-center">
                 <h2>création d'un compte vendeur</h2>
             </div>
 
