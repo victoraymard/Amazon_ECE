@@ -62,79 +62,87 @@ $livres = $itemReq->fetchAll();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
-        </header><br>
+      </header><br>
 
-        <!------------------------------------------------------------------------------->
-
-
-
-
-
-
-        <div id= "corps">
-            <div id="banniere">
-                
-                <img src="images\livres.jpg">
-                <h2>Nos livres</h2>
-            </div>
+      <!------------------------------------------------------------------------------->
 
 
-            <div id="section">
+
+
+
+
+      <div id= "corps">
+        <div id="banniere">
+            
+            <img src="images\livres.jpg">
+            <h2>Nos livres</h2>
+        </div>
+
+
+        <div id="section">
             <!----------------------------LISTE PRODUITS START -------------------------------->
 
 
-                <div class="liste_produits_categorie" id="liste_produits_categorie">
-                    <h2>Découvrez nos produits !</h2>
+            <div class="liste_produits_categorie" id="liste_produits_categorie">
+                <h2>Découvrez nos produits !</h2>
 
 
-                    <?php foreach ($livres as $livre): ?>
+                <?php foreach ($livres as $livre): ?>
 
 
-                        <div class="produit_categorie">
-                            <div class="produit_gauche_categorie">
-                                <?php
+                    <div class="produit_categorie">
+                        <div class="produit_gauche_categorie">
+                            <?php
                                     //preparation de la requette pour photos
-                                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$livre['ID_Item']);
+                            $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$livre['ID_Item']);
 
                                     //execution de la requette pour photos
-                                    $photosIsOk = $photosReq->execute();
+                            $photosIsOk = $photosReq->execute();
 
                                     //recuperation des resultats pour photos
-                                    $photos = $photosReq->fetchAll();
-                                ?>
-                                <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
-                                    <img src=<?= $photos[0]['Nom_photo']?>>
-                                </a>
-                            </div>
-
-                            <div class="produit_droite_categorie">
-                                <h3 href="produit.php?idItem=<?=$livre['ID_Item']?>">
-                                    <a href="produit.php?idItem=<?=$livre['ID_Item']?>"><?= $livre['Nom']?></a>
-                                </h3>
-                                <p>
-                                <h4>Description courte du produit</h4><br>
-                                <?= $livre['Description']?>
-                                </p>
-                                <p>
-                                    quantité : <?= $livre['QuantiteTot']?>
-                                </p>
-                                <p>
-                                    à partir de (prix le plus bas)
-                                </p>
-                            </div>
+                            $photos = $photosReq->fetchAll();
+                            ?>
+                            <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
+                                <img src=<?= $photos[0]['Nom_photo']?>>
+                            </a>
                         </div>
 
-                    <?php endforeach; ?>
+                        <div class="produit_droite_categorie">
+                            <h3 href="produit.php?idItem=<?=$livre['ID_Item']?>">
+                                <a href="produit.php?idItem=<?=$livre['ID_Item']?>"><?= $livre['Nom']?></a>
+                            </h3>
+                            <p>
+                                <h4>Description courte du produit</h4><br>
+                                <?= $livre['Description']?>
+                            </p>
+                            <p>
+                                quantité : <?= $livre['QuantiteTot']?>
+                            </p>
+                            <p>
+                                à partir de (prix le plus bas)
+                            </p>
+                        </div>
+                    </div>
 
-                </div>
+                <?php endforeach; ?>
 
-        <!----------------------------LISTE PRODUITS END -------------------------------->
             </div>
+
+            <!----------------------------LISTE PRODUITS END -------------------------------->
+        </div>
 
         <!------------------------------------------------------------------------------->
         <div id="footer">

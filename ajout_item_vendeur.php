@@ -61,27 +61,21 @@ session_start();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
 
-        </header><br>
-
-
-
-
-
-
-
-
-        <div id= "corps">
-            <div class="jumbotron text-center">
-
-                <h2>Formulaire d'insertion d'item</h2>
-
-            </div>
+      </header><br>
 
 
 
@@ -90,41 +84,55 @@ session_start();
 
 
 
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="images\item.png" alt=""/>
-                        <h3>Bienvenue</h3>
-                        <p>Super, un nouveau produit sur le site!</p>
+      <div id= "corps">
+        <div class="jumbotron text-center">
 
-                    </div>
-                    <div class="col-md-9 register-right">
+            <h2>Formulaire d'insertion d'item</h2>
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Ajout item</h3>
-                                <form action="redirection_categorie.php" method="post">
-                                    <div class="row register-form">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Description *" value="" name="Description" required />
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="number" class="form-control" placeholder="Quantité *" value="" name="Quantite" required />
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Prix unitaire *" value="" name="Prix" required />
-                                            </div>
+        </div>
 
 
+
+
+
+
+
+
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images\item.png" alt=""/>
+                    <h3>Bienvenue</h3>
+                    <p>Super, un nouveau produit sur le site!</p>
+
+                </div>
+                <div class="col-md-9 register-right">
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Ajout item</h3>
+                            <form action="redirection_categorie.php" method="post">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Description *" value="" name="Description" required />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control" placeholder="Quantité *" value="" name="Quantite" required />
+                                        </div>
 
-                                            <div class="form-group">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Prix unitaire *" value="" name="Prix" required />
+                                        </div>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
 
 
 
@@ -138,17 +146,17 @@ session_start();
                                                     <option value="Sports_Loisirs" name="SportsLoisirs">Sports et loisirs</option>
                                                 </select>
 
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <input type="file" style="display:none" name="Nom_Photo" value="fileupload" id="fileupload"  accept="image/*"  multiple=""/>
-                                                <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
-                                            </div>
+                                        <div class="form-group">
+                                            <input type="file" style="display:none" name="Nom_Photo" value="fileupload" id="fileupload"  accept="image/*"  multiple=""/>
+                                            <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
+                                        </div>
 
-                                            <div class="form-group">
-                                                <input type="file" style="display:none" name="Nom_Video" value="fileupload" id="fileupload"  accept="video/*"/>
-                                                <input type="button" value="Choisir une vidéo de l'item" onclick="getfile()" class="btn_selection"/>
-                                            </div>
+                                        <div class="form-group">
+                                            <input type="file" style="display:none" name="Nom_Video" value="fileupload" id="fileupload"  accept="video/*"/>
+                                            <input type="button" value="Choisir une vidéo de l'item" onclick="getfile()" class="btn_selection"/>
+                                        </div>
 
 
 
@@ -160,43 +168,44 @@ session_start();
                                             <input type="submit" class="btnRegister"  value="Continuer"/>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
 
 
 
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
-        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
+
+    <div id="footer">
+        <small>
+            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+        </small>
+    </div>
+</div>
 </body>
 
 </html>

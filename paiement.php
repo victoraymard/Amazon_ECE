@@ -26,38 +26,46 @@ session_start();
 </head>
 
 <body>
-<div id="bloc_page">
+    <div id="bloc_page">
 
-    <header>
-        <div id="logo">
-            <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
-        </div>
-        <h1 id="titre_principal">
-            <a href ="accueil.php">Amazon ECE</a>
-        </h1>
-        <div id="langue">
-            <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
-            <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
-                    <ul class="submenu">
-                        <li><a href="livres.php">Livres</a></li>
-                        <li><a href="musiques.php">Musiques</a></li>
-                        <li><a href="vetements.php">Vêtements</a></li>
-                        <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
-                    </ul>
-                </li>
+        <header>
+            <div id="logo">
+                <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
+            </div>
+            <h1 id="titre_principal">
+                <a href ="accueil.php">Amazon ECE</a>
+            </h1>
+            <div id="langue">
+                <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
+                <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
+                        <ul class="submenu">
+                            <li><a href="livres.php">Livres</a></li>
+                            <li><a href="musiques.php">Musiques</a></li>
+                            <li><a href="vetements.php">Vêtements</a></li>
+                            <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
+                        </ul>
+                    </li>
 
-                <li><a href="ventes_flash.php">Ventes flash</a></li>
-                <li><a href="votre_compte.php">Votre compte</a></li>
-                <li><a href="vendeur.php">Vendre</a></li>
-                <li><a href="panier.php">Panier</a></li>
-                <li><a href="admin.php">Admin</a></li>
-            </ul>
-        </nav>
-    </header><br>
+                    <li><a href="ventes_flash.php">Ventes flash</a></li>
+                    <li><a href="votre_compte.php">Votre compte</a></li>
+                    <li><a href="vendeur.php">Vendre</a></li>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
+      </header><br>
 
 
 
@@ -66,7 +74,7 @@ session_start();
 
 
 
-    <div id= "corps">
+      <div id= "corps">
         <div class="jumbotron text-center">
             <h2>création d'un compte vendeur</h2>
         </div>

@@ -59,11 +59,19 @@ if(isset($_SESSION['Pseudo_Vendeur']))
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-        </header><br>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
+      </header><br>
 
 
 
@@ -72,39 +80,39 @@ if(isset($_SESSION['Pseudo_Vendeur']))
 
 
 
-        <div id= "corps">
-            <div class="jumbotron text-center">
-                <h2>création d'un compte vendeur</h2>
-            </div>
+      <div id= "corps">
+        <div class="jumbotron text-center">
+            <h2>création d'un compte vendeur</h2>
+        </div>
 
 
 
-            <div class="container register">
-                <div class="row">
-                    <div class="col-md-3 register-left">
-                        <img src="images\money.png" alt=""/>
-                        <h3>Bienvenue</h3>
-                        <p>Vous êtes à seulement 30 secondes de pouvoir vendre votre premier article!</p>
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img src="images\money.png" alt=""/>
+                    <h3>Bienvenue</h3>
+                    <p>Vous êtes à seulement 30 secondes de pouvoir vendre votre premier article!</p>
 
-                        <a href="vendeur_login.php"><input type="submit" name="" value="Connectez-vous!"/><br/></a>
-                    </div>
-                    <div class="col-md-9 register-right">
+                    <a href="vendeur_login.php"><input type="submit" name="" value="Connectez-vous!"/><br/></a>
+                </div>
+                <div class="col-md-9 register-right">
 
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Enregistrement vendeur</h3>
-                                <form action="inscription_vendeur.php" method="post">
-                                    <div class="row register-form">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"required/>
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required/>
-                                            </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Enregistrement vendeur</h3>
+                            <form action="inscription_vendeur.php" method="post">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required/>
+                                        </div>
                                             <!--<div class="form-group">
                                                 <input type="password" class="form-control"  placeholder="Confirmez votre mot de passe *" value="" name="Mdp"/>
                                             </div>-->

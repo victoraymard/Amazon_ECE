@@ -60,93 +60,101 @@ $vetements = $pdoStat->fetchAll();
                     <li><a href="ventes_flash.php">Ventes flash</a></li>
                     <li><a href="votre_compte.php">Votre compte</a></li>
                     <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
+                    <li class="overlay-image"><a href="panier.php">
+                        <div class="normal">
+                          <div class="text">Panier</div>
+                      </div>
+                      <div class="hover">
+                          <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
+                          <div class="text">Panier</div>
+                      </div>
+                  </a></li>
+                  <li><a href="admin.php">Admin</a></li>
+              </ul>
+          </nav>
 
-        </header><br>
+      </header><br>
 
-        <!------------------------------------------------------------------------------->
-
-
-
-
-
-
-        <div id= "corps">
-            <div id="banniere">
-                
-                <img src="images\vetements.jpg">
-                <h2>Nos vêtements</h2>
-            </div>
-
-            <!----------------------------LISTE PRODUITS START -------------------------------->
-            <div id="section">
-
-                <div class="liste_produits_categorie" id="liste_produits_categorie">
+      <!------------------------------------------------------------------------------->
 
 
-                    <h2>Découvrez nos produits !</h2>
 
 
-                    <?php foreach ($vetements as $vetement): ?>
 
 
-                        <div class="produit_categorie">
-                            <div class="produit_gauche_categorie">
-                                <?php
+      <div id= "corps">
+        <div id="banniere">
+            
+            <img src="images\vetements.jpg">
+            <h2>Nos vêtements</h2>
+        </div>
+
+        <!----------------------------LISTE PRODUITS START -------------------------------->
+        <div id="section">
+
+            <div class="liste_produits_categorie" id="liste_produits_categorie">
+
+
+                <h2>Découvrez nos produits !</h2>
+
+
+                <?php foreach ($vetements as $vetement): ?>
+
+
+                    <div class="produit_categorie">
+                        <div class="produit_gauche_categorie">
+                            <?php
                                 //preparation de la requette pour photos
-                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement['ID_Item']);
+                            $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement['ID_Item']);
 
                                 //execution de la requette pour photos
-                                $photosIsOk = $photosReq->execute();
+                            $photosIsOk = $photosReq->execute();
 
                                 //recuperation des resultats pour photos
-                                $photos = $photosReq->fetchAll();
-                                ?>
-                                    <a href="produit.php?idItem=<?=$vetement['ID_Item']?>">
-                                        <img src=<?= $photos[0]['Nom_photo']?>>
-                                    </a>
-                            </div>
-
-                            <div class="produit_droite_categorie">
-                                <h3>
-                                    <a href="produit.php?idItem=<?=$vetement['ID_Item']?>"><?= $vetement['Nom']?></a>
-                                </h3>
-                                <p>
-                                <h4>Description courte du produit</h4><br>
-                                <?= $vetement['Description']?>
-                                </p>
-                                <p>
-                                    quantité : <?= $vetement['QuantiteTot']?>
-                                </p>
-                                <p>
-                                    à partir de (prix le plus bas)
-                                </p>
-                            </div>
+                            $photos = $photosReq->fetchAll();
+                            ?>
+                            <a href="produit.php?idItem=<?=$vetement['ID_Item']?>">
+                                <img src=<?= $photos[0]['Nom_photo']?>>
+                            </a>
                         </div>
 
-                    <?php endforeach; ?>
+                        <div class="produit_droite_categorie">
+                            <h3>
+                                <a href="produit.php?idItem=<?=$vetement['ID_Item']?>"><?= $vetement['Nom']?></a>
+                            </h3>
+                            <p>
+                                <h4>Description courte du produit</h4><br>
+                                <?= $vetement['Description']?>
+                            </p>
+                            <p>
+                                quantité : <?= $vetement['QuantiteTot']?>
+                            </p>
+                            <p>
+                                à partir de (prix le plus bas)
+                            </p>
+                        </div>
+                    </div>
 
-                </div>
-
+                <?php endforeach; ?>
 
             </div>
-        </div>
-
-        <!----------------------------LISTE PRODUITS END -------------------------------->
-
-        </div>
 
 
-        <!------------------------------------------------------------------------------->
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
         </div>
     </div>
+
+    <!----------------------------LISTE PRODUITS END -------------------------------->
+
+</div>
+
+
+<!------------------------------------------------------------------------------->
+<div id="footer">
+    <small>
+        Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+    </small>
+</div>
+</div>
 </body>
 
 </html>
