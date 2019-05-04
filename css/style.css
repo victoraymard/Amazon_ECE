@@ -127,6 +127,7 @@ header h1
 }
 
     /* langue */
+
 #langue
 {
     display: flex;
@@ -136,15 +137,14 @@ header h1
 }
 #langue img
 {
-    margin-top: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 55px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 0px;
+    width: 50px;
     border-radius: 3px;
 }
 #langue img:hover{
-    border: solid 3px black;
-    margin-bottom: -3px;
+    box-shadow: 3px 3px 3px black;
 }
 
 
@@ -263,8 +263,6 @@ nav > ul > li:hover
     border-top: 5px solid #e44d26;
     background-color: rgba(228,77,38,0.15);
 }
-
-
 
 
 
