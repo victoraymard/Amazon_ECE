@@ -19,7 +19,9 @@ $itemSelect = $pdoStat->fetchAll();
 <html>
 <head>
     <meta charset="utf-8" />
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_register.css" />
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
@@ -74,7 +76,7 @@ $itemSelect = $pdoStat->fetchAll();
       </header><br>
       <!------------------------------------------------------------------------------------------------------->
       <!--code spécifique à la page-->
-      <div id="corps_produit">
+      <div style="width: 80%; margin: auto;" id="corps_produit">
         <div id="page_produit_gauche">
             <div id="produit_images">
                 <div id="produit_images_gauche">
@@ -92,21 +94,21 @@ $itemSelect = $pdoStat->fetchAll();
 
                     <?php foreach ($photos as $photo): ?>
 
-                            <img src=<?= $photo['Nom_Photo']?>width="300" height="200">
+                        <img src=<?= $photo['Nom_Photo']?>width="300" height="200">
 
                     <?php endforeach; ?>
 
                 </div>
 
-                    <div id="produit_images_droite">
-                        <img src=<?= $photos[0]['Nom_Photo']?>width="300" height="200">
-                    </div>
-
+                <div id="produit_images_droite">
+                    <img src=<?= $photos[0]['Nom_Photo']?>width="300" height="200">
                 </div>
 
             </div>
 
         </div>
+
+        
 
 
 
@@ -197,6 +199,7 @@ $itemSelect = $pdoStat->fetchAll();
 
 
     </div>
+</div>
 </div>
 
 

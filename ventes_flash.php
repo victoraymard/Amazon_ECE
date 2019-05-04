@@ -75,9 +75,6 @@ $allItems = $pdoStat->fetchAll();
               <li><a href="admin.php">Admin</a></li>
           </ul>
       </nav>
-      <form action="deconnexion">
-        <button type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
-    </form>
 </header>
 
 
