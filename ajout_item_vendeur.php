@@ -132,10 +132,10 @@ session_start()
 
                                                 <select name="Categorie" required >
                                                     <option value="defaut">Sélectionner une catégorie</option>
-                                                    <option value="categorie1">premiere catégorie</option>
-                                                    <option value="categorie2">deuxieme catégorie</option>
-                                                    <option value="categorie3">troisieme catégorie</option>
-                                                    <option value="categorie4">quatrieme catégorie</option>
+                                                    <option value="Livre" name="Livre">Livre</option>
+                                                    <option value="Musique" name="Musique">Musique</option>
+                                                    <option value="Vetement" name="Vetement">Vêtement</option>
+                                                    <option value="SportsLoisirs" name="SportsLoisirs">Sports et loisirs</option>
                                                 </select>
 
                                             </div>

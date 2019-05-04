@@ -1,5 +1,17 @@
 <?php
-session_start()
+session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Vendeur ');
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$allItems = $pdoStat->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -123,20 +135,19 @@ session_start()
                                             <div class="form-group">
                                                 <select name="Categorie" required >
                                                     <option value="defaut">Sélectionner une catégorie</option>
-                                                    <option value="categorie1">premiere catégorie</option>
-                                                    <option value="categorie2">deuxieme catégorie</option>
-                                                    <option value="categorie3">troisieme catégorie</option>
-                                                    <option value="categorie4">quatrieme catégorie</option>
+                                                    <option value="Livre" name="Livre">Livre</option>
+                                                    <option value="Musique" name="Musique">Musique</option>
+                                                    <option value="Vetement" name="Vetement">Vêtement</option>
+                                                    <option value="SportsLoisirs" name="SportsLoisirs">Sports et loisirs</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
                                                 <select name="Vendeur" required >
                                                     <option value="defaut">Sélectionner un vendeur</option>
-                                                    <option value="vendeur1">premier vendeur</option>
-                                                    <option value="vendeur2">deuxieme vendeur</option>
-                                                    <option value="vendeur3">troisieme vendeur</option>
-                                                    <option value="vendeur4">quatrieme vendeur</option>
+                                                    <?php foreach ($allItems as $vendeur): ?>
+                                                    <option value="vendeur1"><?= $vendeur['Pseudo_Vendeur']?></option>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
 
