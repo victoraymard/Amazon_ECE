@@ -66,7 +66,7 @@ $allItems = $pdoStat->fetchAll();
                 <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
-        
+
     </header>
     <form action="deconnexion">
             <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
@@ -95,8 +95,8 @@ $allItems = $pdoStat->fetchAll();
 
 
 
-                        
-        
+
+
                         <?php
                     //preparation de la requette pour photos
                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos');
@@ -114,7 +114,7 @@ $allItems = $pdoStat->fetchAll();
 
                         <?php foreach ($photos as $photo): ?>
                             <div class="carousel-item">
-                                <img style="width:855px height:365px border-radius:10px" src=<?= $photo['Nom_photo']?>>
+                                <img style="width="855" height="365" border-radius="10px" src=<?= $photo['Nom_Photo']?>>
                             </div>
                         <?php endforeach; ?>
                         <!---------------------------------------->

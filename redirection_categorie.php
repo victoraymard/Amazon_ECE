@@ -21,7 +21,7 @@ if($db_found)
   $sql = "INSERT INTO Item(Nom, Description, Categorie, Prix, QuantiteTot, Nom_Video, Pseudo_Vendeur) VALUES('$Nom', '$Description', '$Categorie', '$Prix', '$Quantite', '$Nom_Video', '".$_SESSION['Pseudo_Vendeur']."')";
   mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
 
-  $sql2 = "INSERT INTO Photos VALUES('$Nom_Photo', 1)";
+  $sql2 = "INSERT INTO Photos VALUES('images/$Nom_Photo', 1)";
   mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
 
   $sql3 = "UPDATE Photos SET ID_Item = (SELECT MAX(ID_Item) FROM Item) WHERE Nom_Photo = '$Nom_Photo'";
