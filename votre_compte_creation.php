@@ -102,7 +102,7 @@ session_start();
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Enregistrement acheteur</h3>
-                                <form action="inscription_vendeur.php" method="post">
+                                <form action="inscription_acheteur.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -138,7 +138,7 @@ session_start();
                                             <div class="form-group">
                                                 <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required/>
                                             </div>
-                                            
+
 
                                             <div class="form-group">
                                                 <h4>Informations de livraison</h4>
@@ -153,7 +153,7 @@ session_start();
                                                 <input type="number" class="form-control" placeholder="Code postal *" value="" name="CodePostal" required length="5" />
                                             </div>
 
-                                            
+
 
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Ville *" value="" name="Ville" required/>
@@ -168,7 +168,7 @@ session_start();
                                             </div>
 
 
-                                           
+
 
 
 

@@ -1,200 +1,229 @@
 <?php
 session_start();
 
+if($_SESSION['Mail'])
+{
 //ouverture de la connexion avec la base de données Projet
-$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+    $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Panier WHERE Mail = "'.$_SESSION['Mail'].'"');
+    $pdoStat = $objetPDO->prepare('SELECT * FROM Panier WHERE Mail = "'.$_SESSION['Mail'].'"');
 
 //execution de la requete
-$executeIsOk = $pdoStat->execute();
+    $executeIsOk = $pdoStat->execute();
 
 //recupération des resultats
-$allItemsPanier = $pdoStat->fetchAll();
-
-
+    $allItemsPanier = $pdoStat->fetchAll();
+}
+else
+{
+    header('location: votre_compte.php');
+    exit();
+}
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Amazon ECE - panier</title>
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="myscript.js"></script>
-    <title>Amazon ECE - Connexion acheteur</title>
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-    <div id="bloc_page">
 
-        <header>
-
-            <div id="logo">
-                <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
-            </div>
-
-            <h1 id="titre_principal">
-                <a href ="accueil.php">Amazon ECE</a>
-            </h1>
-
-
-            <div id="langue">
-                <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
-                <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="cate.php" id="categories">Catégories</a> <!--menu déroulant-->
-                        <ul class="submenu">
-                            <li><a href="livres.php">Livres</a></li>
-                            <li><a href="musiques.php">Musiques</a></li>
-                            <li><a href="vetements.php">Vêtements</a></li>
-                            <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="ventes_flash.php">Ventes flash</a></li>
-                    <li><a href="votre_compte.php">Votre compte</a></li>
-                    <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-        </header><br>
-        <!------------------------------------------------------------------------------------------------------->
-        <!--code spécifique à la page-->
-
-        <div id="corps_vendeur">
-            <div id="vendeur_compte_gauche">
-                
-                <p>
-                    Bienvenue dans votre panier.<br>Prêt à passer commande ?
-                </p>
-            </div>
-
-
-
-
-
-
-            <div id="vendeur_droite">
-
-                <div id="ajouter_un_item">
-                    <a href="ajout_item_vendeur.php">ajouter un item</a>
-                    <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-                </div>
-
-            
-
-            <br>
-
-
-
-
-
-               <table frame="box">
-
-                <tr>
-                    <td colspan="2" align="left"><h2>Mes items</h2></td>
-                </tr>
-
-
-                   <!----------------------------------PRODUIT--------------------------------------->
-
-                <form>
-                    <?php foreach ($allItemsPanier as $itemPanier): ?>
-
-                    <?php
-                    //ouverture de la connexion avec la base de données Projet
-                    $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
-
-                    //préparation de la requete
-                    $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item ='.$itemPanier['ID_Item']);
-
-                    //execution de la requete
-                    $executeIsOk = $pdoStat->execute();
-
-                    //recupération des resultats
-                    $itemSelect = $pdoStat->fetchAll();
-
-                    ?>
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-                        </td>
-                        <td>
-                            <label>
-
-                                    <div class="produit">
-                                        <div class="produit_gauche">
-                                            <a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a>
-                                            <a href="produit.php">
-                                                <?php
-                                                //preparation de la requette pour photos
-                                                $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
-
-                                                //execution de la requette pour photos
-                                                $photosIsOk = $photosReq->execute();
-
-                                                //recuperation des resultats pour photos
-                                                $photos = $photosReq->fetchAll();
-                                                ?>
-
-
-                                                <img src=<?= $photos[0]['Nom_photo']?>>
-
-                                            </a>
-                                        </div>
-
-                                        <div class="produit_droite">
-                                            <p>
-                                                <br><br>
-                                                <strong>Description courte du produit :</strong> <?= $itemSelect[0]['Description']?><br>
-                                                <strong>Vendeur :</strong> <?= $itemSelect[0]['Pseudo_Vendeur']?><br>
-                                                <strong>Quantite dans le panier :</strong> <?= $itemPanier['Quantite_panier']?><br>
-                                            <h4>Prix : <?= $itemSelect[0]['Prix']?> </h4>
-                                            </p>
-                                        </div>
-                                    </div>
-                            </label>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-
-                    <!------------------------------------------------------------------------------------------------------->
-
-                    <tr>
-                        <td colspan="2" align="left"><h2>Montant total : <?= $_SESSION['Montant_Tot']?></h2></td>
-                    </tr>
-                    <tr>
-                        <td  colspan="2" align="left">
-                            <a href="paiement.php?Montant_Tot=<?= $_SESSION['Montant_Tot']?>"><input type="button" value="passer commande" onclick="validation()"></a>
-                        </td>
-                    </tr>
-
-                </form>
-            </table>
-
-
-
+    <header>
+        <div id="logo">
+            <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
         </div>
 
-    </div>
+        <h1 id="titre_principal">
+            <a href ="accueil.php">Amazon ECE</a>
+        </h1>
+
+        <div id="langue">
+            <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
+            <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
+        </div>
+
+
+        <nav class=" navbar-expand-md navbar-dark bg-dark">
+            <ul>
+                <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
+                    <ul class="submenu">
+                        <li><a href="livres.php">Livres</a></li>
+                        <li><a href="musiques.php">Musiques</a></li>
+                        <li><a href="vetements.php">Vêtements</a></li>
+                        <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="ventes_flash.php">Ventes flash</a></li>
+                <li><a href="votre_compte.php">Votre compte</a></li>
+                <li><a href="vendeur.php">Vendre</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="admin.php">Admin</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">VOTRE PANIER</h1>
+        </div>
+    </section>
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> </th>
+                                <th scope="col">Nom du produit</th>
+                                <th scope="col">Prix unitaire</th>
+                                <th scope="col" class="text-center">Quantité</th>
+                                <th scope="col" class="text-right">Prix</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!------------------------------------------------------------------------------>
+
+                            <?php foreach ($allItemsPanier as $itemPanier): ?>
+
+                                <?php
+                            //ouverture de la connexion avec la base de données Projet
+                                $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+                            //préparation de la requete
+                                $pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE ID_Item ='.$itemPanier['ID_Item']);
+
+                            //execution de la requete
+                                $executeIsOk = $pdoStat->execute();
+
+                            //recupération des resultats
+                                $itemSelect = $pdoStat->fetchAll();
+                                ?>
+
+
+                                <tr>
 
 
 
 
-    <!------------------------------------------------------------------------------------------------------->
-    <div id="footer">
-        <small>
-            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-        </small>
-    </div>
-</div>
-</body>
+                                    <td><a href="produit.php">
+                                        <?php
+                                                //preparation de la requette pour photos
+                                        $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
 
-</html>
+                                                //execution de la requette pour photos
+                                        $photosIsOk = $photosReq->execute();
+
+                                                //recuperation des resultats pour photos
+                                        $photos = $photosReq->fetchAll();
+                                        ?>
+
+
+                                        <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200"></a></td>
+
+
+
+
+                                        <td><a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a></td>
+
+                                        <td>In stock</td>
+                                        <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
+                                        <td class="text-right"><?= $itemSelect[0]['Prix']?> €</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-danger">supprimer</button> </td>
+                                    </tr>
+                                <?php endforeach; ?>
+
+                                <!------------------------------------------------------------------------------>
+                                    <!--<tr>
+                                        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                        <td>Product Name Toto</td>
+                                        <td>In stock</td>
+                                        <td><input class="form-control" type="number" value="1" /></td>
+                                        <td class="text-right">33,90 €</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                        <td>Product Name Titi</td>
+                                        <td>In stock</td>
+                                        <td><input class="form-control" type="number" value="1" /></td>
+                                        <td class="text-right">70,00 €</td>
+                                        <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                    </tr>-->
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Sub-Total</td>
+                                        <td class="text-right">255,90 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>Shipping</td>
+                                        <td class="text-right">6,90 €</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><strong>Total</strong></td>
+                                        <td class="text-right"><strong>346,90 €</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col mb-2">
+                        <div class="row">
+                            <div class="col-sm-12  col-md-6">
+                                <button class="btn btn-block btn-light">Continuer votre shopping</button>
+                            </div>
+                            <div class="col-sm-12 col-md-6 text-right">
+                                <button class="btn btn-lg btn-block btn-success text-uppercase">Paiement</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 copyright mt-2">
+                            <p class="float-left">
+                                <a href="#">Back to top</a>
+                            </p>
+                            <p class="text-right text-muted">Droits d'auteur | Copyright &copy; 2019, Amazon ECE.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- JS -->
+            <script src="js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+            <script src="js/popper.min.js" type="text/javascript"></script>
+            <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+        </body>
+
+        </html>
+

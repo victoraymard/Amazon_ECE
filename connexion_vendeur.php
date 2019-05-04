@@ -24,6 +24,7 @@ if($db_found)
     {
       if($row['Mdp'] == $Mdp)
       {
+        header('location: deconnexion.php');
         session_start();
         $_SESSION['Pseudo_Vendeur'] = $row['Pseudo_Vendeur'];
         $_SESSION['PhotoVendeur'] = $row['PhotoVendeur'];

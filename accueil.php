@@ -12,82 +12,84 @@ $executeIsOk = $pdoStat->execute();
 
 //recupération des resultats
 $allItems = $pdoStat->fetchAll();
-
 ?>
 
-
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
-    <link rel="stylesheet" type="text/css" href="btn_danger.css">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="myscript.js"></script>
+    <!-- Site meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Amazon ECE - Accueil</title>
+    <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
+    <!-- CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-    <div id="bloc_page">
-
-        <header>
-
-            <div id="logo">
-                <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
-            </div>
 
 
+    <header>
+        <div id="logo">
+            <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
+        </div>
 
-            <h1 id="titre_principal">
-                <a href ="accueil.php">Amazon ECE</a>
-            </h1>
+        <h1 id="titre_principal">
+            <a href ="accueil.php">Amazon ECE</a>
+        </h1>
 
-
-
-            <div id="langue">
-                <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
-                <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
-            </div>
-
-
-            <nav>
-                <ul>
-                    <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
-                        <ul class="submenu">
-                            <li><a href="livres.php">Livres</a></li>
-                            <li><a href="musiques.php">Musiques</a></li>
-                            <li><a href="vetements.php">Vêtements</a></li>
-                            <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
-                        </ul>
-                    </li>
+        <div id="langue">
+            <a href="accueil.php"><img src="images/france.png" alt="langue française" /></a>
+            <a href="#"><img src="images/ru.png" alt="langue anglaise" /></a>
+        </div>
 
 
-                    <li><a href="ventes_flash.php">Ventes flash</a></li>
-                    <li><a href="votre_compte.php">Votre compte</a></li>
-                    <li><a href="vendeur.php">Vendre</a></li>
-                    <li><a href="panier.php">Panier</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                </ul>
-            </nav>
-            <form action="deconnexion">
-                <button type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
-            </form>
+        <nav class=" navbar-expand-md navbar-dark bg-dark">
+            <ul>
+                <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
+                    <ul class="submenu">
+                        <li><a href="livres.php">Livres</a></li>
+                        <li><a href="musiques.php">Musiques</a></li>
+                        <li><a href="vetements.php">Vêtements</a></li>
+                        <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
+                    </ul>
+                </li>
 
-        </header><br>
+
+                <li><a href="ventes_flash.php">Ventes flash</a></li>
+                <li><a href="votre_compte.php">Votre compte</a></li>
+                <li><a href="vendeur.php">Vendre</a></li>
+                <li><a href="panier.php">Panier</a></li>
+                <li><a href="admin.php">Admin</a></li>
+            </ul>
+        </nav>
+        <form action="deconnexion">
+            <button type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+        </form>
+    </header>
 
 
 
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Amazon ECE : Le site de e-commerce</h1>
+            <p class="lead text-muted mb-0">Trouvez les meilleurs articles aux prix les plus attractifs du marché</p>
+        </div>
+    </section>
 
-
-
-
-
-        <div id= "corps">
-            <div id="ventes_flash">
-
-                <div id="carrousel">
-                    <ul>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <!---------------------------------------->
                         <?php
                     //preparation de la requette pour photos
                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos');
@@ -99,102 +101,174 @@ $allItems = $pdoStat->fetchAll();
                         $photos = $photosReq->fetchAll();
                         ?>
 
-                        <?php foreach ($photos as $photo): ?>
-
-                            <img src=<?= $photo['Nom_photo']?> width="525" height="300" >
-
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-
-                <div id="accroche">
-                    <div id="fleche">
-                        <img src="images/fleche.png" alt="fleche Amazon ECE" />
-                    </div>
-
-                    <div id="message">
-                        <p>
-                            Découvrez nos<br/>meilleurs ventes !
-                        </p>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
-
-
-
-            <div id="section">
-                <div id="liste_produits">
-
-
-                    <h2>Découvrez nos produits !</h2>
-
-
-
-                    <?php foreach ($allItems as $item): ?>
-                        <div class="produit">
-                            <div class="produit_gauche">
-                                <a href="produit.php?idItem=<?=$item['ID_Item']?>"><h3><?= $item['Nom']?></h3></a>
-                                <a href="produit.php?idItem=<?=$item['ID_Item']?>" >
-                                    <?php
-                                //preparation de la requette pour photos
-                                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item['ID_Item']);
-
-                                //execution de la requette pour photos
-                                    $photosIsOk = $photosReq->execute();
-
-                                //recuperation des resultats pour photos
-                                    $photos = $photosReq->fetchAll();
-                                    ?>
-
-
-                                    <img src=<?= $photos[0]['Nom_photo']?>>
-
-                                </a>
-                            </div>
-
-                            <div class="produit_droite">
-                                <p>
-                                    <br><br>
-                                    <strong>Description courte du produit :</strong> <?= $item['Description']?><br>
-                                    Vendeur : <?= $item['Pseudo_Vendeur']?><br>
-                                    <strong>Prix : <?= $item['Prix']?> </strong><br>
-                                    Quantité : <?= $item['QuantiteTot']?>
-                                </p>
-                            </div>
+                        <div class="carousel-item active">
+                            <img src=<?= $photo['Nom_photo']?>width="300" height="200">
                         </div>
 
-
-                    <?php endforeach; ?>
-                </div>
-                <div id="petit_message">
-
-                    <img src="images/bulle.png" alt="" id="fleche_bulle" />
-                    <p id="photo_sympa">
-                        <img src="images/ned_flanders.png" alt="Photo sympa" />
-                    </p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-
+                        <?php foreach ($photos as $photo): ?>
+                            <div class="carousel-item">
+                                <img style="width="855" height="365"" src=<?= $photo['Nom_photo']?>>
+                            </div>
+                        <?php endforeach; ?>
+                        <!---------------------------------------->
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
+            <div class="col-12 col-md-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white text-uppercase">
+                        <i class="fa fa-heart"></i> Bienvenue sur notre site !
+                    </div>
+                    <img src="images\ned_flanders.png">
 
-        </div>
 
-
-
-        <div id="footer">
-            <small>
-                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-            </small>
+                    <div class="card-body">
+                        <p style="text-align: center; font-weight: bold;">Etes-vous prêt à découvrir nos produits ?</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</body>
 
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-uppercase">
+                        <i class="fa fa-star"></i> Nos produits
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <!----------------------------------------------------------------------------------test----------->
+                            <?php foreach ($allItems as $item): ?>
+                                <div class="col-sm">
+                                    <div class="card">
+                                        <a href="produit.php?idItem=<?=$item['ID_Item']?>" >
+                                            <?php
+                                        //preparation de la requette pour photos
+                                            $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$item['ID_Item']);
+
+                                        //execution de la requette pour photos
+                                            $photosIsOk = $photosReq->execute();
+
+                                        //recuperation des resultats pour photos
+                                            $photos = $photosReq->fetchAll();
+                                            ?>
+                                            <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200">
+
+                                        </a>
+                                        <div class="card-body">
+
+                                            <h4 class="card-title"><a href="produit.php?idItem=<?=$item['ID_Item']?>"><?= $item['Nom']?></a></h4>
+
+
+                                            <p class="card-text"><?= $item['Description']?></p>
+                                            <p class="card-text">Vendeur : <?= $item['Pseudo_Vendeur']?></p>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <p class="btn btn-primary btn-block"><?= $item['Prix']?> €</p>
+                                                </div>
+                                                <div class="col">
+                                                    <a href="produit.php?idItem=<?=$item['ID_Item']?>" class="btn btn-success btn-block">Plus de détails</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+
+                            <!--------------------------------------------------------------------------------------------->
+
+                            <div class="col-sm">
+                                <div class="card">
+                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="btn btn-danger btn-block">99.00 $</p>
+                                            </div>
+                                            <div class="col">
+                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm">
+                                <div class="card">
+                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="btn btn-danger btn-block">99.00 $</p>
+                                            </div>
+                                            <div class="col">
+                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card">
+                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="btn btn-danger btn-block">99.00 $</p>
+                                            </div>
+                                            <div class="col">
+                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 copyright mt-2">
+                    <p class="float-left">
+                        <a href="#">Back to top</a>
+                    </p>
+                    <p class="text-right text-muted">Droits d'auteur | Copyright &copy; 2019, Amazon ECE.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+
+</body>
 </html>
