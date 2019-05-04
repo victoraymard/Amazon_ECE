@@ -102,10 +102,10 @@ session_start()
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Cous@Cous.Cous" value="" name="Mail"/>
+                                                <input type="text" class="form-control" placeholder="Cous@Cous.Cous" value="" name="Mail" required="" />
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" />
+                                                <input type="password" class="form-control" placeholder="******" value="" name="Mdp" required/>
                                             </div>
 
                                         </div>

@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ session_start()
                     <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
                 </div>
 
-            
+
 
             <br>
 
@@ -91,7 +91,7 @@ session_start()
 
 
 
-                <form> 
+                <form>
 
 
                     <tr>
@@ -189,7 +189,7 @@ session_start()
 
 
 
-            
+
 
         </div>
 

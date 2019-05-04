@@ -68,7 +68,6 @@ CREATE TABLE Musique(
 CREATE TABLE Vetement(
 	ID_Vetement int(5) PRIMARY KEY AUTO_INCREMENT,
 	ID_Item int(5) NOT NULL,
-	Nom varchar(255) NOT NULL,
 	Taille varchar(255) NOT NULL,
 	Marque varchar(255) NOT NULL,
 	Couleurs varchar(255) NOT NULL,
