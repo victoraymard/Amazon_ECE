@@ -27,6 +27,7 @@ $allItems = $pdoStat->fetchAll();
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/font.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="btn_danger.css">
 </head>
 <body>
 
@@ -65,10 +66,11 @@ $allItems = $pdoStat->fetchAll();
                 <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
-        <form action="deconnexion">
-            <button type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
-        </form>
+        
     </header>
+    <form action="deconnexion">
+            <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+        </form>
 
 
 
@@ -82,14 +84,19 @@ $allItems = $pdoStat->fetchAll();
     <div class="container">
         <div class="row">
             <div class="col">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner">
+                    <div  class="carousel-inner">
                         <!---------------------------------------->
+
+
+
+                        
+        
                         <?php
                     //preparation de la requette pour photos
                         $photosReq = $objetPDO->prepare('SELECT * FROM Photos');
@@ -101,13 +108,13 @@ $allItems = $pdoStat->fetchAll();
                         $photos = $photosReq->fetchAll();
                         ?>
 
-                        <div class="carousel-item active">
-                            <img src=<?= $photo['Nom_photo']?>width="300" height="200">
+                        <div  class="carousel-item active">
+                            <img  class="d-block w-100" src="images\ventes_flash.jpg" style="border-radius:10px;">
                         </div>
 
                         <?php foreach ($photos as $photo): ?>
                             <div class="carousel-item">
-                                <img style="width="855" height="365"" src=<?= $photo['Nom_photo']?>>
+                                <img style="width:855px height:365px border-radius:10px" src=<?= $photo['Nom_photo']?>>
                             </div>
                         <?php endforeach; ?>
                         <!---------------------------------------->
@@ -188,60 +195,6 @@ $allItems = $pdoStat->fetchAll();
                             <?php endforeach; ?>
 
                             <!--------------------------------------------------------------------------------------------->
-
-                            <div class="col-sm">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="btn btn-danger btn-block">99.00 $</p>
-                                            </div>
-                                            <div class="col">
-                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="col-sm">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="btn btn-danger btn-block">99.00 $</p>
-                                            </div>
-                                            <div class="col">
-                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm">
-                                <div class="card">
-                                    <img class="card-img-top" src="https://dummyimage.com/600x400/55595c/fff" alt="Card image cap">
-                                    <div class="card-body">
-                                        <h4 class="card-title"><a href="product.html" title="View Product">Product title</a></h4>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                        <div class="row">
-                                            <div class="col">
-                                                <p class="btn btn-danger btn-block">99.00 $</p>
-                                            </div>
-                                            <div class="col">
-                                                <a href="cart.html" class="btn btn-success btn-block">Plus de détails</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
