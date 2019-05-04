@@ -34,20 +34,24 @@ if($db_found)
       }
       else
       {
-        echo "Mot de passe incorrect" ;
+        mysqli_free_result($result);
+        mysqli_close($db_handle);
+        echo "<script language = \"javascript\"> alert('Mot de passe incorrect') </script>";
+        echo "<script language = \"javascript\"> document.location.href = 'http://localhost/Projet/Amazon_ECE/admin.php'</script>";
       }
     }
-    mysqli_free_result($result);
   }
   else
   {
-    echo "Le pseudo saisie est errone ou n'existe pas !";
+    mysqli_free_result($result);
+        mysqli_close($db_handle);
+        echo "<script language = \"javascript\"> alert('Pseudo erroné') </script>";
+        echo "<script language = \"javascript\"> document.location.href = 'http://localhost/Projet/Amazon_ECE/admin.php'</script>";
   }
 }
 else
 {
   mysqli_close($db_handle);
   echo "Database not found";
-}
 }
 ?>

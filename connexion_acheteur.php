@@ -45,20 +45,24 @@ if($db_found)
       }
       else
       {
-        echo "Mot de passe incorrect" ;
-        exit();
+        mysqli_free_result($result);
+        mysqli_close($db_handle);
+        echo "<script language = \"javascript\"> alert('Mot de passe incorrect') </script>";
+        echo "<script language = \"javascript\"> document.location.href = 'http://localhost/Projet/Amazon_ECE/votre_compte.php'</script>";
       }
     }
-    mysqli_free_result($result);
   }
   else
   {
+    mysqli_free_result($result);
     mysqli_close($db_handle);
-    echo "L'adresse mail saisie est erronee !";
+    echo "<script language = \"javascript\"> alert('Adresse mail erronée') </script>";
+    echo "<script language = \"javascript\"> document.location.href = 'http://localhost/Projet/Amazon_ECE/votre_compte.php'</script>";
   }
 }
 else
 {
+  mysqli_close($db_handle);
   echo "Database not found";
 }
 ?>

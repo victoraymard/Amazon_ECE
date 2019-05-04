@@ -1,5 +1,11 @@
 <?php
-session_start()
+session_start();
+
+if(isset($_SESSION['Pseudo_Admin']))
+{
+    header('location: Admin_compte.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,20 +102,21 @@ session_start()
                 </div>
                 <div class="col-md-9 register-right">
 
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading">Connexion administrateur</h3>
-                            <form action="connexion_admin.php" method="post">
-                                <div class="row register-form">
-                                    <div class="col-md-6">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Connexion administrateur</h3>
+                                <form action="connexion_admin.php" method="post">
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
 
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Vendeur"/>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Pseudo *" value="" name="Pseudo_Admin"required/>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" required />
+                                            </div>
+
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Mot de passe *" value="" name="Mdp" />
-                                        </div>
-                                        
                                     </div>
                                     <div class="col-md-6">
                                         <input type="submit" class="btnRegister"  value="Connectez-vous!"/>
