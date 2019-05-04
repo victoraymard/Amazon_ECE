@@ -103,21 +103,21 @@ session_start();
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Ajout item</h3>
-                                <form action="vente.php" method="post">
+                                <form action="redirection_categorie.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Nom *" value="" name="Nom" required/>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Description *" value="" name="Description" required="" />
+                                                <input type="text" class="form-control" placeholder="Description *" value="" name="Description" required />
                                             </div>
                                             <div class="form-group">
-                                                <input type="number" class="form-control" placeholder="Quantité *" value="" name="Quantite" required="" />
+                                                <input type="number" class="form-control" placeholder="Quantité *" value="" name="Quantite" required />
                                             </div>
 
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Prix unitaire *" value="" name="Prix" required="" />
+                                                <input type="text" class="form-control" placeholder="Prix unitaire *" value="" name="Prix" required />
                                             </div>
 
 
