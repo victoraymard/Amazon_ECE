@@ -47,7 +47,7 @@ $itemSelect = $pdoStat->fetchAll();
 
             <nav>
                 <ul>
-                    <li><a href="cate.php" id="categories">Catégories</a> <!--menu déroulant-->
+                    <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
                         <ul class="submenu">
                             <li><a href="livres.php">Livres</a></li>
                             <li><a href="musiques.php">Musiques</a></li>
