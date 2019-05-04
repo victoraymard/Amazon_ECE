@@ -135,7 +135,7 @@ session_start();
                                                     <option value="Livre" name="Livre">Livre</option>
                                                     <option value="Musique" name="Musique">Musique</option>
                                                     <option value="Vetement" name="Vetement">Vêtement</option>
-                                                    <option value="SportsLoisirs" name="SportsLoisirs">Sports et loisirs</option>
+                                                    <option value="Sports_Loisirs" name="SportsLoisirs">Sports et loisirs</option>
                                                 </select>
 
                                             </div>
@@ -157,7 +157,7 @@ session_start();
 
 
 
-                                            <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
+                                            <input type="submit" class="btnRegister"  value="Continuer"/>
                                         </div>
                                     </div>
                                 </form>

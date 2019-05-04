@@ -17,9 +17,8 @@ session_start()
             document.getElementById('selectedfile').value=document.getElementById('fileupload').value
         }
     </script>
-    <title>Amazon ECE - ajout livre</title>
+    <title>Amazon ECE - ajout vetement</title>
 </head>
-
 <body>
     <div id="bloc_page">
         <header>
@@ -51,17 +50,9 @@ session_start()
                 </ul>
             </nav>
         </header><br>
-
-
-
-
-
-
-
-
         <div id= "corps">
             <div class="jumbotron text-center">
-                <h2>Formulaire d'insertion de livre</h2>
+                <h2>Formulaire d'insertion de vêtement</h2>
             </div>
             <div class="container register">
                 <div class="row">
@@ -71,44 +62,66 @@ session_start()
                         <p>Super, un nouveau produit sur le site!</p>
                     </div>
                     <div class="col-md-9 register-right">
-
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Ajout Livre</h3>
-                                <form action="inscription_vendeur.php" method="post">
+                                <h3 class="register-heading">Ajout Vêtement</h3>
+                                <form action="ajout_vetements.php" method="post">
                                     <div class="row register-form">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Titre *" value="" name="Titre" />
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Auteur *" value="" name="Auteur"/>
-                                            </div>
-                                        </div>
 
-                                        <div class="col-md-6">
-                                          <div class="form-group">
-                                            <input type="number" class="form-control" placeholder="Année *" value="" name="Annee" />
+
+                                            <div class="form-group">
+                                                <select name="Taille" required >
+                                                    <option value="defaut">Sélectionner une taille</option>
+                                                    <option value="extra_small" name="X">XS</option>
+                                                    <option value="small" name="S">S</option>
+                                                    <option value="medium" name="M">M</option>
+                                                    <option value="large" name="L">L</option>
+                                                    <option value="extra_large" name="XL">XL</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <select name="Marque" required >
+                                                    <option value="defaut">Sélectionner une marque</option>
+                                                    <option value="Nike" name="Nike">Nike</option>
+                                                    <option value="Loaded" name="Loaded">Loaded</option>
+                                                    <option value="Addidas" name="Addidas">Addidas</option>
+                                                    <option value="Volcom" name="Volcom">Volcom</option>
+                                                    <option value="Decathlon" name="Decathlon">Decathlon</option>
+                                                </select>
+                                            </div>
+
+                                            </div>
+
+
+
+                                            <div class="col-md-6">
+                                              <div class="form-group">
+                                                <select name="Couleurs" required >
+                                                    <option value="defaut">Sélectionner une couleur</option>
+                                                    <option value="Bleu" name="Bleu">bleu</option>
+                                                    <option value="Rouge" name="Rouge">rouge</option>
+                                                    <option value="Noir" name="Noir">noir</option>
+                                                    <option value="Blanc" name="Blanc">blanc</option>
+                                                    <option value="Autre" name="Autre">autre</option>
+                                                </select>
+                                            </div>
+                                            <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Editeur *" value="" name="Editeur" />
-                                        </div>                                   
-                                        <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="footer">
+            <small>
+                Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+            </small>
+        </div>
     </div>
-    <div id="footer">
-        <small>
-            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-        </small>
-    </div>
-</div>
 </body>
-
 </html>

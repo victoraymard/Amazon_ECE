@@ -164,7 +164,7 @@ $allItems = $pdoStat->fetchAll();
                                         //recuperation des resultats pour photos
                                             $photos = $photosReq->fetchAll();
                                             ?>
-                                            <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200">
+                                            <img src=<?= $photos[0]['Nom_Photo']?> width="300" height="200">
 
                                         </a>
                                         <div class="card-body">

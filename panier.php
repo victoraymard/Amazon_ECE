@@ -132,7 +132,7 @@ else
                                         ?>
 
 
-                                        <img src=<?= $photos[0]['Nom_photo']?> width="300" height="200"></a></td>
+                                        <img src=<?= $photos[0]['Nom_Photo']?> width="300" height="200"></a></td>
 
 
 
