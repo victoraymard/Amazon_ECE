@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if(isset($_SESSION['Pseudo_Vendeur']))
+{
+    header('location: vendeur_compte.php');
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -135,7 +141,7 @@ session_start();
                     </div>
                 </div>
             </div>
-        
+
 
 
 
