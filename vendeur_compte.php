@@ -138,7 +138,7 @@ $itemSelects = $pdoStat->fetchAll();
                       <td><?=$itemSelect['Prix']?></td>
                       <td><?=$itemSelect['QuantiteTot']?></td>
                         <form action="appliquer_remise.php?idItem=<?=$itemSelect['ID_Item']?>" method="post">
-                        <td><input type="number" name="remise" min="0" max="100" value="0" ></td>
+                        <td><input type="number" name="remise" min="0" max="100" value="<?=$itemSelect['Remise']?>" ></td>
                         <td><button>Aplliquer remise</button></td>
                         </form>
                         <td><a href="suppression_item.php?idItem=<?=$itemSelect['ID_Item']?>"><button>Supprimer item</button></a></td>
