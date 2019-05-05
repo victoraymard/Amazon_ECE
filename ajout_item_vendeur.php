@@ -110,17 +110,7 @@ session_start();
                                         <div class="form-group">
                                             <input type="text" class="form-control" placeholder="Prix unitaire *" value="" name="Prix" required />
                                         </div>
-
-
-                                    </div>
-                                    <div class="col-md-6">
-
                                         <div class="form-group">
-
-
-
-
-
                                             <select name="Categorie" required>
                                                 <option value="defaut">Sélectionner une catégorie</option>
                                                 <option value="Livre" name="Livre">Livre</option>
@@ -128,28 +118,40 @@ session_start();
                                                 <option value="Vetement" name="Vetement">Vêtement</option>
                                                 <option value="Sports_Loisirs" name="SportsLoisirs">Sports et loisirs</option>
                                             </select>
-
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="file" style="display:none" name="Nom_Photo1" value="" id="fileupload"  accept="image/*"/>
+                                            <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
                                         </div>
 
                                         <div class="form-group">
-                                            <input type="file" style="display:none" name="Nom_Photo" value="fileupload" id="fileupload"  accept="image/*"  multiple=""/>
+                                            <input type="file" style="display:none" name="Nom_Photo2" value="" id="fileupload"  accept="image/*"/>
                                             <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
                                         </div>
+
+                                        <div class="form-group">
+                                            <input type="file" style="display:none" name="Nom_Photo3" value="" id="fileupload"  accept="image/*" />
+                                            <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <input type="file" style="display:none" name="Nom_Photo4" value="" id="fileupload"  accept="image/*" />
+                                            <input type="button" value="Choisir les photos de l'item" onclick="getfile()" class="btn_selection" />
+                                        </div>
+
 
                                         <div class="form-group">
                                             <input type="file" style="display:none" name="Nom_Video" value="fileupload" id="fileupload"  accept="video/*"/>
                                             <input type="button" value="Choisir une vidéo de l'item" onclick="getfile()" class="btn_selection"/>
                                         </div>
-
-
-
-
-
-
-
-
+                                    </div>
+                                    <div class="col-md-9">
                                         <input type="submit" class="btnRegister"  value="Continuer"/>
                                     </div>
+
                                 </div>
                             </div>
                         </form>
@@ -158,31 +160,7 @@ session_start();
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
-
-
 <div id="footer">
     <small>
         Droits d'auteur | Copyright &copy; 2019, Amazon ECE.

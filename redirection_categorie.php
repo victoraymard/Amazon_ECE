@@ -9,7 +9,10 @@ $Quantite =(int)$_POST["Quantite"];
 $Description = $_POST["Description"];
 $Categorie = $_POST["Categorie"];
 $Prix = (float)$_POST["Prix"];
-$Nom_Photo = $_POST['Nom_Photo'];
+$Nom_Photo1 = $_POST['Nom_Photo1'];
+$Nom_Photo2 = $_POST['Nom_Photo2'];
+$Nom_Photo3 = $_POST['Nom_Photo3'];
+$Nom_Photo4 = $_POST['Nom_Photo4'];
 $Nom_Video = $_POST['Nom_Video'];
 
 $database = "Projet";
@@ -21,8 +24,29 @@ if($db_found)
   $sql = "INSERT INTO Item(Nom, Description, Categorie, Prix, QuantiteTot, Nom_Video, Pseudo_Vendeur) VALUES('$Nom', '$Description', '$Categorie', '$Prix', '$Quantite', '$Nom_Video', '".$_SESSION['Pseudo_Vendeur']."')";
   mysqli_query($db_handle, $sql) or die (mysqli_error($db_handle));
 
-  $sql2 = "INSERT INTO Photos VALUES('images/$Nom_Photo', (SELECT MAX(ID_Item) FROM Item))";
-  mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
+  if($Nom_Photo1!="")
+  {
+    $sql2 = "INSERT INTO Photos VALUES('images/$Nom_Photo1', (SELECT MAX(ID_Item) FROM Item))";
+    mysqli_query($db_handle, $sql2) or die (mysqli_error($db_handle));
+  }
+
+  if($Nom_Photo2!="")
+  {
+    $sql3 = "INSERT INTO Photos VALUES('images/$Nom_Photo2', (SELECT MAX(ID_Item) FROM Item))";
+    mysqli_query($db_handle, $sql3) or die (mysqli_error($db_handle));
+  }
+
+  if($Nom_Photo3!="")
+  {
+    $sql4 = "INSERT INTO Photos VALUES('images/$Nom_Photo3', (SELECT MAX(ID_Item) FROM Item))";
+    mysqli_query($db_handle, $sql4) or die (mysqli_error($db_handle));
+  }
+
+  if($Nom_Photo4!="")
+  {
+    $sql5 = "INSERT INTO Photos VALUES('images/$Nom_Photo4', (SELECT MAX(ID_Item) FROM Item))";
+    mysqli_query($db_handle, $sql5) or die (mysqli_error($db_handle));
+  }
 
   mysqli_close($db_handle);
 
