@@ -94,10 +94,10 @@ $itemSelects = $pdoStat->fetchAll();
     <!--code spécifique à la page-->
 
     <div style="width: 80%; margin: auto;" id="corps_vendeur" class="text-center">
-        <div style="flex:1;" id="vendeur_compte_gauche">
-            <img src="images\vendeur.jpg">
+        <div style="flex:1;" id="vendeur_compte_gauche" <img src="<?=$_SESSION['ImageFond']?>">>
+            <img src="<?=$_SESSION['PhotoVendeur']?>">
             <br>
-            <h1>Nom vendeur</h1>
+            <h1><?=$_SESSION['Nom']?></h1>
         </div>
 
         <div style="flex:1;" id="vendeur_droite content-wrapper row">

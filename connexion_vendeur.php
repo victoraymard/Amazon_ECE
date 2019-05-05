@@ -29,6 +29,7 @@ if($db_found)
         $_SESSION['Pseudo_Vendeur'] = $row['Pseudo_Vendeur'];
         $_SESSION['PhotoVendeur'] = $row['PhotoVendeur'];
         $_SESSION['ImageFond'] = $row['ImageFond'];
+        $_SESSION['Nom'] = $row['Nom'];
 
         mysqli_close($db_handle);
         header('Location: vendeur_compte.php');
