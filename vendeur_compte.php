@@ -1,5 +1,19 @@
 <?php
 session_start();
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare("SELECT * FROM Item WHERE Pseudo_Vendeur = '".$_SESSION['Pseudo_Vendeur']."'");
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$itemSelects = $pdoStat->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -75,8 +89,8 @@ session_start();
           </nav>
       </header><br>
 
-      <form action="deconnexion">
-        <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+      <form action="deconnexion.php">
+        <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion.php" >Déconnexion</button>
     </form>
       <!------------------------------------------------------------------------------------------------------->
       <section style="height: 150px;" class="jumbotron text-center">
@@ -106,6 +120,7 @@ session_start();
                           <th>Catégorie.</th>
                           <th>Prix</th>
                           <th>Quantité</th>
+                          <th>Remise en  %</th>
                           <th>Supprimer</th>
 
                       </tr>
@@ -113,46 +128,19 @@ session_start();
                   <tbody>
 
 
+                  <?php foreach ($itemSelects as $itemSelect): ?>
+
                     <tr>
                       <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                      <td>Mme Bovarie</td>
-                      <td>Livre</td>
-                      <td>8€</td>
-                      <td>12</td>
+                      <td><?=$itemSelect['Nom']?></td>
+                      <td><?=$itemSelect['Categorie']?></td>
+                      <td><?=$itemSelect['Prix']?></td>
+                      <td><?=$itemSelect['QuantiteTot']?></td>
+                      <td><input type="number" name="remise" min="0" max="100" "></td>
                       <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
 
                   </tr>
-
-
-                  <tr>
-                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                      <td>Mme Bovarie</td>
-                      <td>Livre</td>
-                      <td>8€</td>
-                      <td>12</td>
-                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                  </tr>
-
-                  <tr>
-                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                      <td>Mme Bovarie</td>
-                      <td>Livre</td>
-                      <td>8€</td>
-                      <td>12</td>
-                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                  </tr>
-
-                  <tr>
-                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                      <td>Mme Bovarie</td>
-                      <td>Livre</td>
-                      <td>8€</td>
-                      <td>12</td>
-                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                  </tr>
+                  <?php endforeach; ?>
 
 
 
