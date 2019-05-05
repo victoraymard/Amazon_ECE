@@ -20,6 +20,7 @@ else
     header('location: votre_compte.php');
     exit();
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -106,9 +107,11 @@ else
                     <tbody>
                         <!------------------------------------------------------------------------------>
 
-                        <?php foreach ($allItemsPanier as $itemPanier): ?>
+                        <?php
+                        $remiseTotal = 0;
 
-                            <?php
+                        foreach ($allItemsPanier as $itemPanier):
+
                             //ouverture de la connexion avec la base de données Projet
                             $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
@@ -130,7 +133,9 @@ else
 
                                 <td><a href="produit.php">
                                     <?php
-                                                //preparation de la requette pour photos
+                                    $remiseTotal = $remiseTotal + ($itemSelect[0]['Prix']*$itemPanier['Quantite_panier']*$itemSelect[0]['Remise']/100);
+
+                                    //preparation de la requette pour photos
                                     $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$itemSelect[0]['ID_Item']);
 
                                                 //execution de la requette pour photos
@@ -147,6 +152,7 @@ else
 
 
                                     <td><a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a></td>
+
 
                                     <td><?= $itemSelect[0]['Prix']?> €</td>
                                     <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
@@ -198,8 +204,16 @@ else
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td>Remise</td>
+                                        <td class="text-right"><?=$remiseTotal?> €</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <?php
-                                        $tot_shiping = $_SESSION['Montant_Tot'] + 6;
+                                        $tot_shiping = $_SESSION['Montant_Tot'] + 6 - $remiseTotal;
                                         ?>
                                         <td><strong>Total</strong></td>
                                         <td class="text-right"><strong><?= $tot_shiping?> €</strong></td>
