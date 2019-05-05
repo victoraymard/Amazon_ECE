@@ -133,7 +133,7 @@ $allItems = $pdoStat->fetchAll();
                                 //    $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 // }
 
-                                if ($photos[1]==""){
+                                if ($photos[1]['Nom_Photo']==""){
                                  $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 

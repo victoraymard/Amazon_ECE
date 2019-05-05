@@ -96,31 +96,31 @@ CREATE TABLE Panier(
 
 /*Saisie des données en dur comme les admins ou les tests*/
 
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 15, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Harry Potter','collection des 7 livres','Livre',3, 30, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32,12, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1,8, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3,25, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13,40, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Pink Floyd','Another brick in the wall','Musique',5,20, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Queen','A night at the opera','Musique',12,19, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Disque Beatles','Sgt. Peters lonely band','Musique',24,9, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Ballon coupe du monde','Tres sympa','Sports_loisirs',24,39, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Matuidi','Pour le ramener à la maison','Sports_loisirs',1,999, 'Francis');
--- INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('PS6','On est  dans le turfu','Sports_loisirs',1,2999, 'Francis');
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/livres-HP.jpg',2);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/Deux-petits-pas-sur-le-sable-mouille.jpg',4);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/boxer-chien-boxer-t-shirt-degrade-homme.jpg',5);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/2477751_2.jpg',6);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/harryPot.jpg',2);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/beatles_disques.jpg',9);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/vynil_queen.jpg',8);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/pink-floyd-the-wall.jpg',7);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/ballon_CDM.jpg',10);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/matuidi.jpg',11);
--- INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/PS6.jpg',12);
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 15, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Harry Potter','collection des 7 livres','Livre',3, 30, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32,12, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1,8, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3,25, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13,40, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Pink Floyd','Another brick in the wall','Musique',5,20, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Queen','A night at the opera','Musique',12,19, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Disque Beatles','Sgt. Peters lonely band','Musique',24,9, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Ballon coupe du monde','Tres sympa','Sports_loisirs',24,39, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Matuidi','Pour le ramener à la maison','Sports_loisirs',1,999, 'Francis');
+INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('PS6','On est  dans le turfu','Sports_loisirs',1,2999, 'Francis');
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/livres-HP.jpg',2);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/Deux-petits-pas-sur-le-sable-mouille.jpg',4);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/boxer-chien-boxer-t-shirt-degrade-homme.jpg',5);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/2477751_2.jpg',6);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/harryPot.jpg',2);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/beatles_disques.jpg',9);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/vynil_queen.jpg',8);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/pink-floyd-the-wall.jpg',7);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/ballon_CDM.jpg',10);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/matuidi.jpg',11);
+INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/PS6.jpg',12);
 INSERT INTO Admin VALUES ('Cous', 'Cous');
 
 

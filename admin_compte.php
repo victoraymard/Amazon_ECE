@@ -181,7 +181,7 @@ $allVendeurs = $pdoStat2->fetchAll();
                         <td><?= $allItem['Prix']?>€</td>
                         <td><?= $allItem['QuantiteTot']?></td>
                         <td><?= $allItem['Pseudo_Vendeur']?></td>
-                          <td><a href="suppression_item_admin.php?idItem=<?=$itemSelect['ID_Item']?>"><button>Supprimer item</button></a></td>
+                          <td><a href="suppression_item_admin.php?idItem=<?=$allItem['ID_Item']?>"><button>Supprimer item</button></a></td>
                       </tr>
                     <?php endforeach; ?>
 
@@ -243,7 +243,7 @@ $allVendeurs = $pdoStat2->fetchAll();
                         <td><?=$nbTotItems?></td>
                         <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
                         <td><?=$nbTotVendus?></td>
-                          <td><a href="suppression_vendeur_admin.php?Pseudo_Vendeur=<?=$allVendeur['Nom']?>"><button>Supprimer vendeur</button></a></td>
+                          <td><a href="suppression_vendeur_admin.php?Pseudo_Vendeur=<?=$allVendeur['Pseudo_Vendeur']?>"><button>Supprimer vendeur</button></a></td>
                       </tr>
                     <?php endforeach; ?>
 
