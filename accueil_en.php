@@ -38,11 +38,11 @@ $allItems = $pdoStat->fetchAll();
 
     <header>
         <div id="logo">
-            <a href ="accueil.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
+            <a href ="accueil_en.php"><img src="images/icone.png" alt="Logo Amazon ECE" /></a>
         </div>
 
         <h1 id="titre_principal">
-            <a href ="accueil.php">Amazon ECE</a>
+            <a href ="accueil_en.php">Amazon ECE</a>
         </h1>
 
         <div id="langue">
@@ -53,24 +53,24 @@ $allItems = $pdoStat->fetchAll();
 
         <nav class=" navbar-expand-md navbar-dark bg-dark">
             <ul>
-                <li><a href="#" id="categories">Catégories</a> <!--menu déroulant-->
+                <li><a href="#" id="categories">Category</a> <!--menu déroulant-->
                     <ul class="submenu">
-                        <li><a href="livres.php">Livres</a></li>
-                        <li><a href="musiques.php">Musiques</a></li>
-                        <li><a href="vetements.php">Vêtements</a></li>
-                        <li><a href="sports_loisirs.php">Sports et loisirs</a></li>
+                        <li><a href="livres.php">Books</a></li>
+                        <li><a href="musiques.php">Musics</a></li>
+                        <li><a href="vetements.php">Cloths</a></li>
+                        <li><a href="sports_loisirs.php">Sports and leisures</a></li>
                     </ul>
                 </li>
-                <li><a href="ventes_flash.php">Ventes flash</a></li>
-                <li><a href="votre_compte.php">Votre compte</a></li>
-                <li><a href="vendeur.php">Vendre</a></li>
+                <li><a href="ventes_flash.php">Flash sale</a></li>
+                <li><a href="votre_compte.php">Your account</a></li>
+                <li><a href="vendeur.php">Sell</a></li>
                 <li class="overlay-image"><a href="panier.php">
                     <div class="normal">
-                      <div class="text">Panier</div>
+                      <div class="text">Basket</div>
                   </div>
                   <div class="hover">
                       <img class="image" src="images\icone_panier.png" alt="Alt text hover" />
-                      <div class="text">Panier</div>
+                      <div class="text">Basket</div>
                   </div>
               </a></li>
               <li><a href="admin.php">Admin</a></li>
@@ -79,15 +79,15 @@ $allItems = $pdoStat->fetchAll();
 
   </header>
   <form action="deconnexion.php">
-    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion.php" >Déconnexion</button>
+    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion.php" >Deconnection</button>
 </form>
 
 
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Amazon ECE : Le site de e-commerce</h1>
-        <p class="lead text-muted mb-0">Trouver les meilleurs articles aux prix les plus attractifs du marché</p>
+        <h1 class="jumbotron-heading">Amazon ECE : The site of e-commerce</h1>
+        <p class="lead text-muted mb-0">Find the best articles at the most attractive prices on the market</p>
     </div>
 </section>
 
@@ -101,7 +101,7 @@ $allItems = $pdoStat->fetchAll();
 
 
                     <div  class="carousel-item active">
-                        <img  class="d-block w-100" src="images\ventes_flash.jpg" style="border-radius:10px;">
+                        <img  class="d-block w-100" src="images\ventes_flash_en.gif" style="border-radius:10px;">
                     </div>
 
 
@@ -141,13 +141,13 @@ $allItems = $pdoStat->fetchAll();
         <div class="col-12 col-md-3">
             <div class="card">
                 <div class="card-header bg-success text-white text-uppercase">
-                    <i class="fa fa-heart"></i> Bienvenue sur notre site!
+                    <i class="fa fa-heart"></i> Welcome on our site!
                 </div>
                 <img src="images\ned_flanders.png">
 
 
                 <div class="card-body">
-                    <p style="text-align: center; font-weight: bold;">Etes-vous prêt à découvrir nos produits ?</p>
+                    <p style="text-align: center; font-weight: bold;">Are you ready to discover our products?</p>
                 </div>
             </div>
         </div>
@@ -160,7 +160,7 @@ $allItems = $pdoStat->fetchAll();
         <div class="col-sm">
             <div class="card">
                 <div class="card-header bg-primary text-white text-uppercase">
-                    <i class="fa fa-star"></i> Nos produits
+                    <i class="fa fa-star"></i> Our products
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -189,13 +189,13 @@ $allItems = $pdoStat->fetchAll();
 
 
                                         <p class="card-text"><?= $item['Description']?></p>
-                                        <p class="card-text">Vendeur : <?= $item['Pseudo_Vendeur']?></p>
+                                        <p class="card-text">Seller : <?= $item['Pseudo_Vendeur']?></p>
                                         <div class="row">
                                             <div class="col">
                                                 <p class="btn btn-primary btn-block"><?= $item['Prix']?> €</p>
                                             </div>
                                             <div class="col">
-                                                <a href="produit.php?idItem=<?=$item['ID_Item']?>" class="btn btn-success btn-block">Plus de détails</a>
+                                                <a href="produit.php?idItem=<?=$item['ID_Item']?>" class="btn btn-success btn-block">More details</a>
                                             </div>
                                         </div>
                                     </div>
@@ -219,7 +219,7 @@ $allItems = $pdoStat->fetchAll();
         <div class="row">
             <div class="col-12 copyright mt-2">
                 <p class="float-left">
-                    <a href="#">Retour au début</a>
+                    <a href="#">Back to top</a>
                 </p>
                 <p class="text-right text-muted">Droits d'auteur | Copyright &copy; 2019, Amazon ECE.</p>
             </div>
