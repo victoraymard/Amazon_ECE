@@ -5,7 +5,7 @@ session_start();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete pour Item
-$itemReq = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Livre\' ');
+$itemReq = $objetPDO->prepare('SELECT * FROM Item WHERE Categorie = \'Livre\' AND QuantiteTot !=0');
 
 //execution de la requete pour Item
 $itemIsOk = $itemReq->execute();
