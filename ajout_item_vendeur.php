@@ -73,31 +73,13 @@ session_start();
                   <li><a href="admin.php">Admin</a></li>
               </ul>
           </nav>
-
-
       </header><br>
-
-
-
-
-
-
-
-
       <div id= "corps">
         <div class="jumbotron text-center">
 
             <h2>Formulaire d'insertion d'item</h2>
 
         </div>
-
-
-
-
-
-
-
-
         <div class="container register">
             <div class="row">
                 <div class="col-md-3 register-left">
@@ -138,13 +120,13 @@ session_start();
 
 
 
-                                                <select name="Categorie" required>
-                                                    <option value="defaut">Sélectionner une catégorie</option>
-                                                    <option value="Livre" name="Livre">Livre</option>
-                                                    <option value="Musique" name="Musique">Musique</option>
-                                                    <option value="Vetement" name="Vetement">Vêtement</option>
-                                                    <option value="Sports_Loisirs" name="SportsLoisirs">Sports et loisirs</option>
-                                                </select>
+                                            <select name="Categorie" required>
+                                                <option value="defaut">Sélectionner une catégorie</option>
+                                                <option value="Livre" name="Livre">Livre</option>
+                                                <option value="Musique" name="Musique">Musique</option>
+                                                <option value="Vetement" name="Vetement">Vêtement</option>
+                                                <option value="Sports_Loisirs" name="SportsLoisirs">Sports et loisirs</option>
+                                            </select>
 
                                         </div>
 
@@ -165,46 +147,46 @@ session_start();
 
 
 
-                                            <input type="submit" class="btnRegister"  value="Continuer"/>
-                                        </div>
+                                        <input type="submit" class="btnRegister"  value="Continuer"/>
                                     </div>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 
 
-    <div id="footer">
-        <small>
-            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-        </small>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<div id="footer">
+    <small>
+        Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+    </small>
+</div>
 </div>
 </body>
 
