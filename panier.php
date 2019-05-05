@@ -150,7 +150,7 @@ else
                                     <td>In stock</td>
                                     <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
                                     <td class="text-right"><?= $itemSelect[0]['Prix']?> €</td>
-                                    <td class="text-right"><button class="btn btn-sm btn-danger">supprimer</button> </td>
+                                    <td class="text-right"><a href="suppression_panier.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><button class="btn btn-sm btn-danger">supprimer</button></a></td>
                                 </tr>
                             <?php endforeach; ?>
 
