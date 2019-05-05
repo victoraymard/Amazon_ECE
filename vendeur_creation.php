@@ -7,6 +7,7 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="style.css" />
+    <style type="text/css">img{object-fit: contain;}</style>
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>

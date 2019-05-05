@@ -21,6 +21,7 @@ $allItems = $pdoStat->fetchAll();
     <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style_register.css" />
+    <style type="text/css">img{object-fit: contain;}</style>
 
 
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">

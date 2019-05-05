@@ -11,6 +11,7 @@ session_start()
     <link rel="stylesheet" href="style.css" />
     
     <link rel="stylesheet" href="style_register.css" />
+    <style type="text/css">img{object-fit: contain;}</style>
 
 
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">

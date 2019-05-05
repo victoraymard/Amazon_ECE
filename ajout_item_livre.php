@@ -8,6 +8,7 @@ session_start()
     <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="style_register.css" />
+    <style type="text/css">img{object-fit: contain;}</style>
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>

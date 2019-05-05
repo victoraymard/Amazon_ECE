@@ -5,7 +5,7 @@ session_start();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item ');
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE QuantiteTot !=0');
 
 //execution de la requete
 $executeIsOk = $pdoStat->execute();
@@ -28,6 +28,10 @@ $allItems = $pdoStat->fetchAll();
     <link href="css/font.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="btn_danger.css">
+    <style type="text/css">img{object-fit: contain;}</style>
+
+    
+
 </head>
 <body>
 
