@@ -63,6 +63,10 @@ if($_SESSION['Mail']!="")
       mysqli_query($db_handle, $changementMontantTotal) or die (mysqli_error($db_handle));
       $_SESSION['Montant_Tot'] = $nouveauMontantTot;
 
+      //Gestion du  nombre de ventes
+      $nbVentes = "UPDATE `Item` SET `NombreVentes` = NombreVentes+".$Quantite_Panier." WHERE `ID_Item` = ".$ID_Item;
+      mysqli_query($db_handle, $nbVentes) or die (mysqli_error($db_handle));
+
       mysqli_close($db_handle);
       header('location: panier.php');
       exit();
@@ -81,6 +85,10 @@ if($_SESSION['Mail']!="")
       mysqli_query($db_handle, $changementMontantTotal) or die (mysqli_error($db_handle));
 
       $_SESSION['Montant_Tot'] = $nouveauMontantTot;
+
+      //Gestion du  nombre de ventes
+      $nbVentes = "UPDATE `Item` SET `NombreVentes` = NombreVentes+".$Quantite_Panier." WHERE `ID_Item` = ".$ID_Item;
+      mysqli_query($db_handle, $nbVentes) or die (mysqli_error($db_handle));
 
 
       mysqli_close($db_handle);
