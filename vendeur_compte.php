@@ -115,6 +115,7 @@ $itemSelects = $pdoStat->fetchAll();
                           <th>Catégorie.</th>
                           <th>Prix</th>
                           <th>Quantité</th>
+                          <th>Remise en  %</th>
                           <th>Supprimer</th>
 
                       </tr>
@@ -130,6 +131,7 @@ $itemSelects = $pdoStat->fetchAll();
                       <td><?=$itemSelect['Categorie']?></td>
                       <td><?=$itemSelect['Prix']?></td>
                       <td><?=$itemSelect['QuantiteTot']?></td>
+                      <td><input type="number" name="remise" min="0" max="100" "></td>
                       <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
 
                   </tr>
