@@ -13,7 +13,22 @@ if(!isset($_SESSION['Pseudo_Admin']))
 <html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+    <link rel="stylesheet" href="table_gestion/materialdesignicons.min.css">
+    <link rel="stylesheet" href="table_gestion/vendor.bundle.base.css">
+    <link rel="stylesheet" href="table_gestion/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="table_gestion/style.css">
+
+
+
+    <meta charset="utf-8" />
+    <link href="bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_register.css" />
+    <link rel="stylesheet" type="text/css" href="btn_danger.css">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+
+
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
@@ -21,7 +36,7 @@ if(!isset($_SESSION['Pseudo_Admin']))
 </head>
 
 <body>
-    <div id="bloc_page">
+    <div id="bloc_page" >
 
         <header>
 
@@ -66,251 +81,207 @@ if(!isset($_SESSION['Pseudo_Admin']))
               </ul>
           </nav>
       </header><br>
-      <!------------------------------------------------------------------------------------------------------->
-      <!--code spécifique à la page-->
 
-      <div id="corps_admin">
-
-
-        <div id="ajouter_un_item_admin">
-            <a href="ajout_vendeur.php">ajouter<br/>un vendeur</a>
-            <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-        </div>
-
-        <br>
-        <table frame="box">
-
-            <tr>
-                <td colspan="2" align="left"><h2>Mes items</h2></td>
-            </tr>
-
-            <form>
-
-
-                <tr>
-                    <td>
-                        <input type="checkbox" id="item_checkbox">
-
-                    </td>
-                    <td>
-                        <label>
-                            <div class="produit">
-                                <div class="produit_gauche">
-                                    <a href="produit.php"><h3>nom du produit</h3></a>
-                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
-                                </div>
-
-                                <div class="produit_droite">
-                                    <p>
-                                        <h4>Description courte du produit</h4><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </label>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <input type="checkbox" id="item_checkbox">
-
-                    </td>
-                    <td>
-                        <label>
-                            <div class="produit">
-                                <div class="produit_gauche">
-                                    <a href="produit.php"><h3>nom du produit</h3></a>
-                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
-                                </div>
-
-                                <div class="produit_droite">
-                                    <p>
-                                        <h4>Description courte du produit</h4><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </label>
-                    </td>
-                </tr>
-
-
-                <tr>
-                    <td>
-                        <input type="checkbox" id="item_checkbox">
-
-                    </td>
-                    <td>
-                        <label>
-                            <div class="produit">
-                                <div class="produit_gauche">
-                                    <a href="produit.php"><h3>nom du produit</h3></a>
-                                    <a href="produit.php"><img src="images\vendeur.jpg"></a>
-                                </div>
-
-                                <div class="produit_droite">
-                                    <p>
-                                        <h4>Description courte du produit</h4><br>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </label>
-                    </td>
-                </tr>
-
-
-
-
-
-
-
-                <tr>
-                    <td colspan="2" align="left"><input type="button" value="supprimer" onclick="validation()"></td>
-                </tr>
-
-
-
-            </form>
-        </table>
-
-
-
-
-
-
-
-        <div id="admin_droite">
-
-
-            <div id="ajouter_un_item_admin">
-                <a href="ajout_item_admin.php">ajouter<br/>un item</a>
-                <!--<p>il faut pouvoir revenir à la page précédente, et donc savoir de laquelle il s'agit</p>-->
-            </div>
-
-            <br>
-            <table frame="box">
-
-                <tr>
-                    <td colspan="2" align="left"><h2>Mes items</h2></td>
-                </tr>
-
-                <form>
-
-
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-
-                        </td>
-                        <td>
-                            <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
-
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                    </div>
-                                </div>
-                            </label>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-
-                        </td>
-                        <td>
-                            <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
-
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                    </div>
-                                </div>
-                            </label>
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>
-                            <input type="checkbox" id="item_checkbox">
-
-                        </td>
-                        <td>
-                            <label>
-                                <div class="produit">
-                                    <div class="produit_gauche">
-                                        <a href="produit.php"><h3>nom du produit</h3></a>
-                                        <a href="produit.php"><img src="images\apple1.jpg"></a>
-                                    </div>
-
-                                    <div class="produit_droite">
-                                        <p>
-                                            <h4>Description courte du produit</h4><br>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                        </p>
-                                    </div>
-                                </div>
-                            </label>
-                        </td>
-                    </tr>
-
-
-
-
-
-
-
-                    <tr>
-                        <td colspan="2" align="left"><input type="button" value="supprimer" onclick="validation()"></td>
-                    </tr>
-
-
-
-                </form>
-            </table>
-
-
-
-
-
-
-
-
-
-        </div>
-
-    </div>
-
-
-
-
+      <form action="deconnexion">
+        <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+    </form>
     <!------------------------------------------------------------------------------------------------------->
-    <div id="footer">
-        <small>
-            Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
-        </small>
+    <!--code spécifique à la page-->
+
+    <section class="jumbotron text-center">
+        <h1 class="jumbotron-heading">Espace administrateur</h1>
+    </section>
+
+    <div class="row text-center">
+        <div class="col-lg-6">
+            <a href="ajout_item_admin.php"><button type="button" class="btn btn-outline-dark">ajouter un items</button></a>            
+        </div>
+        <div class="col-lg-6">
+            <a href="ajout_vendeur.php"><button type="button" class="btn btn-outline-dark">ajouter un vendeur</button></a>
+        </div>
     </div>
+
+    
+
+
+    <div style=" margin: auto;" class="main-panel">
+        <div class="content-wrapper">
+          <div class="row text-center">
+
+
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Table Items</h4>
+                  <div class="table-responsive">
+                    <table class="table table-striped ">
+                      <thead>
+                        <tr>
+                          <th>Photo</th>
+                          <th>Nom</th>
+                          <th>Catégorie.</th>
+                          <th>Prix</th>
+                          <th>Quantité</th>
+                          <th>Vendeur</th>
+                          <th>Supprimer</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+
+
+                    <tr>
+                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+                      <td>Mme Bovarie</td>
+                      <td>Livre</td>
+                      <td>8€</td>
+                      <td>12</td>
+                      <td>Kemar</td>
+                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+                  </tr>
+
+
+                  <tr>
+                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+                      <td>Mme Bovarie</td>
+                      <td>Livre</td>
+                      <td>8€</td>
+                      <td>12</td>
+                      <td>Kemar</td>
+                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+                  </tr>
+
+                  <tr>
+                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+                      <td>Mme Bovarie</td>
+                      <td>Livre</td>
+                      <td>8€</td>
+                      <td>12</td>
+                      <td>Kemar</td>
+                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+                  </tr>
+
+                  <tr>
+                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+                      <td>Mme Bovarie</td>
+                      <td>Livre</td>
+                      <td>8€</td>
+                      <td>12</td>
+                      <td>Kemar</td>
+                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+                  </tr>
+
+
+
+
+
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
+</div>
+
+
+
+<div class="col-lg-6 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Table vendeurs</h4>
+      <div class="table-responsive">
+        <table class="table table-striped ">
+          <thead>
+            <tr>
+              <th>Photo</th>
+              <th>Pseudo</th>
+              <th>Nombre d'items</th>
+              <th>Progression</th>
+              <th>Nombres de ventes</th>
+              <th>Supprimer</th>
+
+          </tr>
+      </thead>
+      <tbody>
+
+
+        <tr>
+          <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+          <td>Kemar</td>
+          <td>12</td>
+          <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
+          <td>112</td>
+          <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+      </tr>
+
+
+      <tr>
+          <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+          <td>Kemar</td>
+          <td>12</td>
+          <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 18%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
+          <td>112</td>
+          <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+      </tr>
+
+      <tr>
+          <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+          <td>Kemar</td>
+          <td>12</td>
+          <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
+          <td>112</td>
+          <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+      </tr>
+
+      <tr>
+          <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+          <td>Kemar</td>
+          <td>12</td>
+          <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
+          <td>112</td>
+          <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+
+      </tr>
+
+
+
+
+
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+<!------------------------------------------------------------------------------------------------------->
+<div id="footer">
+
+    <small>
+        Droits d'auteur | Copyright &copy; 2019, Amazon ECE.
+        <audio cont rols autoplay><source src="images/admin.mp3" type="audio/mpeg"></audio>
+    </small>
+</div>
+</div>
+<script src="table_gestion/vendor.bundle.base.js"></script>
+<script src="table_gestion/vendor.bundle.addons.js"></script>
+<script src="table_gestion/off-canvas.js"></script>
+<script src="table_gestion/misc.js"></script>
 </body>
 
 </html>

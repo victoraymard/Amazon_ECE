@@ -1,0 +1,18 @@
+#bloc_page, .content-wrapper{
+	background-image: url("images/fond_admin.jpg");
+}
+
+.jumbotron{
+	height: 150px; 
+	/*background: linear-gradient(40deg, rgba(9,9,121,1) 0%, rgba(100,200,230,1) 50%, rgba(9,9,121,1) 100%); */
+	color:darkred;
+	font-size: 5em;
+	font-weight: bold;
+	border-radius: 70px;
+	background-image: url("images/money.gif");
+}
+
+.jumbotron h1{
+	text-shadow: 2px 2px black;
+}
+

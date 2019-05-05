@@ -674,11 +674,12 @@ nav > ul > li:hover
          #ajouter_un_item_admin
         {
             text-align: center;
-            background-color: yellow;
+            background-color: darkgrey;margin-top: 20px;color: #FFF;
             font-size: 1.3em;
             width: 150px;
             height: 65px;
             border-radius: 5px;
+
         }
 
        
@@ -1038,9 +1039,6 @@ nav > ul > li:hover
 nav a:hover{
     color: white;
 }
-
-
-
 
 
 
