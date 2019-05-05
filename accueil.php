@@ -161,7 +161,7 @@ $allItems = $pdoStat->fetchAll();
                         <!----------------------------------------------------------------------------------test----------->
                         <?php foreach ($allItems as $item): ?>
                             <div class="col-sm">
-                                <div class="card">
+                                <div class="card text-center">
                                     <a href="produit.php?idItem=<?=$item['ID_Item']?>" >
                                         <?php
                                         //preparation de la requette pour photos
