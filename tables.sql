@@ -96,31 +96,34 @@ CREATE TABLE Panier(
 
 /*Saisie des données en dur comme les admins ou les tests*/
 
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Madame Bovary','Livre sur une chaudasse','Livre',12, 15, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Harry Potter','collection des 7 livres','Livre',3, 30, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('On a pas toujours du caviar','Un livre exceptionnel que je vous recommande chaudement de lire','Livre',32,12, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Petit pas sur le sable mouillé','Livre que je dois lire','Livre',1,8, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('T-shirt sympa','il peut aussi servir de callebar','Vetement',3,25, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Pull pas beau','quand il fait froid en ete','Vetement',13,40, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Pink Floyd','Another brick in the wall','Musique',5,20, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Vynil Queen','A night at the opera','Musique',12,19, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Disque Beatles','Sgt. Peters lonely band','Musique',24,9, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Ballon coupe du monde','Tres sympa','Sports_loisirs',24,39, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('Matuidi','Pour le ramener à la maison','Sports_loisirs',1,999, 'Francis');
-INSERT INTO `Item`(`Nom`, `Description`, `Categorie`, `QuantiteTot`, `Prix`, Pseudo_Vendeur) VALUES ('PS6','On est  dans le turfu','Sports_loisirs',1,2999, 'Francis');
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/madame-bovary-381.jpg',1);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/on_a_pas_toujours_du_caviar.jpg',3);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/livres-HP.jpg',2);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/Deux-petits-pas-sur-le-sable-mouille.jpg',4);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/boxer-chien-boxer-t-shirt-degrade-homme.jpg',5);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/2477751_2.jpg',6);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/harryPot.jpg',2);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/beatles_disques.jpg',9);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/vynil_queen.jpg',8);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/pink-floyd-the-wall.jpg',7);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/ballon_CDM.jpg',10);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/matuidi.jpg',11);
-INSERT INTO `Photos`(`Nom_photo`, `ID_Item`) VALUES ('images/PS6.jpg',12);
 INSERT INTO Admin VALUES ('Cous', 'Cous');
+INSERT INTO Acheteur VALUES ('thomas.lemercier7156@hotmail.com', 'bonjour', 'Lemercier', 'Thomas', '38 Avenue de la resistance', 'Paris', 93340, 'France', 0789714959, '1111', '2019-05-06', 'MR LEMERCIER', 111, 'Mr.', '1999-01-07', 0);
+INSERT INTO Acheteur VALUES ('tom_atow@hotmail.fr', 'bonsoir', 'Devincre', 'Leonard', '17 Villa Seurat', 'Paris', 75014, 'France', 0666172538, '2222', '2019-05-06', 'MR DEVINCRE', 222, 'Mr.', '1998-03-13', 0);
+INSERT INTO Vendeur VALUES ('Thomas', 'thomas.lemercier7156@hotmail.com', 'salut', 'Lemercier', 'images/Thomas.png', 'images/fond1.jpg');
+INSERT INTO Vendeur VALUES ('Leo', 'thomas.lemercier7156@hotmail.com', 'aplus', 'Devincre', 'images/léonard.png', 'images/fond2.jpg');
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Madame Bovary','Livre de Flaubert','Livre', 20, 15, 'Thomas', 10, 10);
+INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (1, 'Madame Bovary', 'Gustave FLaubert', 1857, 'Multiple');
+INSERT INTO Photos VALUES ('images/madame-bovary-381.jpg', 1);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Bohemain Rhapsody','Musique Queen, ca dechire ! En vynil en plus !','Musique', 10, 35, 'Leo', 0, 45);
+INSERT INTO Musique(ID_Item, Titre, Compositeur, Annee, Album) VALUES (2, 'Bohemain Rhapsody', 'Queen', 1975, 'A Night at the Opera');
+INSERT INTO Photos VALUES ('images/vynil_queen.jpg',2);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Tee-shirt basique','Tee-shirt noir volcom','Vetement', 1, 20, 'Leo', 0, 0);
+INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (3, 'Extra_small', 'Volcom', 'Noir');
+INSERT INTO Photos VALUES ('images/TS_Volcom.jpg',3);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('PlaySTation 6','Derniere console de Sony','Sports_Loisirs', 6, 500, 'Thomas', 20, 1);
+INSERT INTO Photos VALUES ('images/ballon_CDM.jpg', 4);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Ballon de Foot','Ideal pour lacher Fifa de temps en temps','Sports_Loisirs', 8, 5, 'Leo', 5, 7);
+INSERT INTO Photos VALUES ('PS6.jpg', 5);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Harry Potter et le Prince de Sang-Mele','Livre HP, Tome 6','Livre', 2, 15, 'Thomas', 0, 9);
+INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (6, 'Harry Potter et le Prince de Sang-Mele', 'J-K Rowling', 2005, 'Bloomsbury Publishing');
+INSERT INTO Photos VALUES ('images/HP.jpg', 6);
+
+
 
 
