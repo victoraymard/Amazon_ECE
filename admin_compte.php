@@ -27,6 +27,7 @@ if(!isset($_SESSION['Pseudo_Admin']))
     <link rel="stylesheet" href="style_register.css" />
     <link rel="stylesheet" type="text/css" href="btn_danger.css">
     <link rel="stylesheet" type="text/css" href="admin.css">
+    <style type="text/css">img{object-fit: contain;}</style>
 
 
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">

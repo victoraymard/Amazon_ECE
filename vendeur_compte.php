@@ -18,6 +18,8 @@ session_start();
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style_register.css" />
   <link rel="stylesheet" type="text/css" href="btn_danger.css">
+  <link rel="stylesheet" type="text/css" href="vendeur_compte.css">
+  <style type="text/css">img{object-fit: contain;}</style>
 
   
   

@@ -34,6 +34,7 @@ else
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="css/font.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">img{object-fit: contain;}</style>
 </head>
 <body>
 
