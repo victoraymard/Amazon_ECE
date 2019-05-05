@@ -5,7 +5,7 @@ session_start();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
 //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item ');
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item WHERE NombreVentes>5');
 
 //execution de la requete
 $executeIsOk = $pdoStat->execute();
@@ -145,7 +145,7 @@ $allItems = $pdoStat->fetchAll();
     $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
                     //préparation de la requete
-    $pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Livre\' ');
+    $pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Livre\' AND NombreVentes>5');
 
                     //execution de la requete
     $executeIsOk = $pdoStat->execute();
@@ -185,7 +185,7 @@ $allItems = $pdoStat->fetchAll();
                                  $photos[1]['Nom_Photo']="images/blanc.jpg";
                                 }
 
-                             ?>
+                                ?>
 
 
                              <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
@@ -225,7 +225,7 @@ $allItems = $pdoStat->fetchAll();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
                     //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Musique\' ');
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Musique\' AND NombreVentes>5 ');
 
                     //execution de la requete
 $executeIsOk = $pdoStat->execute();
@@ -300,7 +300,7 @@ $musiques = $pdoStat->fetchAll();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
                     //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Vetement\' ');
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'Vetement\' AND NombreVentes>5 ');
 
                     //execution de la requete
 $executeIsOk = $pdoStat->execute();
@@ -375,7 +375,7 @@ $vetements = $pdoStat->fetchAll();
 $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
                     //préparation de la requete
-$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'SportsLoisirs\' ');
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item  WHERE Categorie = \'SportsLoisirs\' AND NombreVentes>5 ');
 
                     //execution de la requete
 $executeIsOk = $pdoStat->execute();

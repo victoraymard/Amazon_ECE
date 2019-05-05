@@ -95,11 +95,11 @@ session_start()
 
                                             </div>
 
-                                            
+
 
                                             <div class="col-md-6">
                                               <div class="form-group">
-                                                <select name="Couleur" required >
+                                                <select name="Couleurs" required >
                                                     <option value="defaut">Sélectionner une couleur</option>
                                                     <option value="Bleu" name="Bleu">bleu</option>
                                                     <option value="Rouge" name="Rouge">rouge</option>
@@ -110,7 +110,7 @@ session_start()
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" class="form-control" placeholder="Type *" value="" name="Album" />
-                                            </div>                                   
+                                            </div>
                                             <input type="submit" class="btnRegister"  value="Enregistrez le!"/>
                                         </div>
                                     </div>
