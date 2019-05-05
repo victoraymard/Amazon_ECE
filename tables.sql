@@ -115,10 +115,10 @@ INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (3, 'Extra_small'
 INSERT INTO Photos VALUES ('images/TS_Volcom.jpg',3);
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('PlaySTation 6','Derniere console de Sony','Sports_Loisirs', 6, 500, 'Thomas', 20, 1);
-INSERT INTO Photos VALUES ('images/ballon_CDM.jpg', 4);
+INSERT INTO Photos VALUES ('images/ballon_CDM.jpg', 5);
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Ballon de Foot','Ideal pour lacher Fifa de temps en temps','Sports_Loisirs', 8, 5, 'Leo', 5, 7);
-INSERT INTO Photos VALUES ('PS6.jpg', 5);
+INSERT INTO Photos VALUES ('images/PS6.jpg', 4);
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Harry Potter et le Prince de Sang-Mele','Livre HP, Tome 6','Livre', 2, 15, 'Thomas', 0, 9);
 INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (6, 'Harry Potter et le Prince de Sang-Mele', 'J-K Rowling', 2005, 'Bloomsbury Publishing');
@@ -141,8 +141,14 @@ INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (10, 'medium', 'L
 INSERT INTO Photos VALUES ('images/pantalon.jpg', 10);
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Boite de lego a construire','Ideal pour enfant a partir de 5 ans','Sports_Loisirs', 1, 50, 'Thomas', 10, 15);
-INSERT INTO Photos VALUES ('lego.jpg', 11);
+INSERT INTO Photos VALUES ('images/lego.jpg', 11);
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Polo Nike noir','Polo Nike, pour plus de seduction', 'Vetement', 1, 55, 'Leo', 0, 0);
 INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (12, 'medium', 'Nike', 'Noir');
 INSERT INTO Photos VALUES ('images/polo.jpg', 12);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Palme','Palme pour nager supersuper vite','Sports_Loisirs', 1, 30, 'Thomas', 0, 10);
+INSERT INTO Photos VALUES ('images/palme.jpg', 13);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Airpods 2','Ecouteurs sans fil, derniere generation','Sports_Loisirs', 1, 150, 'Leo', 25, 16);
+INSERT INTO Photos VALUES ('images/airpods.jpg', 14);
