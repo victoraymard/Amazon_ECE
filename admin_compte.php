@@ -39,7 +39,7 @@ $allVendeurs = $pdoStat2->fetchAll();
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="table_gestion/materialdesignicons.min.css">
   <link rel="stylesheet" href="table_gestion/vendor.bundle.base.css">
   <link rel="stylesheet" href="table_gestion/vendor.bundle.addons.css">
@@ -125,14 +125,14 @@ $allVendeurs = $pdoStat2->fetchAll();
 
     <div class="row text-center">
       <div class="col-lg-6">
-        <a href="ajout_item_admin.php"><button type="button" class="btn btn-outline-dark">ajouter un items</button></a>            
+        <a href="ajout_item_admin.php"><button type="button" class="btn btn-outline-dark">ajouter un items</button></a>
       </div>
       <div class="col-lg-6">
         <a href="ajout_vendeur.php"><button type="button" class="btn btn-outline-dark">ajouter un vendeur</button></a>
       </div>
     </div>
 
-    
+
 
 
     <div style=" margin: auto;" class="main-panel">
@@ -175,7 +175,7 @@ $allVendeurs = $pdoStat2->fetchAll();
 
 
                       <tr>
-                        <td class="py-1"><img src="<?=$photo[0][Nom_Photo]?>" alt="image" /></td>
+                        <td class="py-1"><img src="<?=$photo[0]['Nom_Photo']?>" alt="image" /></td>
                         <td><?=$allItem['Nom']?></td>
                         <td><?= $allItem['Categorie']?></td>
                         <td><?= $allItem['Prix']?>€</td>
@@ -241,7 +241,10 @@ $allVendeurs = $pdoStat2->fetchAll();
                         <td class="py-1"><img src="<?=$allVendeur['PhotoVendeur']?>" alt="image" /></td>
                         <td><?=$allVendeur['Pseudo_Vendeur']?></td>
                         <td><?=$nbTotItems?></td>
-                        <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
+                          <?php
+                          $pourcentageProgression = $nbTotVendus/200;
+                          ?>
+                        <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: <?=$nbTotVendus?>%" aria-valuenow="<?=$nbTotVendus?>" aria-valuemin="0" aria-valuemax="200"></div></div></td>
                         <td><?=$nbTotVendus?></td>
                           <td><a href="suppression_vendeur_admin.php?Pseudo_Vendeur=<?=$allVendeur['Pseudo_Vendeur']?>"><button>Supprimer vendeur</button></a></td>
                       </tr>

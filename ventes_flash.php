@@ -117,7 +117,11 @@ $livres = $pdoStat->fetchAll();
     <div class="row mon_produit">
         <?php foreach ($livres as $livre): ?>
             <div   class="col-md-3 col-sm-6 ">
-
+                <?php
+                $pdoStat = $objetPDO->prepare('SELECT * FROM Livre  WHERE ID_Item = '.$livre['ID_Item']);
+                $executeIsOk = $pdoStat->execute();
+                $Catlivre = $pdoStat->fetchAll();
+                ?>
 
 
 
@@ -162,8 +166,8 @@ $livres = $pdoStat->fetchAll();
                         <div style="height: 250px;text-align: justify; overflow: auto;">
                             <div class="price"><?= $livre['Nom']?></div>
                             <span class="product-shipping">Description :<br><?= $livre['Description']?></span>
-                            <span class="product-shipping">Auteur :<br><?= $livre['Nom']?></span>
-                            <span class="product-shipping">Editeur :<br><?= $livre['Nom']?></span> 
+                            <span class="product-shipping">Auteur :<br><?= $Catlivre[0]['Auteur']?></span>
+                            <span class="product-shipping">Editeur :<br><?= $Catlivre[0]['Editeur']?></span>
                         </div>
                         
                         <a class="all-deals" href="produit.php?idItem=<?=$livre['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
@@ -200,6 +204,12 @@ $musiques = $pdoStat->fetchAll();
 
     <div class="row mon_produit">
         <?php foreach ($musiques as $musique): ?>
+
+            <?php
+            $pdoStat = $objetPDO->prepare('SELECT * FROM Musique  WHERE ID_Item = '.$musique['ID_Item']);
+            $executeIsOk = $pdoStat->execute();
+            $Catmusique = $pdoStat->fetchAll();
+            ?>
             <div class="col-md-3 col-sm-6">
 
                 <div class="product-grid8">
@@ -208,13 +218,13 @@ $musiques = $pdoStat->fetchAll();
 
                         <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
                             <?php
-                                        //preparation de la requette pour photos
+                            //preparation de la requette pour photos
                             $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$musique['ID_Item']);
 
-                                        //execution de la requette pour photos
+                            //execution de la requette pour photos
                             $photosIsOk = $photosReq->execute();
 
-                                        //recuperation des resultats pour photos
+                            //recuperation des resultats pour photos
                             $photos = $photosReq->fetchAll();
 
 
@@ -240,8 +250,10 @@ $musiques = $pdoStat->fetchAll();
                         <div style="height: 250px;text-align: justify; overflow: auto;">
                             <div class="price"><?= $musique['Nom']?></div>
                             <span class="product-shipping">Description :<br><?= $musique['Description']?></span>
-                            <span class="product-shipping">Auteur :<br><?= $musique['Nom']?></span>
-                            <span class="product-shipping">Editeur :<br><?= $musique['Nom']?></span> 
+                            <span class="product-shipping">Auteur :<br><?= $Catmusique[0]['Titre']?></span>
+                            <span class="product-shipping">Editeur :<br><?= $Catmusique[0]['Compositeur']?></span>
+                            <span class="product-shipping">Année :<br><?= $Catmusique[0]['Annee']?></span>
+                            <span class="product-shipping">Album :<br><?= $Catmusique[0]['Album']?></span>
                         </div>
                         <a class="all-deals" href="produit.php?idItem=<?=$musique['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                     </div>
@@ -278,6 +290,11 @@ $vetements = $pdoStat->fetchAll();
 
     <div class="row mon_produit">
         <?php foreach ($vetements as $vetement): ?>
+            <?php
+            $pdoStat = $objetPDO->prepare('SELECT * FROM Vetement  WHERE ID_Item = '.$vetement['ID_Item']);
+            $executeIsOk = $pdoStat->execute();
+            $Catvetement = $pdoStat->fetchAll();
+            ?>
             <div class="col-md-3 col-sm-6">
 
                 <div class="product-grid8">
@@ -286,16 +303,14 @@ $vetements = $pdoStat->fetchAll();
 
                         <a href="produit.php?idItem=<?=$vetement['ID_Item']?>">
                             <?php
-                                        //preparation de la requette pour photos
+                            //preparation de la requette pour photos
                             $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$vetement['ID_Item']);
 
-                                        //execution de la requette pour photos
+                            //execution de la requette pour photos
                             $photosIsOk = $photosReq->execute();
 
-                                        //recuperation des resultats pour photos
+                            //recuperation des resultats pour photos
                             $photos = $photosReq->fetchAll();
-
-
 
                             ?>
                             <img class="pic-1" src=<?= $photos[0]['Nom_Photo']?>>
@@ -317,8 +332,9 @@ $vetements = $pdoStat->fetchAll();
                         <div style="height: 250px;text-align: justify; overflow: auto;">
                             <div class="price"><?= $vetement['Nom']?></div>
                             <span class="product-shipping">Description :<br><?= $vetement['Description']?></span>
-                            <span class="product-shipping">Auteur :<br><?= $vetement['Nom']?></span>
-                            <span class="product-shipping">Editeur :<br><?= $vetement['Nom']?></span> 
+                            <span class="product-shipping">Taille :<br><?= $Catvetement[0]['Taille']?></span>
+                            <span class="product-shipping">Marque :<br><?= $Catvetement[0]['Marque']?></span>
+                            <span class="product-shipping">Couleur :<br><?= $Catvetement[0]['Couleur']?></span>
                         </div>
                         <a class="all-deals" href="produit.php?idItem=<?=$vetement['ID_Item']?>">More info <i class="fa fa-angle-right icon"></i></a>
                     </div>
