@@ -91,7 +91,7 @@ $allItems = $pdoStat->fetchAll();
     <div class="row">
         <div class="col">
             <div  id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            
+
                 <div  class="carousel-inner">
                     <!---------------------------------------->
 
@@ -115,7 +115,7 @@ $allItems = $pdoStat->fetchAll();
                     </div>
 
                     <?php foreach ($photos as $photo): ?>
-                        <div class="carousel-item">
+                        <div class="carousel-item text-center">
                             <img style="width="855" height="365" border-radius="10"" src=<?= $photo['Nom_Photo']?>>
                         </div>
                     <?php endforeach; ?>
