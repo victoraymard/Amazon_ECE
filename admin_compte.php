@@ -20,6 +20,18 @@ $executeIsOk = $pdoStat->execute();
 //recupération des resultats
 $allItems = $pdoStat->fetchAll();
 
+//ouverture de la connexion avec la base de données Projet
+$objetPDO2 = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat2 = $objetPDO2->prepare('SELECT * FROM Vendeur');
+
+//execution de la requete
+$executeIsOk2 = $pdoStat2->execute();
+
+//recupération des resultats
+$allVendeurs = $pdoStat2->fetchAll();
+
 
 ?>
 
@@ -148,54 +160,17 @@ $allItems = $pdoStat->fetchAll();
                     </thead>
                     <tbody>
 
-
+                    <?php foreach ($allItems as $allItem): ?>
                       <tr>
                         <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Mme Bovarie</td>
-                        <td>Livre</td>
-                        <td>8€</td>
-                        <td>12</td>
-                        <td>Kemar</td>
+                        <td><?=$allItem['Nom']?></td>
+                        <td><?= $allItem['Categorie']?></td>
+                        <td>8<?= $allItem['Prix']?>€</td>
+                        <td><?= $allItem['QuantiteTot']?></td>
+                        <td><?= $allItem['Pseudo_Vendeur']?></td>
                         <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
                       </tr>
-
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Mme Bovarie</td>
-                        <td>Livre</td>
-                        <td>8€</td>
-                        <td>12</td>
-                        <td>Kemar</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Mme Bovarie</td>
-                        <td>Livre</td>
-                        <td>8€</td>
-                        <td>12</td>
-                        <td>Kemar</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Mme Bovarie</td>
-                        <td>Livre</td>
-                        <td>8€</td>
-                        <td>12</td>
-                        <td>Kemar</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-
-
+                    <?php endforeach; ?>
 
 
                     </tbody>
@@ -226,50 +201,38 @@ $allItems = $pdoStat->fetchAll();
                     </thead>
                     <tbody>
 
+                    <?php foreach ($allVendeurs as $allVendeur):
+
+                        //ouverture de la connexion avec la base de données Projet
+                        $objetPDO3 = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+                        //préparation de la requete
+                        $pdoStat3 = $objetPDO3->prepare("SELECT * FROM Item WHERE Pseudo_Vendeur = '".$allVendeur['Pseudo_Vendeur']."'");
+
+                        //execution de la requete
+                        $executeIsOk3 = $pdoStat3->execute();
+
+                        //recupération des resultats
+                        $itemsVendeurs = $pdoStat3->fetchAll();
+
+                        $nbTotItems = 0;
+                        $nbTotVendus = 0;
+
+                        foreach ($itemsVendeurs as $itemsVendeur):
+                            $nbTotItems = $nbTotItems + $itemsVendeur['QuantiteTot'];
+                            $nbTotVendus = $nbTotVendus + $itemsVendeur['NombreVentes'];
+                        endforeach;
+                        ?>
 
                       <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Kemar</td>
-                        <td>12</td>
+                        <td class="py-1"><img src="<?=$allVendeur['PhotoVendeur']?>" alt="image" /></td>
+                        <td><?=$allVendeur['Nom']?></td>
+                        <td><?=$nbTotItems?></td>
                         <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
-                        <td>112</td>
+                        <td><?=$nbTotVendus?></td>
                         <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
                       </tr>
-
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Kemar</td>
-                        <td>12</td>
-                        <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 18%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
-                        <td>112</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Kemar</td>
-                        <td>12</td>
-                        <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
-                        <td>112</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-                      <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
-                        <td>Kemar</td>
-                        <td>12</td>
-                        <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
-                        <td>112</td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                      </tr>
-
-
-
+                    <?php endforeach; ?>
 
 
                     </tbody>
