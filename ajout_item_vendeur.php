@@ -144,7 +144,7 @@ session_start();
 
 
                                         <div class="form-group">
-                                            <input type="file" style="display:none" name="Nom_Video" value="" id="fileupload"  accept="video/*"/>
+                                            <input type="file" style="display:none" name="Nom_Video" value="fileupload" id="fileupload"  accept="video/*"/>
                                             <input type="button" value="Choisir une vidéo de l'item" onclick="getfile()" class="btn_selection"/>
                                         </div>
                                     </div>
