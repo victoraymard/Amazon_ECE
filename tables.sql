@@ -106,7 +106,7 @@ INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur,
 INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (1, 'Madame Bovary', 'Gustave FLaubert', 1857, 'Multiple');
 INSERT INTO Photos VALUES ('images/madame-bovary-381.jpg', 1);
 
-INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Bohemain Rhapsody','Musique Queen, ca dechire ! En vynil en plus !','Musique', 10, 35, 'Leo', 0, 45);
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Bohemain Rhapsody','Musique Queen, ca dechire ! En vynil en plus','Musique', 10, 35, 'Leo', 0, 45);
 INSERT INTO Musique(ID_Item, Titre, Compositeur, Annee, Album) VALUES (2, 'Bohemain Rhapsody', 'Queen', 1975, 'A Night at the Opera');
 INSERT INTO Photos VALUES ('images/vynil_queen.jpg',2);
 
@@ -124,6 +124,25 @@ INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur,
 INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (6, 'Harry Potter et le Prince de Sang-Mele', 'J-K Rowling', 2005, 'Bloomsbury Publishing');
 INSERT INTO Photos VALUES ('images/HP.jpg', 6);
 
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Freestyle du sale','Rap de qualite','Musique', 2, 20, 'Leo', 5, 13);
+INSERT INTO Musique(ID_Item, Titre, Compositeur, Annee, Album) VALUES (7, 'Lorenzo', 'Lorenzo', 2016, 'OKLM');
+INSERT INTO Photos VALUES ('images/lorenzo.jpg', 7);
 
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Californication','Grand classique des Red Hot','Musique', 5, 15, 'Thomas', 0, 5);
+INSERT INTO Musique(ID_Item, Titre, Compositeur, Annee, Album) VALUES (8, 'Californication', 'Red Hot CHilli Peppers', 1999, 'Californication');
+INSERT INTO Photos VALUES ('images/californication.jpg', 8);
 
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('One Piece','Tome 78 de cette épopée', 'Livre', 1, 7, 'Thomas', 0, 0);
+INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (9, 'One Piece', ' Eiichiro Oda', 2016, 'Glenat');
+INSERT INTO Photos VALUES ('images/OP.jpg', 9);
 
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Pantalon noir basique','Pantalon femme','Vetement', 1, 60, 'Leo', 0, 0);
+INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (10, 'medium', 'Levis', 'Noir');
+INSERT INTO Photos VALUES ('images/pantalon.jpg', 10);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Boite de lego a construire','Ideal pour enfant a partir de 5 ans','Sports_Loisirs', 1, 50, 'Thomas', 10, 15);
+INSERT INTO Photos VALUES ('lego.jpg', 11);
+
+INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Polo Nike noir','Polo Nike, pour plus de seduction', 'Vetement', 1, 55, 'Leo', 0, 0);
+INSERT INTO Vetement(ID_Item, Taille, Marque, Couleurs) VALUES (12, 'medium', 'Nike', 'Noir');
+INSERT INTO Photos VALUES ('images/polo.jpg', 12);
