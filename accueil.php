@@ -96,12 +96,20 @@ $allItems = $pdoStat->fetchAll();
                     <!---------------------------------------->
 
 
-
+                    <div  class="carousel-item active">
+                        <img  class="d-block w-100" src="images\ventes_flash.jpg" style="border-radius:10px;">
+                    </div>
 
 
                     <?php
-                    //preparation de la requette pour photos
-                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos');
+                    $nbVentes = $objetPDO->prepare('SELECT * FROM Item WHERE NombreVentes>5');
+                    $nbVentesIsOk = $nbVentes->execute();
+                    $ventesFlashs = $nbVentes->fetchAll();
+
+                    foreach ($ventesFlashs as $ventesFlash):
+
+                        //preparation de la requette pour photos
+                    $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item ='.$ventesFlash['ID_Item']);
 
                     //execution de la requette pour photos
                     $photosIsOk = $photosReq->execute();
@@ -110,13 +118,8 @@ $allItems = $pdoStat->fetchAll();
                     $photos = $photosReq->fetchAll();
                     ?>
 
-                    <div  class="carousel-item active">
-                        <img  class="d-block w-100" src="images\ventes_flash.jpg" style="border-radius:10px;">
-                    </div>
-
-                    <?php foreach ($photos as $photo): ?>
                         <div class="carousel-item text-center">
-                            <img style="width="855" height="365" border-radius="10"" src=<?= $photo['Nom_Photo']?>>
+                            <img style="width="855" height="365" border-radius="10"" src=<?= $photos[0]['Nom_Photo']?>>
                         </div>
                     <?php endforeach; ?>
                     <!---------------------------------------->

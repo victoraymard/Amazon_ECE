@@ -27,7 +27,6 @@ if($_SESSION['NumCarte'] == $NumCarte && $_SESSION['NomCarte'] == $NomCarte && $
     $_SESSION['Montant_Tot'] = 0;
     $deletePanier = $objetPDO->prepare("DELETE FROM Panier WHERE Mail = '".$_SESSION['Mail']."'");
 
-
     //execution de la requete
     $executeIsOk = $pdoStat->execute();
     $executeIsOk2 = $deletePanier->execute();
