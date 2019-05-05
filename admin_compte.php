@@ -161,8 +161,21 @@ $allVendeurs = $pdoStat2->fetchAll();
                     <tbody>
 
                     <?php foreach ($allItems as $allItem): ?>
+
+                        <?php
+                        //preparation de la requette pour photos
+                        $photosReq = $objetPDO->prepare('SELECT * FROM Photos WHERE ID_Item = '.$allItem['ID_Item']);
+
+                        //execution de la requette pour photos
+                        $photosIsOk = $photosReq->execute();
+
+                        //recuperation des resultats pour photos
+                        $photo = $photosReq->fetchAll();
+                        ?>
+
+
                       <tr>
-                        <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
+                        <td class="py-1"><img src="<?=$photo[0][Nom_Photo]?>" alt="image" /></td>
                         <td><?=$allItem['Nom']?></td>
                         <td><?= $allItem['Categorie']?></td>
                         <td>8<?= $allItem['Prix']?>€</td>
