@@ -32,7 +32,9 @@ if($_SESSION['NumCarte'] == $NumCarte && $_SESSION['NomCarte'] == $NomCarte && $
     $executeIsOk2 = $deletePanier->execute();
 
     //Envoie de mail qui fonctionne si on peut se connecter au serveur mail
-    mail($_SESSION['Mail'], 'Confirmation de votre achat', 'Nous vous confirmons la reception de votre achat !');
+    ini_set("SMTP", "smtp.free.fr");
+    ini_set("smpt_port", "25");
+    mail($_SESSION['Mail'], "Confirmation de votre achat", "Nous vous confirmons la reception de votre achat !", "tom_atow@hotmail.fr");
 
     echo "<script language = \"javascript\"> alert('Paiement effectué avec succes ! Merci de votre achat.') </script>";
     echo "<script language = \"javascript\"> document.location.href = 'accueil.php'</script>";
