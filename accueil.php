@@ -78,8 +78,8 @@ $allItems = $pdoStat->fetchAll();
       </nav>
 
   </header>
-  <form action="deconnexion">
-    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+  <form action="deconnexion.php">
+    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion.php" >Déconnexion</button>
 </form>
 
 

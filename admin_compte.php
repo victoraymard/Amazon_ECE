@@ -7,6 +7,20 @@ if(!isset($_SESSION['Pseudo_Admin']))
     header('location: accueil.php');
     exit();
 }
+
+//ouverture de la connexion avec la base de données Projet
+$objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
+
+//préparation de la requete
+$pdoStat = $objetPDO->prepare('SELECT * FROM Item');
+
+//execution de la requete
+$executeIsOk = $pdoStat->execute();
+
+//recupération des resultats
+$allItems = $pdoStat->fetchAll();
+
+
 ?>
 
 <!DOCTYPE html>
