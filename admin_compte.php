@@ -56,7 +56,7 @@ $allVendeurs = $pdoStat2->fetchAll();
     img{object-fit: contain;}
     .jumbotron-heading a{color: darkred; font-weight: bold;}
     .jumbotron-heading a:hover{color: darkred; text-decoration: none;}
-
+    @media(max-width: 1116px){.jumbotron{display: none;}}
   </style>
 
 

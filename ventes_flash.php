@@ -435,7 +435,7 @@ $sports_loisirss = $pdoStat->fetchAll();
     <div class="row">
         <div class="col-12 copyright mt-2">
             <p class="float-left">
-                <a href="#">Back to top</a>
+                <a href="#">Retour au début</a>
             </p>
             <p class="text-right text-muted">Droits d'auteur | Copyright &copy; 2019, Amazon ECE.</p>
         </div>

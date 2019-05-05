@@ -24,7 +24,7 @@ $allItems = $pdoStat->fetchAll();
     <link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link href="css/font.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="btn_danger.css">
@@ -141,7 +141,7 @@ $allItems = $pdoStat->fetchAll();
         <div class="col-12 col-md-3">
             <div class="card">
                 <div class="card-header bg-success text-white text-uppercase">
-                    <i class="fa fa-heart"></i> Bienvenue sur notre site !
+                    <i class="fa fa-heart"></i> Bienvenue sur notre site!
                 </div>
                 <img src="images\ned_flanders.png">
 
