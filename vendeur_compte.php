@@ -32,8 +32,9 @@ $itemSelects = $pdoStat->fetchAll();
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style_register.css" />
   <link rel="stylesheet" type="text/css" href="btn_danger.css">
-      #vendeur_compte_gauche{background-image: url("<?=$_SESSION['ImageFond']?>");}
+
   <style type="text/css">
+      #vendeur_compte_gauche{background-image: url("<?=$_SESSION['ImageFond']?>");}
   img{object-fit: contain;}
   #ajouter_un_item_admin > a{color: white;}
   #ajouter_un_item_admin > a:hover{text-decoration: none; color: white; }
