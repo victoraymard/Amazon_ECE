@@ -115,8 +115,8 @@ $allItems = $pdoStat->fetchAll();
                     </div>
 
                     <?php foreach ($photos as $photo): ?>
-                        <div class="carousel-item text-center">
-                            <img style="width="855" height="365" border-radius="10p"" src=<?= $photo['Nom_Photo']?>>
+                        <div class="carousel-item">
+                            <img style="width="855" height="365" border-radius="10"" src=<?= $photo['Nom_Photo']?>>
                         </div>
                     <?php endforeach; ?>
                     <!---------------------------------------->
