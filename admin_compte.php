@@ -39,7 +39,7 @@ $allVendeurs = $pdoStat2->fetchAll();
 <html>
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="table_gestion/materialdesignicons.min.css">
   <link rel="stylesheet" href="table_gestion/vendor.bundle.base.css">
   <link rel="stylesheet" href="table_gestion/vendor.bundle.addons.css">
@@ -125,14 +125,14 @@ $allVendeurs = $pdoStat2->fetchAll();
 
     <div class="row text-center">
       <div class="col-lg-6">
-        <a href="ajout_item_admin.php"><button type="button" class="btn btn-outline-dark">ajouter un items</button></a>            
+        <a href="ajout_item_admin.php"><button type="button" class="btn btn-outline-dark">ajouter un items</button></a>
       </div>
       <div class="col-lg-6">
         <a href="ajout_vendeur.php"><button type="button" class="btn btn-outline-dark">ajouter un vendeur</button></a>
       </div>
     </div>
 
-    
+
 
 
     <div style=" margin: auto;" class="main-panel">
@@ -175,7 +175,7 @@ $allVendeurs = $pdoStat2->fetchAll();
 
 
                       <tr>
-                        <td class="py-1"><img src="<?=$photo[0][Nom_Photo]?>" alt="image" /></td>
+                        <td class="py-1"><img src="<?=$photo[0]['Nom_Photo']?>" alt="image" /></td>
                         <td><?=$allItem['Nom']?></td>
                         <td><?= $allItem['Categorie']?></td>
                         <td><?= $allItem['Prix']?>€</td>

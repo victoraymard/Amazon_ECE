@@ -100,7 +100,7 @@ INSERT INTO Admin VALUES ('Cous', 'Cous');
 INSERT INTO Acheteur VALUES ('thomas.lemercier7156@hotmail.com', 'bonjour', 'Lemercier', 'Thomas', '38 Avenue de la resistance', 'Paris', 93340, 'France', 0789714959, '1111', '2019-05-06', 'MR LEMERCIER', 111, 'Mr.', '1999-01-07', 0);
 INSERT INTO Acheteur VALUES ('tom_atow@hotmail.fr', 'bonsoir', 'Devincre', 'Leonard', '17 Villa Seurat', 'Paris', 75014, 'France', 0666172538, '2222', '2019-05-06', 'MR DEVINCRE', 222, 'Mr.', '1998-03-13', 0);
 INSERT INTO Vendeur VALUES ('Thomas', 'thomas.lemercier7156@hotmail.com', 'salut', 'Lemercier', 'images/Thomas.png', 'images/fond1.jpg');
-INSERT INTO Vendeur VALUES ('Leo', 'thomas.lemercier7156@hotmail.com', 'aplus', 'Devincre', 'images/léonard.png', 'images/fond2.jpg');
+INSERT INTO Vendeur VALUES ('Leo', 'thomas.lemercier7156@hotmail.com', 'aplus', 'Devincre', 'images/leonard.jpg', 'images/fond2.jpg');
 
 INSERT INTO Item(Nom, Description, Categorie, QuantiteTot, Prix, Pseudo_Vendeur, Remise, NombreVentes) VALUES ('Madame Bovary','Livre de Flaubert','Livre', 20, 15, 'Thomas', 10, 10);
 INSERT INTO Livre(ID_Item, Titre, Auteur, Annee, Editeur) VALUES (1, 'Madame Bovary', 'Gustave FLaubert', 1857, 'Multiple');

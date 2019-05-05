@@ -31,13 +31,16 @@ if($_SESSION['NumCarte'] == $NumCarte && $_SESSION['NomCarte'] == $NomCarte && $
     $executeIsOk = $pdoStat->execute();
     $executeIsOk2 = $deletePanier->execute();
 
+    //Envoie de mail qui fonctionne si on peut se connecter au serveur mail
+    mail($_SESSION['Mail'], 'Confirmation de votre achat', 'Nous vous confirmons la reception de votre achat !');
+
     echo "<script language = \"javascript\"> alert('Paiement effectué avec succes ! Merci de votre achat.') </script>";
     echo "<script language = \"javascript\"> document.location.href = 'accueil.php'</script>";
 }
 else
-    {
-        echo "<script language = \"javascript\"> alert('Les données bancaires fournis ne sont pas valides.') </script>";
+{
+    echo "<script language = \"javascript\"> alert('Les données bancaires fournis ne sont pas valides.') </script>";
         //Redirection
-        echo "<script language = \"javascript\"> document.location.href = 'paiement.php'</script>";
+    echo "<script language = \"javascript\"> document.location.href = 'paiement.php'</script>";
 }
 ?>
