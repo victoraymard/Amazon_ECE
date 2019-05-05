@@ -116,7 +116,7 @@ $livres = $itemReq->fetchAll();
                             $photos = $photosReq->fetchAll();
                             ?>
                             <a href="produit.php?idItem=<?=$livre['ID_Item']?>">
-                                <img src=<?= $photos[0]['Nom_photo']?>>
+                                <img src=<?= $photos[0]['Nom_Photo']?>>
                             </a>
                         </div>
 

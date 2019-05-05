@@ -115,7 +115,7 @@ $sports_loisirs = $pdoStat->fetchAll();
                             ?>
 
                             <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>">
-                                <img src=<?= $photos[0]['Nom_photo']?>>
+                                <img src=<?= $photos[0]['Nom_Photo']?>>
                             </a>
                         </div>
 

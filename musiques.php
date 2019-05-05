@@ -117,7 +117,7 @@ $musiques = $pdoStat->fetchAll();
                             ?>
 
                             <a href="produit.php?idItem=<?=$musique['ID_Item']?>">
-                                <img src=<?= $photos[0]['Nom_photo']?>>
+                                <img src=<?= $photos[0]['Nom_Photo']?>>
                             </a>
                         </div>
 

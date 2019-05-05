@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 //Redirection
 //header('location: accueil.php');
 //exit();
@@ -14,46 +16,28 @@ $NomCarte = $_POST["NomCarte"];
 $DateCarte = $_POST["DateCarte"];
 $Crypto = $_POST["Crypto"];
 
-$database = "Projet";
-$db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-$db_found = mysqli_select_db($db_handle, $database);
 
-if($db_found)
+if($_SESSION['NumCarte'] == $NumCarte && $_SESSION['NomCarte'] == $NomCarte && $_SESSION['Crypto'] == $Crypto && $_SESSION['DateCarte'] == $DateCarte)
 {
-    $sql = "SELECT * FROM Acheteur WHERE Mail = '$_SESSION[Mail]'";
+    //ouverture de la connexion avec la base de données Projet
+    $objetPDO = new PDO('mysql:host=localhost;dbname=Projet','root','');
 
-    $result = mysqli_query($db_handle, $sql);
+    //préparation de la requete
+    $pdoStat = $objetPDO->prepare('UPDATE Acheteur SET Montant_Tot = 0');
+    $_SESSION['Montant_Tot'] = 0;
+    $deletePanier = $objetPDO->prepare('TRUNCATE TABLE Panier');
 
-    if(mysqli_num_rows($result)!=0)
-    {
-        while($row = mysqli_fetch_assoc($result))
-        {
-            if($row['Mdp'] == $Mdp)
-            {
-                session_start();
-                $_SESSION['Pseudo_Vendeur'] = $row['Pseudo_Vendeur'];
-                $_SESSION['PhotoVendeur'] = $row['PhotoVendeur'];
-                $_SESSION['ImageFond'] = $row['ImageFond'];
+    //execution de la requete
+    $executeIsOk = $pdoStat->execute();
+    $executeIsOk2 = $deletePanier->execute();
 
-                mysqli_close($db_handle);
-                header('Location: accueil.php');
-                exit();
-            }
-            else
-            {
-                echo "Mot de passe incorrect" ;
-            }
-        }
-        mysqli_free_result($result);
-    }
-    else
-    {
-        echo "Le pseudo saisie est errone ou n'existe pas !";
-    }
+    echo "<script language = \"javascript\"> alert('Paiement effectué avec succes ! Merci de votre achat.') </script>";
+    echo "<script language = \"javascript\"> document.location.href = 'accueil.php'</script>";
 }
 else
-{
-    mysqli_close($db_handle);
-    echo "Database not found";
+    {
+        echo "<script language = \"javascript\"> alert('Les données bancaires fournis ne sont pas valides.') </script>";
+        //Redirection
+        echo "<script language = \"javascript\"> document.location.href = 'paiement.php'</script>";
 }
 ?>

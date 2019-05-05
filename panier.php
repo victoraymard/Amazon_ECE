@@ -177,23 +177,31 @@ else
                                         <td></td>
                                         <td></td>
                                         <td>Sub-Total</td>
-                                        <td class="text-right">255,90 €</td>
+                                        <?php
+                                        if ($_SESSION['Montant_Tot']==""){
+                                            $_SESSION['Montant_Tot']=0;
+                                        }
+                                        ?>
+                                        <td class="text-right"><?= $_SESSION['Montant_Tot']?> €</td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td>Shipping</td>
-                                        <td class="text-right">6,90 €</td>
+                                        <td>Shipping fee</td>
+                                        <td class="text-right">6 €</td>
                                     </tr>
                                     <tr>
                                         <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <?php
+                                        $tot_shiping = $_SESSION['Montant_Tot'] + 6;
+                                        ?>
                                         <td><strong>Total</strong></td>
-                                        <td class="text-right"><strong>346,90 €</strong></td>
+                                        <td class="text-right"><strong><?= $tot_shiping?> €</strong></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -202,10 +210,10 @@ else
                     <div class="col mb-2">
                         <div class="row">
                             <div class="col-sm-12  col-md-6">
-                                <button class="btn btn-block btn-light">Continuer votre shopping</button>
+                                <a href="accueil.php"><button class="btn btn-block btn-light">Continuer votre shopping</button></a>
                             </div>
                             <div class="col-sm-12 col-md-6 text-right">
-                                <button class="btn btn-lg btn-block btn-success text-uppercase">Paiement</button>
+                                <a href="paiement.php?Montant_Tot=<?= $tot_shiping?>"><button class="btn btn-lg btn-block btn-success text-uppercase">Paiement</button></a>
                             </div>
                         </div>
                     </div>

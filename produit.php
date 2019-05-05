@@ -98,14 +98,14 @@ $itemSelect = $pdoStat->fetchAll();
 
                     <?php foreach ($photos as $photo): ?>
 
-                        <img src=<?= $photo['Nom_Photo']?>width="300" height="200">
+                        <img src="<?= $photo['Nom_Photo']?>" width="300" height="200">
 
                     <?php endforeach; ?>
 
                 </div>
 
                 <div id="produit_images_droite">
-                    <img src=<?= $photos[0]['Nom_Photo']?>width="300" height="200">
+                    <img src="<?= $photos[0]['Nom_Photo']?>" width="300" height="200">
                 </div>
 
             </div>

@@ -31,7 +31,7 @@ if($db_found)
         $_SESSION['Adresse'] = $row['Adresse'];
         $_SESSION['Ville'] = $row['Ville'];
         $_SESSION['CodePostal'] = $row['CodePostal'];
-        $_SESSION['Pays'] = $row['Pays'];
+        $_SESSION['Pcays'] = $row['Pays'];
         $_SESSION['Tel'] = $row['Tel'];
         $_SESSION['NumCarte'] = $row['NumCarte'];
         $_SESSION['DateCarte'] = $row['DateCarte'];
