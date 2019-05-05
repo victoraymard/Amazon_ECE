@@ -30,7 +30,7 @@ $allItems = $pdoStat->fetchAll();
     <link rel="stylesheet" type="text/css" href="btn_danger.css">
     <style type="text/css">img{object-fit: contain;}</style>
 
-    
+
 
 </head>
 <body>
@@ -78,8 +78,8 @@ $allItems = $pdoStat->fetchAll();
       </nav>
 
   </header>
-  <form action="deconnexion">
-    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion" >Déconnexion</button>
+  <form action="deconnexion.php">
+    <button  type="submit" class="btn btn-danger" name="btn_connexion" action="deconnexion.php" >Déconnexion</button>
 </form>
 
 
