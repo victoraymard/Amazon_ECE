@@ -32,8 +32,15 @@ $itemSelects = $pdoStat->fetchAll();
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style_register.css" />
   <link rel="stylesheet" type="text/css" href="btn_danger.css">
-  <link rel="stylesheet" type="text/css" href="vendeur_compte.css">
-  <style type="text/css">img{object-fit: contain;}</style>
+
+  <style type="text/css">
+      #vendeur_compte_gauche{background-image: url("<?=$_SESSION['ImageFond']?>");}
+  img{object-fit: contain;}
+  #ajouter_un_item_admin > a{color: white;}
+  #ajouter_un_item_admin > a:hover{text-decoration: none; color: white; }
+  #ajouter_un_item_admin:hover{box-shadow: 10px 5px 5px black;}
+  #vendeur_compte_gauche img{height: 300px;width: 300px;object-fit:contain;}
+</style>
 
   
   
@@ -94,10 +101,10 @@ $itemSelects = $pdoStat->fetchAll();
     <!--code spécifique à la page-->
 
     <div style="width: 80%; margin: auto;" id="corps_vendeur" class="text-center">
-        <div style="flex:1;" id="vendeur_compte_gauche">
-            <img src="images\vendeur.jpg">
+        <div style="flex:1;" id="vendeur_compte_gauche" >
+            <img src="<?=$_SESSION['PhotoVendeur']?>">
             <br>
-            <h1>Nom vendeur</h1>
+            <h1><?=$_SESSION['Pseudo_Vendeur']?></h1>
         </div>
 
         <div style="flex:1;" id="vendeur_droite content-wrapper row">
@@ -110,12 +117,12 @@ $itemSelects = $pdoStat->fetchAll();
                     <table class="table table-striped ">
                       <thead>
                         <tr>
-                          <th>Photo</th>
                           <th>Nom</th>
                           <th>Catégorie.</th>
                           <th>Prix</th>
                           <th>Quantité</th>
                           <th>Remise en  %</th>
+                          <th>Appliquer remise</th>
                           <th>Supprimer</th>
 
                       </tr>
@@ -126,17 +133,17 @@ $itemSelects = $pdoStat->fetchAll();
                   <?php foreach ($itemSelects as $itemSelect): ?>
 
                     <tr>
-                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
                       <td><?=$itemSelect['Nom']?></td>
                       <td><?=$itemSelect['Categorie']?></td>
                       <td><?=$itemSelect['Prix']?></td>
                       <td><?=$itemSelect['QuantiteTot']?></td>
-                      <td><input type="number" name="remise" min="0" max="100" "></td>
-                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                  </tr>
+                        <form action="appliquer_remise.php?idItem=<?=$itemSelect['ID_Item']?>" method="post">
+                        <td><input type="number" name="remise" min="0" max="100" value="0" ></td>
+                        <td><button>Aplliquer remise</button></td>
+                        </form>
+                        <td><a href="suppression_item.php?idItem=<?=$itemSelect['ID_Item']?>"><button>Supprimer item</button></a></td>
+                    </tr>
                   <?php endforeach; ?>
-
 
 
 
@@ -149,7 +156,7 @@ $itemSelects = $pdoStat->fetchAll();
 </div>
 
 </div>
-<div  style="background-color: darkgrey;margin-top: 20px;color: #FFF;"id="ajouter_un_item_admin">
+<div  style="background-color: #424558;margin-top: 20px;" id="ajouter_un_item_admin">
     <a href="ajout_item_vendeur.php">ajouter<br/>un item</a>
 </div>
 </div>

@@ -139,14 +139,16 @@ $musiques = $pdoStat->fetchAll();
                                     <a href="produit.php?idItem=<?=$musique['ID_Item']?>"><?= $musique['Nom']?></a>
                                 </h3>
                                 <p>
-                                    <h4>Description courte du produit</h4><br>
-                                    <?= $musique['Description']?>
+                                    <p><span style="font-weight: bold;">Description du produit :<br></span>
+                                    <?= $musique['Description']?></p>
                                 </p>
                                 <p>
-                                    quantité : <?= $musique['QuantiteTot']?>
+                                    <p><span style="font-weight: bold;">Quantité disponible :<br></span>
+                                    <?= $musique['QuantiteTot']?></p>
                                 </p>
                                 <p>
-                                    à partir de (prix le plus bas)
+                                    <p><span style="font-weight: bold;">Prix :<br></span>
+                                    <?=$musique['Prix']?> €</p>
                                 </p>
                             </div>
                         </div>
