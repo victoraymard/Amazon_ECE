@@ -148,9 +148,9 @@ else
 
                                     <td><a href="produit.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><h3><?= $itemSelect[0]['Nom']?></h3></a></td>
 
-                                    <td>In stock</td>
+                                    <td><?= $itemSelect[0]['Prix']?> €</td>
                                     <td class="text-center"><?= $itemPanier['Quantite_panier']?></td>
-                                    <td class="text-right"><?= $itemSelect[0]['Prix']?> €</td>
+                                    <td class="text-right"><?= $itemSelect[0]['Prix']*$itemPanier['Quantite_panier']?> €</td>
                                     <td class="text-right"><a href="suppression_panier.php?idItem=<?=$itemSelect[0]['ID_Item']?>"><button class="btn btn-sm btn-danger">supprimer</button></a></td>
                                 </tr>
                             <?php endforeach; ?>
