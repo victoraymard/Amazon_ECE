@@ -136,14 +136,16 @@ $vetements = $pdoStat->fetchAll();
                                     <a href="produit.php?idItem=<?=$vetement['ID_Item']?>"><?= $vetement['Nom']?></a>
                                 </h3>
                                 <p>
-                                    <h4>Description courte du produit</h4><br>
-                                    <?= $vetement['Description']?>
+                                    <p><span style="font-weight: bold;">Description du produit :<br></span>
+                                    <?= $vetement['Description']?></p>
                                 </p>
                                 <p>
-                                    quantité : <?= $vetement['QuantiteTot']?>
+                                    <p><span style="font-weight: bold;">Quantité disponible :<br></span>
+                                    <?= $vetement['QuantiteTot']?></p>
                                 </p>
                                 <p>
-                                    à partir de (prix le plus bas)
+                                    <p><span style="font-weight: bold;">Prix :<br></span>
+                                    <?=$vetement['Prix']?> €</p>
                                 </p>
                             </div>
                         </div>

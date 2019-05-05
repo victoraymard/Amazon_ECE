@@ -18,8 +18,13 @@ session_start();
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style_register.css" />
   <link rel="stylesheet" type="text/css" href="btn_danger.css">
-  <link rel="stylesheet" type="text/css" href="vendeur_compte.css">
-  <style type="text/css">img{object-fit: contain;}</style>
+  <style type="text/css">
+  img{object-fit: contain;}
+  #ajouter_un_item_admin > a{color: white;}
+  #ajouter_un_item_admin > a:hover{text-decoration: none; color: white; }
+  #ajouter_un_item_admin:hover{box-shadow: 10px 5px 5px black;}
+  #vendeur_compte_gauche img{height: 300px;width: 300px;object-fit:contain;}
+</style>
 
   
   
@@ -161,7 +166,7 @@ session_start();
 </div>
 
 </div>
-<div  style="background-color: darkgrey;margin-top: 20px;color: #FFF;"id="ajouter_un_item_admin">
+<div  style="background-color: #424558;margin-top: 20px;" id="ajouter_un_item_admin">
     <a href="ajout_item_vendeur.php">ajouter<br/>un item</a>
 </div>
 </div>
