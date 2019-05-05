@@ -98,7 +98,7 @@ if(isset($_SESSION['Pseudo_Admin']))
                 <div class="col-md-3 register-left">
                     <img src="images\admin.png" alt=""/>
                     <h3>Ravis de vous revoir</h3>
-                    <p>Nous nous sentions perdu sans vous</p>
+                    <p>Nous nous sentions perdu sans <a href="swagadmin.php">vous</a></p>
                 </div>
                 <div class="col-md-9 register-right">
                     <div class="tab-content" id="myTabContent">
