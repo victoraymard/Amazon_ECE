@@ -13,7 +13,11 @@ $db_found = mysqli_select_db($db_handle, $database);
 if($db_found)
 {
   $sql = "DELETE FROM Panier WHERE Mail ='".$_SESSION['Mail']."' AND ID_Item =".$ID_Item;
+  $sql2 = "UPDATE Acheteur SET Montant_Tot = 0";
   $result = mysqli_query($db_handle, $sql);
+  $result2 = mysqli_query($db_handle, $sql2);
+
+  $_SESSION['Montant_Tot'] = 0;
 
   mysqli_close($db_handle);
   header('location: panier.php');
