@@ -139,14 +139,16 @@ $livres = $itemReq->fetchAll();
                                     <a href="produit.php?idItem=<?=$livre['ID_Item']?>"><?= $livre['Nom']?></a>
                                 </h3>
                                 <p>
-                                    <h4>Description courte du produit</h4><br>
-                                    <?= $livre['Description']?>
+                                     <p><span style="font-weight: bold;">Description du produit :<br></span>
+                                    <?= $livre['Description']?></p>
                                 </p>
                                 <p>
-                                    quantité : <?= $livre['QuantiteTot']?>
+                                    <p><span style="font-weight: bold;">Quantité disponible :<br></span>
+                                    <?= $livre['QuantiteTot']?></p>
                                 </p>
                                 <p>
-                                    à partir de (prix le plus bas)
+                                    <p><span style="font-weight: bold;">Prix :<br></span>
+                                    <?=$livre['Prix']?> €</p>
                                 </p>
                             </div>
                         </div>

@@ -137,14 +137,16 @@ $sports_loisirs = $pdoStat->fetchAll();
                                    <a href="produit.php?idItem=<?=$sport_loisir['ID_Item']?>"><?= $sport_loisir['Nom']?></a>
                                </h3>
                                <p>
-                                <h4>Description courte du produit</h4><br>
-                                <?= $sport_loisir['Description']?>
+                                 <p><span style="font-weight: bold;">Description du produit :<br></span>
+                                <?= $sport_loisir['Description']?></p>
                             </p>
                             <p>
-                                quantité : <?= $sport_loisir['QuantiteTot']?>
+                                <p><span style="font-weight: bold;">Quantité disponible :<br></span>
+                                <?= $sport_loisir['QuantiteTot']?></p>
                             </p>
                             <p>
-                                à partir de (prix le plus bas)
+                                <p><span style="font-weight: bold;">Prix :<br></span>
+                                <?=$sport_loisir['Prix']?> €</p>
                             </p>
                         </div>
                     </div>
