@@ -33,7 +33,10 @@ $itemSelects = $pdoStat->fetchAll();
   <link rel="stylesheet" href="style_register.css" />
   <link rel="stylesheet" type="text/css" href="btn_danger.css">
   <link rel="stylesheet" type="text/css" href="vendeur_compte.css">
-  <style type="text/css">img{object-fit: contain;}</style>
+  <style type="text/css">
+      img{object-fit: contain;}
+      #vendeur_compte_gauche{background-image: url("<?=$_SESSION['ImageFond']?>");}
+  </style>
 
   
   
@@ -94,10 +97,10 @@ $itemSelects = $pdoStat->fetchAll();
     <!--code spécifique à la page-->
 
     <div style="width: 80%; margin: auto;" id="corps_vendeur" class="text-center">
-        <div style="flex:1;" id="vendeur_compte_gauche" <img src="<?=$_SESSION['ImageFond']?>">>
+        <div style="flex:1;" id="vendeur_compte_gauche" >
             <img src="<?=$_SESSION['PhotoVendeur']?>">
             <br>
-            <h1><?=$_SESSION['Nom']?></h1>
+            <h1><?=$_SESSION['Pseudo_Vendeur']?></h1>
         </div>
 
         <div style="flex:1;" id="vendeur_droite content-wrapper row">

@@ -178,10 +178,10 @@ $allVendeurs = $pdoStat2->fetchAll();
                         <td class="py-1"><img src="<?=$photo[0][Nom_Photo]?>" alt="image" /></td>
                         <td><?=$allItem['Nom']?></td>
                         <td><?= $allItem['Categorie']?></td>
-                        <td>8<?= $allItem['Prix']?>€</td>
+                        <td><?= $allItem['Prix']?>€</td>
                         <td><?= $allItem['QuantiteTot']?></td>
                         <td><?= $allItem['Pseudo_Vendeur']?></td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+                          <td><a href="suppression_item_admin.php?idItem=<?=$itemSelect['ID_Item']?>"><button>Supprimer item</button></a></td>
                       </tr>
                     <?php endforeach; ?>
 
@@ -239,11 +239,11 @@ $allVendeurs = $pdoStat2->fetchAll();
 
                       <tr>
                         <td class="py-1"><img src="<?=$allVendeur['PhotoVendeur']?>" alt="image" /></td>
-                        <td><?=$allVendeur['Nom']?></td>
+                        <td><?=$allVendeur['Pseudo_Vendeur']?></td>
                         <td><?=$nbTotItems?></td>
                         <td><div class="progress"><div class="progress-bar " role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div></div></td>
                         <td><?=$nbTotVendus?></td>
-                        <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
+                          <td><a href="suppression_vendeur_admin.php?Pseudo_Vendeur=<?=$allVendeur['Nom']?>"><button>Supprimer vendeur</button></a></td>
                       </tr>
                     <?php endforeach; ?>
 
