@@ -84,7 +84,7 @@ $itemSelect = $pdoStat->fetchAll();
     <div style="width: 80%; margin: auto;" id="corps_produit">
         <div id="page_produit_gauche">
             <div id="produit_images">
-                <div id="produit_images_gauche">
+                <div id="produit_images_gauche ">
 
                     <?php
                 //preparation de la requette pour photos
@@ -99,14 +99,16 @@ $itemSelect = $pdoStat->fetchAll();
 
                     <?php foreach ($photos as $photo): ?>
 
-                        <img src="<?= $photo['Nom_Photo']?>" width="300" height="200">
+                        <img src="<?= $photo['Nom_Photo']?>" style="width:140px; margin-bottom: 20px; border-radius: 10px;"  >
 
                     <?php endforeach; ?>
+
+                    <video src="<?=$itemSelect[0]['Nom_Video']?>" controls style="width:140px;  object-fit: contain; border-radius: 10px;"></video>
 
                 </div>
 
                 <div id="produit_images_droite">
-                    <img src="<?= $photos[0]['Nom_Photo']?>" width="300" height="200">
+                    <img src="<?= $photos[0]['Nom_Photo']?>" style=" width:300; height:200; border-radius:20px;">
                 </div>
 
             </div>
