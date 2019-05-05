@@ -110,12 +110,12 @@ $itemSelects = $pdoStat->fetchAll();
                     <table class="table table-striped ">
                       <thead>
                         <tr>
-                          <th>Photo</th>
                           <th>Nom</th>
                           <th>Catégorie.</th>
                           <th>Prix</th>
                           <th>Quantité</th>
                           <th>Remise en  %</th>
+                          <th>Appliquer remise</th>
                           <th>Supprimer</th>
 
                       </tr>
@@ -126,17 +126,17 @@ $itemSelects = $pdoStat->fetchAll();
                   <?php foreach ($itemSelects as $itemSelect): ?>
 
                     <tr>
-                      <td class="py-1"><img src="table_gestion/pic-1.png" alt="image" /></td>
                       <td><?=$itemSelect['Nom']?></td>
                       <td><?=$itemSelect['Categorie']?></td>
                       <td><?=$itemSelect['Prix']?></td>
                       <td><?=$itemSelect['QuantiteTot']?></td>
-                      <td><input type="number" name="remise" min="0" max="100" "></td>
-                      <td><input style="background-color: darkred;" type="button" name="nom du produit"></td>
-
-                  </tr>
+                        <form action="appliquer_remise.php?idItem=<?=$itemSelect['ID_Item']?>" method="post">
+                        <td><input type="number" name="remise" min="0" max="100" value="0" ></td>
+                        <td><button>Aplliquer remise</button></td>
+                        </form>
+                        <td><a href="suppression_item.php?idItem=<?=$itemSelect['ID_Item']?>"><button>Supprimer item</button></a></td>
+                    </tr>
                   <?php endforeach; ?>
-
 
 
 
