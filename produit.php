@@ -40,15 +40,11 @@ $itemSelect = $pdoStat->fetchAll();
 		.img-zoom-result{
 			border: 1px solid #d4d4d4;
 			/*set the size of the result div:*/
-			width: 30px;
-			height: 30px;
-		}
-
-		.img-zoom-result:hover{
-			border: 1px solid #d4d4d4;
-			/*set the size of the result div:*/
 			width: 300px;
 			height: 300px;
+		}
+
+		
 		}
 	</style>
 	<link rel="icon" type="image/png" href="images/icone.png" alt="icone Amazon ECE">
