@@ -25,7 +25,7 @@ if($_SESSION['NumCarte'] == $NumCarte && $_SESSION['NomCarte'] == $NomCarte && $
     //préparation de la requete
     $pdoStat = $objetPDO->prepare('UPDATE Acheteur SET Montant_Tot = 0');
     $_SESSION['Montant_Tot'] = 0;
-    $deletePanier = $objetPDO->prepare('DELETE FROM Panier WHERE Mail ='.$_SESSION['Mail']);
+    $deletePanier = $objetPDO->prepare("DELETE FROM Panier WHERE Mail = '".$_SESSION['Mail']."'");
 
 
     //execution de la requete
